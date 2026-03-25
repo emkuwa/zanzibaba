@@ -20,7 +20,10 @@ function configure(): void {
 /**
  * Upload file bytes to Cloudinary (images + video). Returns HTTPS URL (secure_url).
  */
-export async function uploadBufferToCloudinary(bytes: ArrayBuffer): Promise<string> {
+export async function uploadBufferToCloudinary(
+  bytes: ArrayBuffer,
+  resourceType: "image" | "video" | "auto" = "auto"
+): Promise<string> {
   configure();
   const buffer = Buffer.from(bytes);
   const folder =
@@ -30,7 +33,7 @@ export async function uploadBufferToCloudinary(bytes: ArrayBuffer): Promise<stri
     const stream = cloudinary.uploader.upload_stream(
       {
         folder,
-        resource_type: "auto",
+        resource_type: resourceType,
         use_filename: true,
         unique_filename: true,
       },
