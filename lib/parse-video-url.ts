@@ -31,7 +31,12 @@ export function getVimeoId(url: string): string | null {
 }
 
 export function isDirectVideoFileUrl(url: string): boolean {
-  return /\.(mp4|webm|ogg|mov)(\?|#|$)/i.test(url.trim());
+  const u = url.trim();
+  if (!u) return false;
+  if (/\.(mp4|webm|ogg|mov)(\?|#|$)/i.test(u)) return true;
+  // Cloudinary video URLs often look like:
+  // https://res.cloudinary.com/<cloud>/video/upload/v.../<public_id>
+  return /res\.cloudinary\.com\/.+\/video\/upload\//i.test(u);
 }
 
 /**
