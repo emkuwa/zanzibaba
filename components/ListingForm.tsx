@@ -635,7 +635,7 @@ export function ListingForm({ listing, mode }: ListingFormProps) {
           Video URL (optional)
         </label>
         <p className="mt-0.5 text-xs text-sand-500">
-          YouTube, Vimeo, direct link, or upload a video file
+          YouTube, Vimeo, direct link, or upload — with Cloudinary env vars, files go to your Cloudinary CDN; otherwise local <code className="text-xs">/uploads/</code> (dev).
         </p>
         <div className="mt-1 flex flex-wrap items-center gap-2">
           <input
@@ -643,7 +643,7 @@ export function ListingForm({ listing, mode }: ListingFormProps) {
             type="text"
             value={videoUrl}
             onChange={(e) => setVideoUrl(e.target.value)}
-            placeholder="https://www.youtube.com/watch?v=... or /uploads/video.mp4"
+            placeholder="https://www.youtube.com/... or paste URL after upload"
             className="min-w-0 flex-1 rounded-lg border border-sand-200 bg-sand-50 px-3 py-2 text-sand-900 placeholder:text-sand-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           />
           <label className="inline-flex cursor-pointer items-center rounded-lg border border-sand-300 bg-white px-3 py-2 text-sm text-sand-700 hover:bg-sand-50">
