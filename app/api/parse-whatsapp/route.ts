@@ -34,6 +34,7 @@ function extractAgent(text: string): { agentWhatsApp: string | null; agentCode: 
 function fallbackParse(text: string): {
   title: string;
   description: string;
+  originalDescription: string;
   price: number;
   currency: string;
   location: string;

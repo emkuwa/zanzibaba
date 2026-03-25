@@ -26,7 +26,7 @@ function buildPrefilledMessage(listing: Listing): string {
     `Price: ${price}`,
     ...(listing.area ? [`Area: ${listing.area}`] : []),
     ...(listing.agentName || listing.agentCode
-      ? ["", `Agent: ${listing.agentName ?? ""}${listing.agentCode ? ` (${listing.agentCode})` : ""}"]
+      ? ["", `Agent: ${listing.agentName ?? ""}${listing.agentCode ? ` (${listing.agentCode})` : ""}`]
       : []),
   ];
   return lines.join("\n");
