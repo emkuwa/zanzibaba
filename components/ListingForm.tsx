@@ -165,6 +165,7 @@ export function ListingForm({ listing, mode }: ListingFormProps) {
       ).slice(0, 120);
       const finalImages = resolveCoverImage(images, videoUrl);
       const desc = description.trim();
+      const fullPaste = whatsappPaste.trim();
       const br =
         bedrooms.trim() === ""
           ? undefined
@@ -190,7 +191,7 @@ export function ListingForm({ listing, mode }: ListingFormProps) {
       const payload = {
         title: fixedTitle || title,
         description: desc,
-        originalDescription: desc,
+        originalDescription: fullPaste || desc,
         price: Number(price) || 0,
         currency,
         location,
@@ -267,19 +268,46 @@ export function ListingForm({ listing, mode }: ListingFormProps) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error ?? "Parse failed");
       }
-      const data = await res.json();
+      const data = await res.json() as {
+        title?: string;
+        description?: string;
+        originalDescription?: string;
+        price?: number;
+        currency?: string;
+        location?: string;
+        area?: string;
+        propertyType?: string;
+        features?: string[];
+        agentWhatsApp?: string;
+        agentCode?: string;
+        transactionType?: "sale" | "rent";
+        landAreaSqm?: number;
+        hasDocuments?: boolean;
+      };
       setTitle(data.title ?? title);
-      setDescription(
-        (typeof data.originalDescription === "string" && data.originalDescription.trim()
-          ? data.originalDescription
-          : data.description) ?? description
-      );
-      setPrice(String(data.price ?? price));
+      // Prefer cleaned description so the user sees extracted prose; full paste stays in WhatsApp box above
+      {
+        const cleaned =
+          typeof data.description === "string" && data.description.trim()
+            ? data.description.trim()
+            : "";
+        setDescription(cleaned || description);
+      }
+      setPrice(data.price != null && !Number.isNaN(Number(data.price)) ? String(data.price) : price);
       setCurrency(data.currency ?? currency);
       setLocation(data.location ?? location);
       setArea(data.area ?? area);
       setPropertyType((data.propertyType ?? propertyType) as PropertyType);
       setFeaturesText(Array.isArray(data.features) ? data.features.join(", ") : featuresText);
+      if (data.transactionType === "sale" || data.transactionType === "rent") {
+        setTransactionType(data.transactionType);
+      }
+      if (data.landAreaSqm != null && Number.isFinite(data.landAreaSqm) && data.landAreaSqm > 0) {
+        setLandAreaSqm(String(data.landAreaSqm));
+      }
+      if (typeof data.hasDocuments === "boolean") {
+        setHasDocuments(data.hasDocuments);
+      }
       if (data.agentWhatsApp) {
         setAgentWhatsApp(data.agentWhatsApp);
       }
