@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { getYouTubeId, getVimeoId, isDirectVideoFileUrl } from "@/lib/parse-video-url";
+import {
+  getCloudinaryVideoPosterUrl,
+  getYouTubeId,
+  getVimeoId,
+  isDirectVideoFileUrl,
+} from "@/lib/parse-video-url";
 
 const DEFAULT_IMAGE_SIZES =
   "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
@@ -71,6 +76,38 @@ export function CardVideoPreview({
   }
 
   return <VideoFallback compact={compact} />;
+}
+
+function CloudinaryPosterOrVideo({
+  posterUrl,
+  videoUrl,
+  title,
+  imageSizes,
+  compact,
+}: {
+  posterUrl: string;
+  videoUrl: string;
+  title: string;
+  imageSizes: string;
+  compact?: boolean;
+}) {
+  const [posterFailed, setPosterFailed] = useState(false);
+  if (posterFailed) {
+    return <DirectVideoPoster src={videoUrl} title={title} compact={compact} />;
+  }
+  return (
+    <div className="absolute inset-0">
+      <Image
+        src={posterUrl}
+        alt=""
+        fill
+        className="object-cover transition duration-300 group-hover:scale-[1.03]"
+        sizes={imageSizes}
+        unoptimized
+        onError={() => setPosterFailed(true)}
+      />
+    </div>
+  );
 }
 
 function VideoFallback({ compact }: { compact?: boolean }) {
