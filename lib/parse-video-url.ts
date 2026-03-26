@@ -55,7 +55,8 @@ export function getCloudinaryVideoPosterUrl(videoUrl: string): string | null {
     const after = path.slice(idx + marker.length);
     if (!after) return null;
     const jpgAfter = after.replace(/\.(mp4|webm|mov|m4v)$/i, ".jpg");
-    u.pathname = `${prefix}so_0.5/f_jpg,q_auto/${jpgAfter}`;
+    // Transformations must be comma-separated in one segment (not so_0.5/f_jpg)
+    u.pathname = `${prefix}so_0,f_jpg,q_auto/${jpgAfter}`;
     return u.toString();
   } catch {
     return null;

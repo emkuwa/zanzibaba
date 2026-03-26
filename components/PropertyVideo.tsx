@@ -39,17 +39,26 @@ export function PropertyVideo({ videoUrl, title }: PropertyVideoProps) {
   }
 
   if (isDirectVideoFileUrl(url)) {
+    const isLocalUploadPath = url.startsWith("/uploads/");
     return (
-      <div className="overflow-hidden rounded-xl bg-sand-100">
-        <video
-          src={url}
-          controls
-          className="w-full bg-sand-100"
-          preload="metadata"
-          playsInline
-        >
-          Your browser does not support the video tag.
-        </video>
+      <div className="space-y-2">
+        {isLocalUploadPath ? (
+          <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+            Video is linked as <code className="rounded bg-amber-100/80 px-1">/uploads/…</code> — on the live site that file usually does not exist. Edit this listing, upload the video again (with Cloudinary configured on Vercel) so the URL starts with{" "}
+            <code className="rounded bg-amber-100/80 px-1">https://res.cloudinary.com/…</code>.
+          </p>
+        ) : null}
+        <div className="overflow-hidden rounded-xl bg-sand-100">
+          <video
+            src={url}
+            controls
+            className="w-full bg-sand-100"
+            preload="metadata"
+            playsInline
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     );
   }

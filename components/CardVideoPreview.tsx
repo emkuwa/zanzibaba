@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { DEFAULT_LISTING_IMAGE } from "@/lib/default-listing-image";
 import {
   getCloudinaryVideoPosterUrl,
   getYouTubeId,
@@ -66,6 +67,35 @@ export function CardVideoPreview({
           className="object-cover transition duration-300 group-hover:scale-[1.03]"
           sizes={imageSizes}
           unoptimized
+        />
+      </div>
+    );
+  }
+
+  // Cloudinary: use derived JPEG frame (reliable); <video> poster on cards often stays blank
+  const cloudinaryPoster = getCloudinaryVideoPosterUrl(url);
+  if (cloudinaryPoster) {
+    return (
+      <CloudinaryPosterOrVideo
+        posterUrl={cloudinaryPoster}
+        videoUrl={url}
+        title={title}
+        imageSizes={imageSizes}
+        compact={compact}
+      />
+    );
+  }
+
+  // Local /uploads/ paths do not exist on Vercel — avoid broken <video> (beige fallback)
+  if (url.startsWith("/uploads/")) {
+    return (
+      <div className="absolute inset-0">
+        <Image
+          src={DEFAULT_LISTING_IMAGE}
+          alt=""
+          fill
+          className="object-cover transition duration-300 group-hover:scale-[1.03]"
+          sizes={imageSizes}
         />
       </div>
     );
