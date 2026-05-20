@@ -13,21 +13,25 @@ export function CtaBanner() {
         aria-hidden
       />
       <div className="relative text-center">
-        <p className="text-eyebrow">Partner With Us</p>
-        <h2 className="mx-auto mt-5 max-w-2xl text-section-title text-white">
+        <h2 className="mx-auto max-w-3xl font-sans text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem]">
           Build the future of Zanzibar with Zanzibaba Group
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-body-luxury !text-white/75">
-          Speak with our team in Paje or Stone Town — we respond to programme
-          enquiries across all divisions.
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+          Partner with a group that delivers across every stage — from land and
+          materials to construction, digital, and beyond.
         </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-5">
+        <div className="mt-10 flex flex-row flex-wrap justify-center gap-3 sm:mt-12 sm:gap-4">
           <Button href="/contact" variant="gold" size="lg">
-            Get in Touch
+            Contact Us
             <span aria-hidden>→</span>
           </Button>
-          <Button href="/solutions" variant="outline" size="lg" className="!border-white/60 !text-white hover:!bg-white/10">
-            Explore Solutions
+          <Button
+            href="/solutions"
+            variant="outline-light"
+            size="lg"
+            className="!border-white !bg-transparent !text-white hover:!bg-white/10"
+          >
+            Our Solutions
           </Button>
         </div>
       </div>

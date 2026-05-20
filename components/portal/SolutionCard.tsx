@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Solution } from "@/data/solutions";
+import { SolutionIcon } from "@/components/portal/icons/SolutionIcon";
 import { Card } from "./Card";
 
 interface SolutionCardProps {
@@ -26,15 +26,8 @@ export function SolutionCard({ solution, index = 0 }: SolutionCardProps) {
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="flex h-full flex-col p-6 sm:p-7"
       >
-        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-sm border border-zb-border/70 bg-zb-surface/50 transition-colors group-hover:border-zb-gold/30">
-          <Image
-            src={solution.logo}
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain"
-            aria-hidden
-          />
+        <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-sm border border-zb-border/70 bg-white shadow-zb-sm transition-colors group-hover:border-zb-gold/30">
+          <SolutionIcon slug={solution.slug} className="h-14 w-14" />
         </div>
         <h3 className="font-sans text-lg font-bold text-zb-navy transition-colors group-hover:text-zb-navy sm:text-xl">
           {solution.title}
@@ -43,7 +36,7 @@ export function SolutionCard({ solution, index = 0 }: SolutionCardProps) {
           {solution.shortDescription}
         </p>
         <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-zb-navy transition-colors group-hover:text-zb-gold">
-          Learn More
+          Learn more
           <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
             →
           </span>

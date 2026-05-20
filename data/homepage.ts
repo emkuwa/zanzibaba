@@ -1,51 +1,47 @@
 export const HERO_IMAGES = {
-  /** Stone Town / Zanzibar harbor — warm golden-hour coastal panorama */
+  /** Luxury modern architecture at dusk */
   primary:
-    "https://images.unsplash.com/photo-1573844250598-d871b821bb88?w=2400&q=88&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=88&auto=format&fit=crop",
 } as const;
 
 export const HERO_COPY = {
-  line1: "Building Today,",
-  line2: "Empowering Tomorrow.",
+  line1: "BUILDING TODAY,",
+  line2: "EMPOWERING TOMORROW.",
   subheading:
     "Seven integrated solutions across real estate, materials, construction, and digital — one group, endless possibilities for investors and institutions across Zanzibar and Tanzania.",
 } as const;
 
-export const FLAGSHIP_PROJECTS = [
+export const PORTFOLIO_ITEMS = [
   {
-    id: "east-coast",
-    title: "East Coast Villa Programme",
-    location: "Paje & Bwejuu, Unguja",
-    sector: "Real Estate & Construction",
-    image:
-      "https://images.unsplash.com/photo-1613497453912-2f81d5d8e5af?w=1200&q=80&auto=format&fit=crop",
+    id: "first-class-villa",
+    title: "First Class Villa Programme",
     description:
       "Integrated land, materials, and build delivery for coastal villa developments — investor-grade coordination from plot to handover.",
     href: "/projects",
+    variant: "featured" as const,
   },
   {
-    id: "stone-town",
-    title: "Stone Town Heritage Corridor",
-    location: "Mlandege, Stone Town",
-    sector: "Urban Regeneration",
-    image:
-      "https://images.unsplash.com/photo-1573844250598-d871b821bb88?w=1200&q=80&auto=format&fit=crop",
+    id: "residential-complex",
+    title: "New Residential Complex",
     description:
-      "Commercial and hospitality assets aligned with UNESCO heritage context — disciplined design, security, and digital presence.",
+      "Multi-unit residential development with modern amenities and sustainable design across Unguja.",
     href: "/projects",
+    variant: "card" as const,
   },
   {
-    id: "materials-hub",
-    title: "Island Materials Hub",
-    location: "Paje Yard, Zanzibar",
-    sector: "Building Materials",
+    id: "commercial-building",
+    title: "Commercial Building",
+    description:
+      "Mixed-use commercial programme with construction, security, and digital brand stewardship.",
+    href: "/projects",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop",
-    description:
-      "Programme-scale procurement and logistics for developers across Unguja — BOQ support, bulk supply, and delivery zones.",
-    href: "/solutions/building-materials",
+    variant: "photo" as const,
   },
 ] as const;
+
+/** @deprecated Use PORTFOLIO_ITEMS — kept for legacy components */
+export const FLAGSHIP_PROJECTS = PORTFOLIO_ITEMS;
 
 export const STRATEGIC_SECTORS = [
   {
@@ -133,13 +129,10 @@ export const VISION_PILLARS = [
 
 export const ABOUT_IMAGES = {
   primary:
-    "https://images.unsplash.com/photo-1573844250598-d871b821bb88?w=1400&q=85&auto=format&fit=crop",
-  secondary:
-    "https://images.unsplash.com/photo-1590073242678-70ee3fc28d8b?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1511818966892-7c031c556a9e?w=1400&q=85&auto=format&fit=crop",
 } as const;
 
 export const ABOUT_COPY = {
-  eyebrow: "About Us",
   heading: "Building Beyond Structures. Creating Lasting Impact.",
   body:
     "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja to Tanzania-wide programmes. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",

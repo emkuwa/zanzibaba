@@ -1,18 +1,18 @@
-import { Hero } from "@/components/portal/Hero";
+import { HomeHero } from "@/components/portal/HomeHero";
 import { StatsBar } from "@/components/portal/StatsBar";
 import { SolutionsGrid } from "@/components/portal/SolutionsGrid";
 import { AboutSection } from "@/components/portal/AboutSection";
-import { FlagshipProjects } from "@/components/portal/FlagshipProjects";
+import { PortfolioSection } from "@/components/portal/PortfolioSection";
 import { CtaBanner } from "@/components/portal/CtaBanner";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <StatsBar />
       <SolutionsGrid />
       <AboutSection />
-      <FlagshipProjects />
+      <PortfolioSection />
       <CtaBanner />
     </>
   );

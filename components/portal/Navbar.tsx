@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { NAV_LINKS, SITE } from "@/data/site";
 import { Button } from "./Button";
 
-function PhoneIcon({ className = "" }: { className?: string }) {
+function SearchIcon({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -21,7 +21,7 @@ function PhoneIcon({ className = "" }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.75}
-        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
       />
     </svg>
   );
@@ -29,9 +29,12 @@ function PhoneIcon({ className = "" }: { className?: string }) {
 
 export function Navbar() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const darkHero = isHome && !scrolled;
 
   useEffect(() => {
     setOpen(false);
@@ -46,7 +49,7 @@ export function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 48);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -55,31 +58,41 @@ export function Navbar() {
   const navLinkClass = (href: string) =>
     `relative whitespace-nowrap px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3.5 xl:text-sm ${
       pathname === href
-        ? "text-zb-navy after:scale-x-100"
-        : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
+        ? darkHero
+          ? "text-white after:scale-x-100"
+          : "text-zb-navy after:scale-x-100"
+        : darkHero
+          ? "text-white/85 after:scale-x-0 hover:text-white hover:after:scale-x-100"
+          : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-zb-border/80 bg-white/98 shadow-zb-sm backdrop-blur-lg"
-          : "border-b border-zb-border/60 bg-white/98 backdrop-blur-md"
+        darkHero
+          ? "border-b border-white/10 bg-zb-navy-deep/95 backdrop-blur-md"
+          : scrolled
+            ? "border-b border-zb-border/80 bg-white/98 shadow-zb-sm backdrop-blur-lg"
+            : "border-b border-zb-border/60 bg-white/98 backdrop-blur-md"
       }`}
     >
       <div className="container-portal">
-        <div className="grid h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-4 sm:h-[6rem] lg:gap-8">
+        <div className="grid h-[4.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[5.5rem] sm:gap-4 lg:h-[6rem] lg:gap-8">
           <Link
             href="/"
             className="group shrink-0 transition-opacity hover:opacity-90"
             aria-label={`${SITE.name} home`}
           >
             <Image
-              src="/brand/logos-v2/primary-horizontal.png"
+              src={
+                darkHero
+                  ? "/brand/logos-v2/reverse-white-on-navy.png"
+                  : "/brand/logos-v2/primary-horizontal.png"
+              }
               alt="Zanzibaba Group"
               width={320}
               height={64}
-              className="h-12 w-auto sm:h-[3.25rem] md:h-14 lg:h-[3.75rem]"
+              className="h-10 w-auto sm:h-12 md:h-[3.25rem] lg:h-14"
               priority
             />
           </Link>
@@ -94,7 +107,11 @@ export function Navbar() {
                   <li key={item.label} className="group relative">
                     <button
                       type="button"
-                      className="relative flex items-center gap-1 px-3 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors hover:text-zb-navy after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform group-hover:after:scale-x-100 xl:px-3.5 xl:text-sm"
+                      className={`relative flex items-center gap-1 px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform group-hover:after:scale-x-100 xl:px-3.5 xl:text-sm ${
+                        darkHero
+                          ? "text-white/85 hover:text-white"
+                          : "text-zb-ink hover:text-zb-navy"
+                      }`}
                       aria-expanded={solutionsOpen}
                       aria-haspopup="true"
                       onClick={() => setSolutionsOpen((v) => !v)}
@@ -145,21 +162,35 @@ export function Navbar() {
             </ul>
           </nav>
 
-          <div className="flex items-center justify-end gap-4 sm:gap-5 lg:gap-6">
-            <a
-              href={`tel:${SITE.phoneTel}`}
-              className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium text-zb-navy transition-colors hover:text-zb-gold lg:inline-flex"
+          <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5">
+            <Link
+              href="/solutions"
+              className={`hidden h-10 w-10 items-center justify-center rounded-sm transition-colors lg:inline-flex ${
+                darkHero
+                  ? "text-white/90 hover:bg-white/10 hover:text-white"
+                  : "text-zb-navy hover:bg-zb-surface"
+              }`}
+              aria-label="Search"
             >
-              <PhoneIcon className="h-4 w-4 shrink-0 text-zb-gold" />
-              {SITE.phone}
-            </a>
-            <Button href="/contact" variant="navy" size="md" className="hidden sm:inline-flex">
+              <SearchIcon className="h-5 w-5" />
+            </Link>
+            <Button
+              href="/contact"
+              variant="navy"
+              size="md"
+              className={`hidden uppercase tracking-wider sm:inline-flex ${
+                darkHero ? "" : ""
+              }`}
+            >
               Get in Touch
-              <span aria-hidden>→</span>
             </Button>
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-sm text-zb-navy transition-colors hover:bg-zb-surface lg:hidden"
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors sm:h-11 sm:w-11 lg:hidden ${
+                darkHero
+                  ? "text-white hover:bg-white/10"
+                  : "text-zb-navy hover:bg-zb-surface"
+              }`}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
@@ -181,23 +212,28 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-zb-border bg-white lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 top-[4.5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[5.5rem]"
           >
-            <nav className="container-portal flex flex-col gap-1 py-6" aria-label="Mobile navigation">
-              {NAV_LINKS.map((item) =>
+            <nav
+              className="container-portal flex h-full flex-col overflow-y-auto py-8"
+              aria-label="Mobile navigation"
+            >
+              {NAV_LINKS.map((item, idx) =>
                 "children" in item ? (
-                  <div key={item.label} className="py-3">
-                    <p className="px-3 text-eyebrow text-zb-muted">{item.label}</p>
+                  <div key={item.label} className="border-b border-white/10 py-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.2em] text-zb-gold">
+                      {item.label}
+                    </p>
                     <ul className="mt-3 space-y-1">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="block rounded-sm px-3 py-3 text-base font-normal text-zb-ink transition-colors hover:bg-zb-surface"
+                            className="block rounded-sm py-3 text-lg font-medium text-white/90 transition-colors hover:text-zb-gold"
                           >
                             {child.label}
                           </Link>
@@ -206,24 +242,23 @@ export function Navbar() {
                     </ul>
                   </div>
                 ) : (
-                  <Link
+                  <motion.div
                     key={item.href}
-                    href={item.href}
-                    className="rounded-sm px-3 py-3.5 text-base font-medium text-zb-ink transition-colors hover:bg-zb-surface"
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.04 }}
                   >
-                    {item.label}
-                  </Link>
+                    <Link
+                      href={item.href}
+                      className="block border-b border-white/10 py-4 text-lg font-medium text-white transition-colors hover:text-zb-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 )
               )}
-              <a
-                href={`tel:${SITE.phoneTel}`}
-                className="mt-4 flex items-center gap-2 px-3 py-3 text-base font-medium text-zb-navy"
-              >
-                <PhoneIcon className="h-5 w-5 text-zb-gold" />
-                {SITE.phone}
-              </a>
-              <div className="mt-6 px-3">
-                <Button href="/contact" variant="navy" className="w-full" size="lg">
+              <div className="mt-8">
+                <Button href="/contact" variant="gold" className="w-full uppercase tracking-wider" size="lg">
                   Get in Touch
                   <span aria-hidden>→</span>
                 </Button>
