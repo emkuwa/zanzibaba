@@ -13,7 +13,7 @@ export function AboutSection() {
         aria-hidden
       >
         <Image
-          src="/brand/logos/icon-favicon.svg"
+          src="/brand/logos-v2/icon-only-favicon.png"
           alt=""
           width={420}
           height={420}

@@ -75,7 +75,7 @@ export function Navbar() {
             aria-label={`${SITE.name} home`}
           >
             <Image
-              src="/brand/logos/primary-horizontal.svg"
+              src="/brand/logos-v2/primary-horizontal.png"
               alt="Zanzibaba Group"
               width={320}
               height={64}

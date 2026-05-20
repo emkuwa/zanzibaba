@@ -16,6 +16,7 @@ const config: Config = {
           ink: "#0F172A",
           muted: "#64748B",
           surface: "#F8FAFC",
+          "surface-warm": "#FAF8F5",
           border: "#E2E8F0",
         },
         brand: {
@@ -51,10 +52,26 @@ const config: Config = {
       },
       boxShadow: {
         "zb-sm": "0 1px 2px rgba(7, 36, 90, 0.06)",
-        "zb-md": "0 4px 12px rgba(7, 36, 90, 0.08)",
-        "zb-lg": "0 12px 32px rgba(7, 36, 90, 0.1)",
+        "zb-md": "0 4px 16px rgba(7, 36, 90, 0.1)",
+        "zb-lg": "0 16px 48px rgba(7, 36, 90, 0.12)",
+        "zb-xl": "0 24px 64px rgba(7, 36, 90, 0.14)",
         "zb-card":
           "0 2px 8px rgba(10, 46, 115, 0.06), 0 1px 2px rgba(10, 46, 115, 0.04)",
+        "zb-card-hover":
+          "0 12px 40px rgba(10, 46, 115, 0.12), 0 4px 12px rgba(10, 46, 115, 0.06)",
+        "zb-gold": "0 4px 24px rgba(200, 155, 60, 0.2)",
+      },
+      transitionTimingFunction: {
+        luxury: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      animation: {
+        "fade-up": "fadeUp 0.6s ease-out forwards",
+      },
+      keyframes: {
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },
