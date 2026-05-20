@@ -5,7 +5,7 @@
     {
       "id": "years",
       "value": "10+",
-      "label": "Years of Excellence",
+      "label": "Years of Experience",
       "icon": "award",
       "indicative": true
     },
@@ -26,7 +26,7 @@
     {
       "id": "coverage",
       "value": "Tanzania Wide",
-      "label": "Serving Locally, Impacting Globally",
+      "label": "Serving across all regions",
       "icon": "map",
       "indicative": true
     }

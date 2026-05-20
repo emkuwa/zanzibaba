@@ -42,12 +42,12 @@
   "logo": {
     "clearanceMultiplier": { "value": 1.25, "type": "number" },
     "paths": {
-      "primaryHorizontal": "brand/logos/primary-horizontal.svg",
-      "navbarCompact": "brand/logos/navbar-compact.svg",
-      "icon": "brand/logos/icon-favicon.svg",
-      "stacked": "brand/logos/stacked-vertical.svg",
-      "monochrome": "brand/logos/monochrome-black.svg",
-      "reverse": "brand/logos/reverse-white-on-navy.svg"
+      "primaryHorizontal": "brand/logos-v2/primary-horizontal.png",
+      "navbarCompact": "brand/logos-v2/navbar-compact.png",
+      "icon": "brand/logos-v2/icon-only-favicon.png",
+      "stacked": "brand/logos-v2/stacked-vertical-master.png",
+      "monochrome": "brand/logos-v2/monochrome-black.png",
+      "reverse": "brand/logos-v2/reverse-white-on-navy.png"
     }
   }
 }

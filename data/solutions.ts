@@ -25,7 +25,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Land, plots, and investment property across Unguja.",
     description:
       "Zanzibaba Real Estate connects investors and buyers with curated land and property opportunities — from Paje and the east coast to Stone Town and beyond. Programme-scale due diligence, transparent listings, and local expertise.",
-    logo: "/brand/logos/department-real-estate.svg",
+    logo: "/brand/icons/solutions/real-estate.svg",
     heroImage:
       "https://images.unsplash.com/photo-1566073771259-6a8506099f0b?w=1920&q=80&auto=format&fit=crop",
     highlights: [
@@ -40,7 +40,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Programme-scale procurement, BOQ quoting, island delivery.",
     description:
       "Our materials division supplies cement, steel, aggregates, and finish materials to developers and contractors across Zanzibar — with BOQ support, indicative programme metrics, and reliable island logistics.",
-    logo: "/brand/logos/department-building-materials.svg",
+    logo: "/brand/icons/solutions/building-materials.svg",
     heroImage:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80&auto=format&fit=crop",
     externalUrl: "https://materials.zanzibaba.com",
@@ -56,7 +56,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Residential, commercial, and resort-scale delivery.",
     description:
       "From groundworks to handover, our construction teams deliver investor-grade builds with disciplined project controls, quality materials integration, and transparent milestone reporting.",
-    logo: "/brand/logos/department-construction.svg",
+    logo: "/brand/icons/solutions/construction.svg",
     heroImage:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80&auto=format&fit=crop",
     highlights: [
@@ -71,7 +71,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Brand, web, and growth for the Zanzibar economy.",
     description:
       "The Zanzibaba Digital Agency stewards the group's multi-subdomain estate — premium portals, SEO, analytics, and campaign creative aligned with Chairman brand standards.",
-    logo: "/brand/logos/department-digital-marketing.svg",
+    logo: "/brand/icons/solutions/digital-marketing.svg",
     heroImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&auto=format&fit=crop",
     highlights: [
@@ -86,7 +86,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Authentic Zanzibar journeys for discerning travellers.",
     description:
       "Curated tours, transfers, and experiences that showcase Stone Town heritage, spice routes, and the island's coast — delivered with hospitality standards that reflect the Zanzibaba brand.",
-    logo: "/brand/logos/department-tours.svg",
+    logo: "/brand/icons/solutions/tours.svg",
     heroImage:
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=1920&q=80&auto=format&fit=crop",
     highlights: [
@@ -101,7 +101,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Integrated protection for assets and developments.",
     description:
       "CCTV, access control, and perimeter solutions for villas, resorts, and commercial sites — designed for coastal environments and managed with professional monitoring options.",
-    logo: "/brand/logos/department-security.svg",
+    logo: "/brand/icons/solutions/security.svg",
     heroImage:
       "https://images.unsplash.com/photo-1557597774-9d273620dfac?w=1920&q=80&auto=format&fit=crop",
     highlights: [
@@ -116,7 +116,7 @@ export const SOLUTIONS: Solution[] = [
     shortDescription: "Tropical landscapes that complete the investment story.",
     description:
       "Native planting, irrigation, hardscape, and maintenance for villas and hospitality sites — executed with materials synergy from our construction and materials divisions.",
-    logo: "/brand/logos/department-landscaping.svg",
+    logo: "/brand/icons/solutions/landscaping.svg",
     heroImage:
       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80&auto=format&fit=crop",
     highlights: [

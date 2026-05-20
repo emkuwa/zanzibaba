@@ -22,7 +22,7 @@ export const SUBDOMAINS = {
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "About" },
   {
     label: "Our Solutions",
     children: [
@@ -37,8 +37,7 @@ export const NAV_LINKS = [
     ],
   },
   { href: "/projects", label: "Projects" },
-  { href: "/investments", label: "Investments" },
-  { href: "/careers", label: "Careers" },
-  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact Us" },
+  { href: "/news", label: "News" },
+  { href: "/careers", label: "Careers" },
 ] as const;

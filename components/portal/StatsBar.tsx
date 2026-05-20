@@ -45,19 +45,19 @@ export function StatsBar() {
 
   return (
     <section
-      className="relative overflow-hidden bg-zb-navy-deep text-white"
+      className="relative border-y border-zb-border bg-white"
       aria-label="Group experience metrics"
     >
       <div className="container-portal py-12 sm:py-14 lg:py-16">
         <ul className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-6">
           {metrics.map((m, i) => {
             const content = (
-              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <div className="flex flex-col items-center text-center">
                 <MetricIconSvg type={m.icon as MetricIcon} />
-                <p className="mt-4 font-sans text-3xl font-bold tracking-tight text-zb-gold sm:text-4xl lg:text-[2.5rem]">
+                <p className="mt-4 font-sans text-2xl font-bold tracking-tight text-zb-navy sm:text-3xl lg:text-4xl">
                   {m.value}
                 </p>
-                <p className="mt-2 max-w-[11rem] text-xs font-medium leading-snug text-white/90 sm:text-sm lg:max-w-none">
+                <p className="mt-2 max-w-[11rem] text-xs font-medium leading-snug text-zb-muted sm:text-sm lg:max-w-none">
                   {m.label}
                 </p>
               </div>

@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/brand/logos/icon-favicon.svg",
+    icon: [
+      { url: "/brand/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicons/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/brand/favicons/favicon-180.png",
   },
 };
 
