@@ -17,7 +17,7 @@ export function Partnerships() {
             {PARTNERSHIPS.map((partner) => (
               <li
                 key={partner}
-                className="flex items-center gap-3 rounded-sm border border-zb-border/80 bg-white px-5 py-4 shadow-zb-sm transition-colors hover:border-zb-gold/30"
+                className="flex items-center gap-3 rounded-sm border border-zb-border/80 bg-white px-5 py-4 shadow-zb-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/35 hover:shadow-zb-card-hover"
               >
                 <span
                   className="h-1.5 w-1.5 shrink-0 rounded-full bg-zb-gold"
@@ -31,7 +31,7 @@ export function Partnerships() {
           </ul>
         </MotionReveal>
         <MotionReveal delay={0.1} direction="right">
-          <div className="rounded-sm border border-zb-border bg-zb-navy p-8 text-white sm:p-10">
+          <div className="rounded-sm border border-zb-border bg-zb-navy p-8 text-white shadow-zb-lg transition-shadow hover:shadow-zb-xl sm:p-10">
             <h3 className="font-serif text-2xl font-semibold">
               Programme partnerships
             </h3>

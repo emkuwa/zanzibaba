@@ -4,8 +4,10 @@ import { EditorialDivider } from "./EditorialDivider";
 
 export function CorporateVision() {
   return (
-    <section className="bg-zb-navy-deep text-white">
-      <div className="container-portal section-py-sm">
+    <section className="relative overflow-hidden bg-zb-navy-deep text-white">
+      <div className="absolute inset-0 pattern-architectural opacity-50" aria-hidden />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(200,155,60,0.08),transparent_55%)]" aria-hidden />
+      <div className="container-portal relative z-10 section-py-sm">
         <MotionReveal>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-eyebrow">Corporate Vision</p>

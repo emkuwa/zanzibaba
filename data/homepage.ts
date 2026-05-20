@@ -2,6 +2,12 @@ export const HERO_IMAGES = {
   /** Stone Town coastal harbor at dusk */
   primary:
     "https://images.unsplash.com/photo-1596402184320-417e71735880?w=2400&q=88&auto=format&fit=crop",
+  /** Aerial Zanzibar coastline */
+  secondary:
+    "https://images.unsplash.com/photo-1583032329542-5981d1b9c8b4?w=1600&q=85&auto=format&fit=crop",
+  /** Luxury coastal architecture */
+  accent:
+    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85&auto=format&fit=crop",
 } as const;
 
 export const HERO_COPY = {
@@ -34,6 +40,11 @@ export const PORTFOLIO_ITEMS = [
       "Integrated land, materials, and build delivery for coastal villa developments — investor-grade coordination from plot to handover.",
     href: "/projects",
     variant: "featured" as const,
+    sector: "Residential",
+    location: "Paje, Unguja",
+    status: "In Development",
+    image:
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=85&auto=format&fit=crop",
   },
   {
     id: "residential-complex",
@@ -42,6 +53,11 @@ export const PORTFOLIO_ITEMS = [
       "Multi-unit residential development with modern amenities and sustainable design across Unguja.",
     href: "/projects",
     variant: "card" as const,
+    sector: "Residential",
+    location: "Stone Town",
+    status: "Planning",
+    image:
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=85&auto=format&fit=crop",
   },
   {
     id: "commercial-building",
@@ -50,12 +66,36 @@ export const PORTFOLIO_ITEMS = [
       "Mixed-use commercial programme with construction, security, and digital brand stewardship.",
     href: "/projects",
     image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=85&auto=format&fit=crop",
     variant: "photo" as const,
+    sector: "Commercial",
+    location: "Zanzibar City",
+    status: "Active",
   },
 ] as const;
 
-export const FLAGSHIP_PROJECTS = PORTFOLIO_ITEMS;
+export const FLAGSHIP_PROJECTS = [
+  ...PORTFOLIO_ITEMS,
+  {
+    id: "hospitality-retreat",
+    title: "Coastal Hospitality Retreat",
+    description:
+      "Boutique resort coordination — tours, security, landscaping, and digital presence under one group mandate.",
+    href: "/projects",
+    image:
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85&auto=format&fit=crop",
+    sector: "Hospitality",
+    location: "East Coast, Unguja",
+    status: "Indicative",
+  },
+] as const;
+
+export const CORPORATE_TIMELINE = [
+  { year: "2014", label: "Founded in Zanzibar", detail: "Paje Yard operations established" },
+  { year: "2018", label: "Seven divisions unified", detail: "Group brand and integrated delivery model" },
+  { year: "2022", label: "Stone Town presence", detail: "Mlandege office — corporate & investor relations" },
+  { year: "2026", label: "Regional expansion", detail: "Tanzania-wide programmes and digital estate" },
+] as const;
 
 export const ABOUT_IMAGES = {
   /** Mobile: cityscape inset */

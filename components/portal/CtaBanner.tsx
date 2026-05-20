@@ -4,11 +4,12 @@ import { Button } from "./Button";
 export function CtaBanner() {
   return (
     <Section dark animate={false} className="relative overflow-hidden">
+      <div className="absolute inset-0 pattern-architectural opacity-40" aria-hidden />
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 50%, rgba(200,155,60,0.12), transparent 60%)",
+            "radial-gradient(ellipse at 30% 50%, rgba(200,155,60,0.14), transparent 60%)",
         }}
         aria-hidden
       />
@@ -22,7 +23,7 @@ export function CtaBanner() {
           across Zanzibar and Tanzania.
         </p>
         <div className="mt-8 flex flex-row flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
-          <Button href="/contact" variant="gold" size="lg">
+          <Button href="/contact" variant="gold" size="lg" className="shadow-zb-gold">
             Get in Touch with Us
           </Button>
           <Button

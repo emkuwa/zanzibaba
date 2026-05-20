@@ -50,6 +50,10 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"],
       },
+      borderRadius: {
+        zb: "0.125rem",
+        "zb-md": "0.25rem",
+      },
       boxShadow: {
         "zb-sm": "0 1px 2px rgba(7, 36, 90, 0.06)",
         "zb-md": "0 4px 16px rgba(7, 36, 90, 0.1)",
@@ -60,6 +64,15 @@ const config: Config = {
         "zb-card-hover":
           "0 12px 40px rgba(10, 46, 115, 0.12), 0 4px 12px rgba(10, 46, 115, 0.06)",
         "zb-gold": "0 4px 24px rgba(200, 155, 60, 0.2)",
+        "zb-gold-glow":
+          "0 0 0 1px rgba(200, 155, 60, 0.25), 0 8px 32px rgba(200, 155, 60, 0.15)",
+        "zb-elevate":
+          "0 8px 32px rgba(7, 36, 90, 0.14), 0 2px 8px rgba(10, 46, 115, 0.08)",
+      },
+      letterSpacing: {
+        "hero-tight": "-0.02em",
+        "hero-wide": "0.04em",
+        editorial: "0.28em",
       },
       transitionTimingFunction: {
         luxury: "cubic-bezier(0.4, 0, 0.2, 1)",

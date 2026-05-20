@@ -43,7 +43,7 @@ export function SolutionCard({
       <Link
         href={href}
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="group flex h-full min-h-[5.5rem] flex-col justify-between rounded-sm border border-zb-border/70 bg-white p-3.5 shadow-zb-sm transition-all hover:border-zb-gold/30 hover:shadow-zb-card"
+        className="group flex h-full min-h-[6rem] flex-col justify-between rounded-sm border border-zb-border/70 bg-white p-4 shadow-zb-card transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/35 hover:shadow-zb-gold-glow sm:p-5"
       >
         <div className="flex h-10 w-10 items-center justify-center text-zb-navy">
           <SolutionIcon slug={solution.slug} className="h-9 w-9" />
@@ -74,12 +74,12 @@ export function SolutionCard({
   const card = (
     <Card
       as="article"
-      className="group flex h-full flex-col border-zb-border/80 bg-white shadow-zb-card transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/25 hover:shadow-zb-card-hover"
+      className="group flex h-full flex-col border-zb-border/80 bg-white shadow-zb-card transition-all duration-300 hover:-translate-y-1 hover:border-zb-gold/30 hover:shadow-zb-gold-glow"
     >
       <Link
         href={href}
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="flex h-full flex-col p-6 sm:p-7"
+        className="flex h-full flex-col card-padding-lg"
       >
         <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-sm border border-zb-border/60 bg-white text-zb-gold shadow-zb-sm transition-colors group-hover:border-zb-gold/40">
           <SolutionIcon slug={solution.slug} className="h-14 w-14 text-zb-gold" />

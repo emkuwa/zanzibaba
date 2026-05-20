@@ -29,7 +29,7 @@ export function StrategicSectors() {
           >
             <Link
               href={sector.href}
-              className="group flex h-full flex-col rounded-sm border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:border-zb-gold/40 hover:bg-white/10"
+              className="group flex h-full flex-col rounded-sm border border-white/10 bg-white/5 p-8 shadow-zb-sm transition-all duration-300 hover:-translate-y-1 hover:border-zb-gold/40 hover:bg-white/10 hover:shadow-zb-gold-glow sm:p-10"
             >
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-sm border border-zb-gold/30 bg-zb-gold/10">
                 <SectorIcon name={sector.icon} />

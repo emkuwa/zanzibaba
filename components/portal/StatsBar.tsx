@@ -13,8 +13,8 @@ type Metric = {
   icon: MetricIcon;
 };
 
-function MetricIconSvg({ type, gold = false }: { type: MetricIcon; gold?: boolean }) {
-  const cls = `h-6 w-6 sm:h-7 sm:w-7 ${gold ? "text-zb-gold" : "text-white/90"}`;
+function MetricIconSvg({ type }: { type: MetricIcon }) {
+  const cls = "h-6 w-6 sm:h-7 sm:w-7 text-zb-gold";
   switch (type) {
     case "award":
       return (
@@ -51,23 +51,24 @@ function MetricIconSvg({ type, gold = false }: { type: MetricIcon; gold?: boolea
 }
 
 export function StatsBar() {
-  const { metrics } = trustMetrics;
+  const { metrics, disclaimer } = trustMetrics;
   const reduce = useReducedMotion();
   const typed = metrics as Metric[];
 
   return (
-    <section className="relative bg-zb-navy" aria-label="Group experience metrics">
-      <div className="container-portal py-8 sm:py-10 lg:py-12">
+    <section className="relative border-b border-zb-gold/15 bg-zb-navy" aria-label="Group experience metrics">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(200,155,60,0.06),transparent_60%)]" aria-hidden />
+      <div className="container-portal relative z-10 py-10 sm:py-12 lg:py-14">
         <ul className="grid grid-cols-2 lg:grid-cols-4">
           {typed.map((m, i) => {
             const isLast = i === typed.length - 1;
             const content = (
-              <div className="flex flex-col items-center px-2 py-2 text-center sm:px-4">
-                <MetricIconSvg type={m.icon} gold />
-                <p className="mt-2 font-sans text-xl font-bold tracking-tight text-zb-gold sm:mt-3 sm:text-2xl lg:text-3xl">
+              <div className="flex flex-col items-center px-3 py-2 text-center sm:px-5">
+                <MetricIconSvg type={m.icon} />
+                <p className="mt-3 font-serif text-2xl font-semibold tracking-tight text-zb-gold sm:text-3xl lg:text-4xl">
                   {m.value}
                 </p>
-                <p className="mt-1 text-[0.65rem] font-medium leading-snug text-white/85 sm:text-xs">
+                <p className="mt-1.5 text-[0.65rem] font-medium leading-snug text-white/85 sm:text-xs">
                   <span className="lg:hidden">{m.labelMobile ?? m.label}</span>
                   <span className="hidden lg:inline">{m.label}</span>
                 </p>
@@ -79,9 +80,9 @@ export function StatsBar() {
                 key={m.id}
                 className={`relative ${
                   !isLast
-                    ? "after:absolute after:right-0 after:top-1/2 after:h-10 after:w-px after:-translate-y-1/2 after:bg-zb-gold/40 lg:after:h-14"
+                    ? "after:absolute after:right-0 after:top-1/2 after:h-12 after:w-px after:-translate-y-1/2 after:bg-zb-gold/35 lg:after:h-16"
                     : ""
-                } ${i % 2 === 0 ? "before:absolute before:right-0 before:top-1/2 before:h-10 before:w-px before:-translate-y-1/2 before:bg-zb-gold/40 lg:before:hidden" : ""} ${i < 2 ? "border-b border-zb-gold/20 pb-5 lg:border-b-0 lg:pb-0" : "pt-5 lg:pt-0"}`}
+                } ${i % 2 === 0 ? "before:absolute before:right-0 before:top-1/2 before:h-12 before:w-px before:-translate-y-1/2 before:bg-zb-gold/35 lg:before:hidden" : ""} ${i < 2 ? "border-b border-zb-gold/20 pb-6 lg:border-b-0 lg:pb-0" : "pt-6 lg:pt-0"}`}
               >
                 {reduce ? (
                   content
@@ -90,7 +91,7 @@ export function StatsBar() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.06, duration: 0.4 }}
+                    transition={{ delay: i * 0.06, duration: 0.45 }}
                   >
                     {content}
                   </motion.div>
@@ -99,6 +100,9 @@ export function StatsBar() {
             );
           })}
         </ul>
+        <p className="mt-6 text-center text-[0.65rem] font-light text-white/45 sm:text-xs">
+          {disclaimer}
+        </p>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export function InvestmentOpportunities() {
       <div className="grid gap-8 lg:grid-cols-3">
         {INVESTMENT_HIGHLIGHTS.map((item, i) => (
           <MotionReveal key={item.title} delay={i * 0.08}>
-            <article className="flex h-full flex-col rounded-sm border border-zb-border bg-white p-8 shadow-zb-card transition-shadow hover:shadow-zb-card-hover sm:p-10">
+            <article className="flex h-full flex-col rounded-sm border border-zb-border bg-white p-8 shadow-zb-card transition-all duration-300 hover:-translate-y-1 hover:border-zb-gold/25 hover:shadow-zb-gold-glow sm:p-10">
               <h3 className="font-serif text-xl font-semibold text-zb-navy sm:text-2xl">
                 {item.title}
               </h3>

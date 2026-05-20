@@ -10,7 +10,7 @@ const variants: Record<Variant, string> = {
   navy:
     "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent shadow-zb-sm hover:shadow-zb-md",
   gold:
-    "bg-zb-gold text-zb-navy-deep hover:bg-[#d4ab55] border border-zb-gold/80 shadow-zb-gold hover:shadow-zb-md",
+    "bg-zb-gold text-zb-navy-deep hover:bg-[#d4ab55] border border-zb-gold/80 shadow-zb-gold hover:-translate-y-0.5 hover:shadow-zb-gold-glow relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:opacity-0 before:transition-opacity hover:before:opacity-100",
   secondary:
     "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent shadow-zb-sm hover:shadow-zb-md",
   outline:
@@ -48,7 +48,7 @@ export function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const base = `inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-luxury rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 ${variants[variant]} ${sizes[size]} ${className}`;
+  const base = `inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-luxury rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 hover:-translate-y-px ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     if (external) {

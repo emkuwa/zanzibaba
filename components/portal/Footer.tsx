@@ -39,9 +39,10 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-white/10 bg-zb-navy-deep text-white">
-      <div className="container-portal py-20 sm:py-24 lg:py-28">
-        <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+    <footer className="relative border-t border-white/10 bg-zb-navy-deep text-white">
+      <div className="absolute inset-0 pattern-architectural opacity-30" aria-hidden />
+      <div className="container-portal relative z-10 py-20 sm:py-24 lg:py-28">
+        <div className="grid gap-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
           <div className="sm:col-span-2 lg:col-span-1">
             <Image
               src="/brand/logos-v2/reverse-white-on-navy.png"
@@ -50,7 +51,7 @@ export function Footer() {
               height={120}
               className="h-20 w-auto sm:h-24"
             />
-            <p className="mt-6 max-w-sm text-sm font-light leading-relaxed text-white/70">
+            <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
               Building today, empowering tomorrow — Zanzibaba Group delivers
               real estate, materials, construction, and digital excellence across
               Tanzania.
@@ -62,7 +63,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-sm border border-white/15 text-white/70 transition-all hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold"
+                  className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold hover:shadow-zb-gold"
                   aria-label={s.label}
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -75,10 +76,10 @@ export function Footer() {
 
           <div>
             <h3 className="text-eyebrow">Quick Links</h3>
-            <ul className="mt-6 space-y-3 text-sm font-light text-white/80">
+            <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
               {quickLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="transition-colors hover:text-zb-gold">
+                  <Link href={l.href} className="transition-colors duration-300 hover:text-zb-gold">
                     {l.label}
                   </Link>
                 </li>
@@ -88,12 +89,12 @@ export function Footer() {
 
           <div>
             <h3 className="text-eyebrow">Our Services</h3>
-            <ul className="mt-6 space-y-3 text-sm font-light text-white/80">
+            <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
               {SOLUTIONS.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/solutions/${s.slug}`}
-                    className="transition-colors hover:text-zb-gold"
+                    className="transition-colors duration-300 hover:text-zb-gold"
                   >
                     {s.title}
                   </Link>
@@ -104,28 +105,35 @@ export function Footer() {
 
           <div>
             <h3 className="text-eyebrow">Contact</h3>
-            <ul className="mt-6 space-y-4 text-sm font-light text-white/80">
+            <ul className="mt-7 space-y-5 text-sm font-light text-white/80">
               <li>
+                <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
+                  Phone
+                </span>
                 <a
                   href={`tel:${SITE.phoneTel}`}
-                  className="text-base text-white transition-colors hover:text-zb-gold"
+                  className="mt-1 block text-base font-medium text-white transition-colors duration-300 hover:text-zb-gold"
                 >
                   {SITE.phone}
                 </a>
               </li>
               <li>
+                <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
+                  Email
+                </span>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-base text-white transition-colors hover:text-zb-gold"
+                  className="mt-1 block text-base font-medium text-white transition-colors duration-300 hover:text-zb-gold"
                 >
                   {SITE.email}
                 </a>
               </li>
               {SITE.offices.map((o) => (
                 <li key={o.name}>
-                  <span className="font-medium text-white">{o.name}</span>
-                  <br />
-                  <span className="text-white/65">{o.location}</span>
+                  <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
+                    {o.name}
+                  </span>
+                  <span className="mt-1 block text-white/75">{o.location}</span>
                 </li>
               ))}
             </ul>

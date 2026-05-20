@@ -37,16 +37,19 @@
   }
 
   .text-hero {
-    @apply font-serif text-[2.75rem] font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem];
+    @apply font-serif font-semibold leading-[1.02] tracking-hero-tight;
+    font-size: clamp(2.75rem, 8vw, 4.5rem);
   }
 
   .text-hero-headline {
-    @apply font-serif text-[2.25rem] font-semibold uppercase leading-[1.06] tracking-tight sm:text-[2.75rem] md:text-5xl;
+    @apply font-serif font-semibold uppercase leading-[1.04] tracking-hero-tight;
+    font-size: clamp(2.125rem, 7.5vw, 3.25rem);
     text-transform: uppercase;
   }
 
   .text-hero-headline-desktop {
-    @apply font-sans text-[2.5rem] font-bold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem] xl:text-[4rem];
+    @apply font-serif font-semibold uppercase leading-[1.03] tracking-hero-tight;
+    font-size: clamp(2.75rem, 4.5vw, 4.25rem);
     text-transform: uppercase;
   }
 
@@ -75,6 +78,27 @@
     background-size: 48px 48px;
   }
 
+  .pattern-architectural {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .pattern-fine-lines {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      rgba(200, 155, 60, 0.06) 47px,
+      rgba(200, 155, 60, 0.06) 48px
+    );
+  }
+
+  .texture-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
   .gradient-gold-shine {
     background: linear-gradient(
       135deg,
@@ -87,9 +111,18 @@
 
 @layer utilities {
   .section-py {
-    @apply py-20 sm:py-24 lg:py-32;
+    @apply py-24 sm:py-24 lg:py-32;
   }
   .section-py-sm {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-20 sm:py-20 lg:py-24;
+  }
+  .card-padding {
+    @apply p-5 sm:p-7 lg:p-8;
+  }
+  .card-padding-lg {
+    @apply p-6 sm:p-8 lg:p-10;
+  }
+  .hover-lift {
+    @apply transition-all duration-300 ease-luxury hover:-translate-y-0.5 hover:shadow-zb-elevate;
   }
 }
