@@ -94,9 +94,8 @@ export const CORPORATE_TIMELINE = [
 ] as const;
 
 export const ABOUT_IMAGES = {
-  /** Mobile: Stone Town cityscape inset */
-  mobile:
-    "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=800&q=85&auto=format&fit=crop",
+  /** Mobile: Zanzibar coastal promenade aerial */
+  mobile: "/images/hero/secondary.jpg",
   /** Desktop: framed coastal town aerial */
   desktop: "/images/hero/secondary.jpg",
 } as const;

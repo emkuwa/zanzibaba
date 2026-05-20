@@ -42,35 +42,40 @@ export function HomeHero() {
       >
         <Image
           src={HERO_IMAGES.primary}
-          alt="Stone Town Zanzibar sunset aerial"
+          alt="Stone Town Zanzibar at golden hour — historic Swahili architecture and harbor dhows"
           fill
           priority
-          className="object-cover object-center"
+          quality={90}
+          className="object-cover object-[center_35%] sm:object-center"
           sizes="100vw"
         />
       </motion.div>
 
-      {/* Mobile: warm dark overlay */}
+      {/* Mobile: cinematic dark overlay on Stone Town sunset */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-zb-navy-deep/95 via-zb-navy-deep/60 to-zb-navy/30 lg:hidden"
+        className="absolute inset-0 bg-zb-navy-deep/25 lg:hidden"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-zb-navy-deep/75 via-zb-navy-deep/35 to-transparent lg:hidden"
+        className="absolute inset-0 bg-gradient-to-t from-zb-navy-deep/95 via-zb-navy-deep/70 to-zb-navy-deep/25 lg:hidden"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-zb-navy-deep/85 via-zb-navy-deep/45 to-transparent lg:hidden"
         aria-hidden
       />
 
-      {/* Desktop: warm photo + light left panel for navy headline */}
+      {/* Desktop: golden-hour photo + light left panel for navy/gold headline */}
       <div
-        className="absolute inset-0 hidden bg-gradient-to-t from-zb-navy-deep/50 via-transparent to-transparent lg:block"
+        className="absolute inset-0 hidden bg-gradient-to-t from-zb-navy-deep/55 via-zb-navy-deep/15 to-transparent lg:block"
         aria-hidden
       />
       <div
-        className="absolute inset-0 hidden bg-gradient-to-r from-white/92 via-white/55 to-transparent lg:block"
+        className="absolute inset-0 hidden bg-gradient-to-r from-white/94 from-0% via-white/60 via-45% to-transparent to-100% lg:block"
         aria-hidden
       />
       <div
-        className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_15%_50%,rgba(255,255,255,0.35),transparent_55%)] lg:block"
+        className="absolute inset-0 hidden max-w-[58%] bg-[radial-gradient(ellipse_at_0%_50%,rgba(255,255,255,0.5),transparent_70%)] lg:block"
         aria-hidden
       />
 

@@ -47,7 +47,7 @@ export function Navbar() {
   }, []);
 
   const navLinkClass = (href: string) =>
-    `relative whitespace-nowrap px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-0.5 after:origin-left after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3 xl:text-sm ${
+    `relative whitespace-nowrap px-2 py-1.5 text-xs font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:origin-left after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-2.5 xl:text-[0.8125rem] ${
       pathname === href
         ? "text-zb-navy after:scale-x-100"
         : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
@@ -60,7 +60,7 @@ export function Navbar() {
       }`}
     >
       <div className="container-portal">
-        <div className="grid h-[5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[6rem] sm:gap-4 lg:h-[6.5rem] lg:gap-6">
+        <div className="grid min-h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-2 py-2 sm:min-h-[6.5rem] sm:gap-3 lg:min-h-[7.5rem] lg:gap-4 xl:min-h-[8rem]">
           <Link
             href="/"
             className="group shrink-0 transition-opacity hover:opacity-90"
@@ -69,18 +69,18 @@ export function Navbar() {
             <Image
               src="/brand/logos-v2/navbar-compact.png"
               alt="Zanzibaba Group"
-              width={240}
-              height={64}
-              className="h-12 w-auto sm:h-14 lg:hidden"
+              width={280}
+              height={80}
+              className="h-16 w-auto sm:h-[4.5rem] lg:hidden"
               priority
             />
             <Image
               src="/brand/logos-v2/primary-horizontal.png"
               alt=""
               aria-hidden
-              width={380}
-              height={64}
-              className="hidden h-16 w-auto xl:h-[4.5rem] lg:block"
+              width={480}
+              height={96}
+              className="hidden h-20 w-auto lg:block xl:h-24"
               priority
             />
           </Link>
@@ -92,7 +92,7 @@ export function Navbar() {
                   <li key={item.label} className="group relative">
                     <button
                       type="button"
-                      className="relative flex items-center gap-1 px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3 xl:text-sm"
+                      className="relative flex items-center gap-1 px-2 py-1.5 text-xs font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-2.5 xl:text-[0.8125rem]"
                       aria-expanded={solutionsOpen}
                       aria-haspopup="true"
                       onClick={() => setSolutionsOpen((v) => !v)}
@@ -135,7 +135,7 @@ export function Navbar() {
           <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5">
             <a
               href={`tel:${SITE.phoneTel}`}
-              className="hidden items-center gap-2 text-sm font-medium text-zb-navy transition-colors hover:text-zb-gold lg:inline-flex"
+              className="hidden items-center gap-2 text-sm font-medium text-zb-navy transition-colors hover:text-zb-gold xl:inline-flex"
             >
               <PhoneIcon className="h-5 w-5 text-zb-gold" />
               <span className="whitespace-nowrap">{SITE.phone}</span>
@@ -177,7 +177,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[6rem]"
+            className="fixed inset-0 top-[5.5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[6.5rem]"
           >
             <nav className="container-portal flex h-full flex-col overflow-y-auto py-8" aria-label="Mobile navigation">
               {MOBILE_NAV_LINKS.map((item, idx) => (
