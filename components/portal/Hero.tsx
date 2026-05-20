@@ -61,7 +61,7 @@ export function Hero({
         className={`absolute inset-0 bg-gradient-to-r ${
           compact
             ? "from-zb-navy-deep/90 via-zb-navy-deep/55 to-transparent"
-            : "from-white/92 via-white/55 to-transparent sm:via-white/35 lg:via-white/20"
+            : "from-white/80 via-white/40 to-transparent sm:via-white/25 lg:via-transparent"
         }`}
         aria-hidden
       />

@@ -42,6 +42,7 @@
 
   .text-hero-headline {
     @apply font-sans text-[2.25rem] font-bold uppercase leading-[1.06] tracking-tight sm:text-[2.75rem] md:text-5xl lg:text-[3.75rem];
+    text-transform: uppercase;
   }
 
   .text-section-title {
