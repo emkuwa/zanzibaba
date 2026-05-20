@@ -1,9 +1,10 @@
-import Image from "next/image";
-import type { ReactNode } from "react";
-import { Button } from "./Button";
+"use client";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1590073242678-70ee3fc28d8b?w=2400&q=85&auto=format&fit=crop";
+import Image from "next/image";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef, type ReactNode } from "react";
+import { Button } from "./Button";
+import { HERO_COPY, HERO_IMAGES } from "@/data/homepage";
 
 interface HeroProps {
   title?: ReactNode;
@@ -16,55 +17,91 @@ interface HeroProps {
 export function Hero({
   title,
   subtitle,
-  image = HERO_IMAGE,
+  image = HERO_IMAGES.primary,
   compact = false,
   children,
 }: HeroProps) {
-  const minH = compact ? "min-h-[42vh]" : "min-h-[88vh]";
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const minH = compact ? "min-h-[48vh]" : "min-h-[88vh] sm:min-h-[92vh]";
 
   return (
-    <section className={`relative flex ${minH} items-center overflow-hidden bg-zb-navy-deep`}>
-      <Image
-        src={image}
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
+    <section
+      ref={ref}
+      className={`relative flex ${minH} items-center overflow-hidden bg-zb-navy-deep`}
+    >
+      <motion.div
+        className="absolute inset-0"
+        style={reduce ? undefined : { y: imageY }}
+      >
+        <Image
+          src={image}
+          alt="Stone Town and Zanzibar coastline at golden hour"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </motion.div>
+
+      <div
+        className={`absolute inset-0 bg-gradient-to-t ${
+          compact
+            ? "from-zb-navy-deep/90 via-zb-navy-deep/50 to-zb-navy/30"
+            : "from-zb-navy-deep/75 via-transparent to-transparent"
+        }`}
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-zb-navy-deep/95 via-zb-navy/80 to-zb-navy-deep/40"
+        className={`absolute inset-0 bg-gradient-to-r ${
+          compact
+            ? "from-zb-navy-deep/90 via-zb-navy-deep/55 to-transparent"
+            : "from-white/92 via-white/55 to-transparent sm:via-white/35 lg:via-white/20"
+        }`}
         aria-hidden
       />
-      <div className="container-portal relative z-10 py-24 sm:py-32">
+
+      <div className="container-portal relative z-10 py-24 sm:py-28 lg:py-32">
         {children ?? (
-          <>
-            <h1 className="max-w-4xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-4xl"
+          >
+            <h1 className="text-hero-headline">
               {title ?? (
                 <>
-                  <span className="text-white">BUILDING TODAY,</span>
-                  <br />
-                  <span className="text-zb-gold">EMPOWERING TOMORROW.</span>
+                  <span className="block text-zb-navy">{HERO_COPY.line1}</span>
+                  <span className="mt-1 block text-zb-gold sm:mt-2">
+                    {HERO_COPY.line2}
+                  </span>
                 </>
               )}
             </h1>
-            {subtitle && (
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
-                {subtitle}
+            {(subtitle || !compact) && (
+              <p className="mt-7 max-w-2xl text-base font-medium leading-relaxed text-zb-ink/90 sm:mt-8 sm:text-lg">
+                {subtitle ?? HERO_COPY.subheading}
               </p>
             )}
             {!compact && !children && (
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button href="/solutions" variant="primary" size="lg">
-                  Our Solutions
+              <div className="mt-10 flex flex-col gap-4 sm:mt-12 sm:flex-row sm:flex-wrap sm:gap-5">
+                <Button href="/solutions" variant="navy" size="lg">
+                  Explore Our Solutions
+                  <span aria-hidden>→</span>
                 </Button>
-                <Button href="/contact" variant="outline" size="lg">
-                  Get in Touch
+                <Button href="/about" variant="outline-light" size="lg">
+                  About Zanzibaba Group
+                  <span aria-hidden>→</span>
                 </Button>
               </div>
             )}
-          </>
+          </motion.div>
         )}
       </div>
     </section>

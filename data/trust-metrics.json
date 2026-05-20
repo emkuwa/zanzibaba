@@ -6,24 +6,28 @@
       "id": "years",
       "value": "10+",
       "label": "Years of Excellence",
+      "icon": "award",
       "indicative": true
     },
     {
       "id": "projects",
       "value": "500+",
       "label": "Projects Delivered",
+      "icon": "building",
       "indicative": true
     },
     {
       "id": "clients",
       "value": "1000+",
-      "label": "Clients Served",
+      "label": "Happy Clients",
+      "icon": "people",
       "indicative": true
     },
     {
       "id": "coverage",
       "value": "Tanzania Wide",
-      "label": "National Reach",
+      "label": "Serving Locally, Impacting Globally",
+      "icon": "map",
       "indicative": true
     }
   ]
