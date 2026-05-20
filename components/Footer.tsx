@@ -72,7 +72,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-sand-900">Offices</h3>
             <ul className="mt-2 space-y-1 text-sm text-sand-600">
-              <li>Paje Yard — Paje, Zanzibar</li>
+              <li>Paje, Zanzibar</li>
               <li>Town Office — Mlandege, Stone Town, Zanzibar</li>
             </ul>
             <p className="mt-2 text-sm text-sand-600">
