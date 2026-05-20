@@ -49,7 +49,7 @@ export function Footer() {
               alt="Zanzibaba Group"
               width={200}
               height={120}
-              className="h-20 w-auto sm:h-24"
+              className="h-24 w-auto sm:h-28"
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
               Building today, empowering tomorrow — Zanzibaba Group delivers

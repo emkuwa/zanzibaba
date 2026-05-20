@@ -1,13 +1,10 @@
 export const HERO_IMAGES = {
-  /** Stone Town coastal harbor at dusk */
-  primary:
-    "https://images.unsplash.com/photo-1596402184320-417e71735880?w=2400&q=88&auto=format&fit=crop",
-  /** Aerial Zanzibar coastline */
-  secondary:
-    "https://images.unsplash.com/photo-1583032329542-5981d1b9c8b4?w=1600&q=85&auto=format&fit=crop",
-  /** Luxury coastal architecture */
-  accent:
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=85&auto=format&fit=crop",
+  /** Coastal hospitality / Indian Ocean sunset (hosted locally — prior Unsplash IDs 404) */
+  primary: "/images/hero/primary.jpg",
+  /** Tropical coastline aerial (hosted locally) */
+  secondary: "/images/hero/secondary.jpg",
+  /** Luxury coastal architecture (hosted locally) */
+  accent: "/images/hero/accent.jpg",
 } as const;
 
 export const HERO_COPY = {
@@ -101,9 +98,8 @@ export const ABOUT_IMAGES = {
   /** Mobile: cityscape inset */
   mobile:
     "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=800&q=85&auto=format&fit=crop",
-  /** Desktop: coastal promenade / architecture */
-  desktop:
-    "https://images.unsplash.com/photo-1596402184320-417e71735880?w=1200&h=1400&q=85&auto=format&fit=crop",
+  /** Desktop: coastal promenade (same asset as hero primary) */
+  desktop: "/images/hero/primary.jpg",
 } as const;
 
 export const ABOUT_COPY = {

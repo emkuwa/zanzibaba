@@ -37,10 +37,13 @@ export function HomeHero() {
       ref={ref}
       className="relative flex min-h-[28rem] overflow-hidden sm:min-h-[32rem] lg:min-h-[92vh]"
     >
-      <motion.div className="absolute inset-0" style={reduce ? undefined : { y: imageY }}>
+      <motion.div
+        className="absolute inset-0 bg-zb-navy-deep"
+        style={reduce ? undefined : { y: imageY }}
+      >
         <Image
           src={HERO_IMAGES.primary}
-          alt="Stone Town harbor at sunset, Zanzibar"
+          alt="Coastal resort and Indian Ocean at sunset, Zanzibar"
           fill
           priority
           className="object-cover object-center scale-105"

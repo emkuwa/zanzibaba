@@ -60,18 +60,27 @@ export function Navbar() {
       }`}
     >
       <div className="container-portal">
-        <div className="grid h-[4.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[5.5rem] sm:gap-4 lg:h-[6rem] lg:gap-6">
+        <div className="grid h-[5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[6rem] sm:gap-4 lg:h-[6.5rem] lg:gap-6">
           <Link
             href="/"
             className="group shrink-0 transition-opacity hover:opacity-90"
             aria-label={`${SITE.name} home`}
           >
             <Image
-              src="/brand/logos-v2/primary-horizontal.png"
+              src="/brand/logos-v2/navbar-compact.png"
               alt="Zanzibaba Group"
-              width={320}
+              width={240}
               height={64}
-              className="h-10 w-auto sm:h-12 md:h-[3.25rem] lg:h-14"
+              className="h-12 w-auto sm:h-14 lg:hidden"
+              priority
+            />
+            <Image
+              src="/brand/logos-v2/primary-horizontal.png"
+              alt=""
+              aria-hidden
+              width={380}
+              height={64}
+              className="hidden h-16 w-auto xl:h-[4.5rem] lg:block"
               priority
             />
           </Link>
@@ -168,7 +177,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[4.5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[5.5rem]"
+            className="fixed inset-0 top-[5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[6rem]"
           >
             <nav className="container-portal flex h-full flex-col overflow-y-auto py-8" aria-label="Mobile navigation">
               {MOBILE_NAV_LINKS.map((item, idx) => (
