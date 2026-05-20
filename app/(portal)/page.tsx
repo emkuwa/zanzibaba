@@ -18,7 +18,6 @@ export default function HomePage() {
       <HomeHero />
       <StatsBar />
       <SolutionsGrid />
-      <SectionAccent variant="light" />
       <AboutSection />
       <SectionAccent variant="dark" />
       <PortfolioSection />

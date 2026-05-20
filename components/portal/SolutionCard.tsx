@@ -81,8 +81,8 @@ export function SolutionCard({
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="flex h-full flex-col card-padding-lg"
       >
-        <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-sm border border-zb-border/60 bg-white text-zb-gold shadow-zb-sm transition-colors group-hover:border-zb-gold/40">
-          <SolutionIcon slug={solution.slug} className="h-14 w-14 text-zb-gold" />
+        <div className="mb-5 shrink-0 text-zb-gold">
+          <SolutionIcon slug={solution.slug} className="h-12 w-12 sm:h-14 sm:w-14" />
         </div>
         <h3 className="font-sans text-lg font-bold text-zb-navy sm:text-xl">{title}</h3>
         <p className="mt-3 line-clamp-2 flex-1 text-sm font-normal leading-relaxed text-zb-muted">

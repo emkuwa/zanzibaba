@@ -56,9 +56,9 @@ export function StatsBar() {
   const typed = metrics as Metric[];
 
   return (
-    <section className="relative border-b border-zb-gold/15 bg-zb-navy" aria-label="Group experience metrics">
+    <section className="relative border-b border-zb-gold/15 bg-zb-navy-deep" aria-label="Group experience metrics">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(200,155,60,0.06),transparent_60%)]" aria-hidden />
-      <div className="container-portal relative z-10 py-10 sm:py-12 lg:py-14">
+      <div className="container-portal relative z-10 py-8 sm:py-10 lg:py-12">
         <ul className="grid grid-cols-2 lg:grid-cols-4">
           {typed.map((m, i) => {
             const isLast = i === typed.length - 1;
@@ -100,7 +100,7 @@ export function StatsBar() {
             );
           })}
         </ul>
-        <p className="mt-6 text-center text-[0.65rem] font-light text-white/45 sm:text-xs">
+        <p className="mt-6 text-center text-[0.65rem] font-light text-white/45 sm:text-xs lg:sr-only">
           {disclaimer}
         </p>
       </div>

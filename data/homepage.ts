@@ -1,9 +1,8 @@
 export const HERO_IMAGES = {
-  /** Coastal hospitality / Indian Ocean sunset (hosted locally — prior Unsplash IDs 404) */
+  /** Stone Town / Zanzibar golden-hour aerial (local) */
   primary: "/images/hero/primary.jpg",
-  /** Tropical coastline aerial (hosted locally) */
+  /** Coastal town aerial alternate (local) */
   secondary: "/images/hero/secondary.jpg",
-  /** Luxury coastal architecture (hosted locally) */
   accent: "/images/hero/accent.jpg",
 } as const;
 
@@ -95,11 +94,11 @@ export const CORPORATE_TIMELINE = [
 ] as const;
 
 export const ABOUT_IMAGES = {
-  /** Mobile: cityscape inset */
+  /** Mobile: Stone Town cityscape inset */
   mobile:
     "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=800&q=85&auto=format&fit=crop",
-  /** Desktop: coastal promenade (same asset as hero primary) */
-  desktop: "/images/hero/primary.jpg",
+  /** Desktop: framed coastal town aerial */
+  desktop: "/images/hero/secondary.jpg",
 } as const;
 
 export const ABOUT_COPY = {

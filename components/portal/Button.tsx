@@ -48,7 +48,7 @@ export function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const base = `inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-luxury rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 hover:-translate-y-px ${variants[variant]} ${sizes[size]} ${className}`;
+  const base = `inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-luxury rounded-[4px] focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 hover:-translate-y-px ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     if (external) {

@@ -8,14 +8,15 @@ import { ABOUT_COPY, ABOUT_IMAGES } from "@/data/homepage";
 function CompassWatermark() {
   return (
     <svg
-      className="pointer-events-none absolute -right-8 top-1/2 h-64 w-64 -translate-y-1/2 opacity-[0.07] text-white lg:h-80 lg:w-80"
+      className="pointer-events-none absolute -right-4 top-1/2 h-[22rem] w-[22rem] -translate-y-1/2 opacity-[0.08] text-white xl:-right-8 xl:h-[26rem] xl:w-[26rem]"
       viewBox="0 0 64 64"
       fill="none"
       aria-hidden
     >
-      <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth={1.5} />
-      <path stroke="currentColor" strokeWidth={1.5} d="M32 4v56M4 32h56M32 8l8 24-8 8-8-8 8-24z" />
-      <path stroke="currentColor" strokeWidth={1} d="M8 8l48 48M56 8L8 56" opacity="0.5" />
+      <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth={1.25} />
+      <path stroke="currentColor" strokeWidth={1.25} d="M32 4v56M4 32h56M32 8l8 24-8 8-8-8 8-24z" />
+      <path stroke="currentColor" strokeWidth={0.75} d="M8 8l48 48M56 8L8 56" opacity="0.45" />
+      <ellipse cx="32" cy="32" rx="18" ry="10" stroke="currentColor" strokeWidth={0.75} opacity="0.35" />
     </svg>
   );
 }
@@ -57,47 +58,43 @@ export function AboutSection() {
         </MotionReveal>
       </div>
 
-      <div className="relative z-10 hidden lg:grid lg:min-h-[32rem] lg:grid-cols-2">
-        <div className="relative min-h-[28rem]">
-          <Image
-            src={ABOUT_IMAGES.desktop}
-            alt="Coastal promenade and architecture in Zanzibar"
-            fill
-            className="object-cover"
-            sizes="50vw"
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-zb-navy/30 to-zb-navy"
-            aria-hidden
-          />
-          <div className="absolute bottom-8 left-8 hidden aspect-[4/3] w-48 overflow-hidden rounded-sm border border-white/15 shadow-zb-xl xl:block">
-            <Image
-              src={ABOUT_IMAGES.mobile}
-              alt="Stone Town detail"
-              fill
-              className="object-cover"
-              sizes="200px"
-            />
-          </div>
-        </div>
-        <div className="relative flex flex-col justify-center px-12 py-20 xl:px-20 xl:py-24">
-          <div className="absolute inset-0 pattern-fine-lines opacity-50" aria-hidden />
-          <CompassWatermark />
-          <MotionReveal className="relative">
-            <p className="text-eyebrow-lined w-fit">{ABOUT_COPY.eyebrow}</p>
-            <h2 className="mt-6 max-w-lg font-serif text-3xl font-semibold leading-[1.1] text-white xl:text-[2.75rem]">
-              {ABOUT_COPY.headingDesktop}
-            </h2>
-            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-white/80">
-              {ABOUT_COPY.bodyDesktop}
-            </p>
-            <div className="mt-10">
-              <Button href="/about" variant="gold" size="lg" className="shadow-zb-gold">
-                Learn More About Us
-                <span aria-hidden>→</span>
-              </Button>
+      <div className="container-portal relative z-10 hidden py-20 xl:py-24 lg:block">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+          <MotionReveal>
+            <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+              <div className="rounded-sm border border-zb-gold/35 bg-zb-navy-deep/40 p-3 shadow-zb-xl sm:p-4">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm ring-1 ring-inset ring-white/15">
+                  <Image
+                    src={ABOUT_IMAGES.desktop}
+                    alt="Aerial coastal town, Zanzibar"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 420px"
+                  />
+                </div>
+              </div>
             </div>
           </MotionReveal>
+
+          <div className="relative flex flex-col justify-center py-4">
+            <div className="absolute inset-0 pattern-fine-lines opacity-50" aria-hidden />
+            <CompassWatermark />
+            <MotionReveal className="relative max-w-lg">
+              <p className="text-eyebrow-lined w-fit">{ABOUT_COPY.eyebrow}</p>
+              <h2 className="mt-6 font-serif text-3xl font-semibold leading-[1.1] text-white xl:text-[2.75rem]">
+                {ABOUT_COPY.headingDesktop}
+              </h2>
+              <p className="mt-6 text-base font-light leading-relaxed text-white/80">
+                {ABOUT_COPY.bodyDesktop}
+              </p>
+              <div className="mt-10">
+                <Button href="/about" variant="gold" size="lg" className="shadow-zb-gold">
+                  Learn More About Us
+                  <span aria-hidden>→</span>
+                </Button>
+              </div>
+            </MotionReveal>
+          </div>
         </div>
       </div>
     </section>

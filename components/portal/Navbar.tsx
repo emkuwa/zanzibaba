@@ -47,7 +47,7 @@ export function Navbar() {
   }, []);
 
   const navLinkClass = (href: string) =>
-    `relative whitespace-nowrap px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-px after:origin-left after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3 xl:text-sm ${
+    `relative whitespace-nowrap px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-0.5 after:origin-left after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3 xl:text-sm ${
       pathname === href
         ? "text-zb-navy after:scale-x-100"
         : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
@@ -92,7 +92,7 @@ export function Navbar() {
                   <li key={item.label} className="group relative">
                     <button
                       type="button"
-                      className="relative flex items-center gap-1 px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3 xl:text-sm"
+                      className="relative flex items-center gap-1 px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3 xl:text-sm"
                       aria-expanded={solutionsOpen}
                       aria-haspopup="true"
                       onClick={() => setSolutionsOpen((v) => !v)}

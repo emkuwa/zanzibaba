@@ -48,8 +48,8 @@
   }
 
   .text-hero-headline-desktop {
-    @apply font-serif font-semibold uppercase leading-[1.03] tracking-hero-tight;
-    font-size: clamp(2.75rem, 4.5vw, 4.25rem);
+    @apply font-sans font-bold uppercase leading-[1.04] tracking-hero-tight;
+    font-size: clamp(2.5rem, 4.2vw, 3.75rem);
     text-transform: uppercase;
   }
 
