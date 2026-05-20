@@ -86,7 +86,7 @@ export function Hero({
             </h1>
             {(subtitle || !compact) && (
               <p className="mt-7 max-w-2xl text-base font-medium leading-relaxed text-zb-ink/90 sm:mt-8 sm:text-lg">
-                {subtitle ?? HERO_COPY.subheading}
+                {subtitle ?? HERO_COPY.subheadingDesktop}
               </p>
             )}
             {!compact && !children && (

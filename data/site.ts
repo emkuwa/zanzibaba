@@ -20,13 +20,37 @@ export const SUBDOMAINS = {
   admin: "https://admin.zanzibaba.com",
 } as const;
 
-/** Desktop header + mobile drawer — flat links per Chairman mockup */
+const SOLUTION_CHILDREN = [
+  { href: "/solutions", label: "All Solutions" },
+  { href: "/solutions/real-estate", label: "Real Estate" },
+  { href: "/solutions/building-materials", label: "Building Materials" },
+  { href: "/solutions/construction", label: "Construction Services" },
+  { href: "/solutions/digital-marketing", label: "Digital & Marketing" },
+  { href: "/solutions/tours", label: "Tours & Experiences" },
+  { href: "/solutions/security", label: "Security Systems" },
+  { href: "/solutions/landscaping", label: "Landscaping" },
+] as const;
+
+/** Desktop header navigation */
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/solutions", label: "Our Services" },
+  { href: "/about", label: "About Us" },
+  { label: "Our Solutions", children: SOLUTION_CHILDREN },
   { href: "/projects", label: "Projects" },
-  { href: "/projects", label: "Portfolio" },
+  { href: "/investments", label: "Investments" },
+  { href: "/careers", label: "Careers" },
   { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
+] as const;
+
+/** Flat links for mobile drawer */
+export const MOBILE_NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/solutions", label: "Our Solutions" },
+  { href: "/projects", label: "Projects" },
+  { href: "/investments", label: "Investments" },
+  { href: "/careers", label: "Careers" },
+  { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;

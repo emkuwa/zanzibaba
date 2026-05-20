@@ -7,16 +7,24 @@ export const HERO_IMAGES = {
 export const HERO_COPY = {
   line1: "BUILDING TODAY,",
   line2: "EMPOWERING TOMORROW.",
-  subheading:
-    "Zanzibaba Group delivers real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline across Tanzania.",
+  subheadingMobile:
+    "A diversified Zanzibar group delivering real estate, materials, construction, and digital excellence across Tanzania.",
+  subheadingDesktop:
+    "One group. Seven solutions. Endless possibilities. Delivering excellence across real estate, construction, technology, and lifestyle services.",
 } as const;
 
 export const SOLUTIONS_SECTION = {
-  eyebrow: "OUR DIVISIONS",
-  title: "Seven divisions. One ecosystem.",
+  eyebrow: "OUR SOLUTIONS",
+  titleMobile: "Seven divisions. One ecosystem.",
+  titleDesktop: "Seven Solutions. One Commitment to Excellence.",
   description:
     "From land acquisition and materials supply to construction, digital marketing, tours, security, and landscaping — integrated capabilities under one accountable group.",
 } as const;
+
+/** Desktop card titles (mobile uses solutions.ts titles) */
+export const SOLUTION_DESKTOP_TITLES: Partial<Record<string, string>> = {
+  "digital-marketing": "Digital & Marketing Solutions",
+};
 
 export const PORTFOLIO_ITEMS = [
   {
@@ -47,8 +55,26 @@ export const PORTFOLIO_ITEMS = [
   },
 ] as const;
 
-/** @deprecated Use PORTFOLIO_ITEMS — kept for legacy components */
 export const FLAGSHIP_PROJECTS = PORTFOLIO_ITEMS;
+
+export const ABOUT_IMAGES = {
+  /** Mobile: cityscape inset */
+  mobile:
+    "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=800&q=85&auto=format&fit=crop",
+  /** Desktop: coastal promenade / architecture */
+  desktop:
+    "https://images.unsplash.com/photo-1596402184320-417e71735880?w=1200&h=1400&q=85&auto=format&fit=crop",
+} as const;
+
+export const ABOUT_COPY = {
+  eyebrow: "ABOUT US",
+  headingMobile: "Rooted in Zanzibar. Built for tomorrow.",
+  headingDesktop: "Building Beyond Structures. Creating Lasting Impact.",
+  bodyMobile:
+    "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja to Tanzania-wide programmes. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",
+  bodyDesktop:
+    "Zanzibaba Group is a diversified Zanzibar conglomerate delivering integrated real estate, construction, materials, digital, tours, security, and landscaping — with investor-grade discipline from Paje Yard and Stone Town across Tanzania.",
+} as const;
 
 export const STRATEGIC_SECTORS = [
   {
@@ -133,16 +159,3 @@ export const VISION_PILLARS = [
     text: "Transparent milestones, indicative metrics with clear disclaimers, and professional programme controls.",
   },
 ] as const;
-
-export const ABOUT_IMAGES = {
-  /** Stone archway / Zanzibar architecture */
-  primary:
-    "https://images.unsplash.com/photo-1583422409515-5240fe4ddb64?w=600&h=800&q=85&auto=format&fit=crop",
-} as const;
-
-export const ABOUT_COPY = {
-  eyebrow: "ABOUT US",
-  heading: "Rooted in Zanzibar. Built for tomorrow.",
-  body:
-    "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja to Tanzania-wide programmes. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",
-} as const;

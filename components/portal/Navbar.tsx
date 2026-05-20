@@ -5,23 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { NAV_LINKS, SITE } from "@/data/site";
+import { MOBILE_NAV_LINKS, NAV_LINKS, SITE } from "@/data/site";
 import { Button } from "./Button";
 
-function SearchIcon({ className = "" }: { className?: string }) {
+function PhoneIcon({ className = "" }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      aria-hidden
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.75}
-        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.72 1.012a12.042 12.042 0 01-5.516-5.516l1.012-.72c.363-.271.527-.733.417-1.173L6.963 4.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z"
       />
     </svg>
   );
@@ -30,10 +24,12 @@ function SearchIcon({ className = "" }: { className?: string }) {
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
+    setSolutionsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -56,10 +52,6 @@ export function Navbar() {
         ? "text-zb-navy after:scale-x-100"
         : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
-
-  const mobileLinks = NAV_LINKS.filter(
-    (item, idx, arr) => arr.findIndex((x) => x.href === item.href) === idx
-  );
 
   return (
     <header
@@ -86,31 +78,67 @@ export function Navbar() {
 
           <nav className="hidden justify-center lg:flex" aria-label="Main navigation">
             <ul className="flex items-center gap-0.5">
-              {NAV_LINKS.map((item) => (
-                <li key={`${item.href}-${item.label}`}>
-                  <Link href={item.href} className={navLinkClass(item.href)}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV_LINKS.map((item) =>
+                "children" in item ? (
+                  <li key={item.label} className="group relative">
+                    <button
+                      type="button"
+                      className="relative flex items-center gap-1 px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3 xl:text-sm"
+                      aria-expanded={solutionsOpen}
+                      aria-haspopup="true"
+                      onClick={() => setSolutionsOpen((v) => !v)}
+                      onMouseEnter={() => setSolutionsOpen(true)}
+                    >
+                      {item.label}
+                      <svg className="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div
+                      className={`absolute left-1/2 top-full min-w-[260px] -translate-x-1/2 pt-3 ${solutionsOpen ? "block" : "hidden"} group-hover:block`}
+                      onMouseLeave={() => setSolutionsOpen(false)}
+                    >
+                      <ul className="rounded-sm border border-zb-border bg-white py-2 shadow-zb-lg">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              className="block px-5 py-2.5 text-sm font-normal text-zb-ink transition-colors hover:bg-zb-surface hover:text-zb-navy"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ) : (
+                  <li key={item.href}>
+                    <Link href={item.href} className={navLinkClass(item.href)}>
+                      {item.label}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </nav>
 
-          <div className="flex items-center justify-end gap-3 sm:gap-4">
-            <Link
-              href="/solutions"
-              className="hidden h-10 w-10 items-center justify-center rounded-sm text-zb-navy transition-colors hover:bg-zb-surface lg:inline-flex"
-              aria-label="Search"
+          <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5">
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="hidden items-center gap-2 text-sm font-medium text-zb-navy transition-colors hover:text-zb-gold lg:inline-flex"
             >
-              <SearchIcon className="h-5 w-5" />
-            </Link>
+              <PhoneIcon className="h-5 w-5 text-zb-gold" />
+              <span className="whitespace-nowrap">{SITE.phone}</span>
+            </a>
             <Button
               href="/contact"
               variant="navy"
               size="md"
-              className="hidden uppercase tracking-[0.12em] lg:inline-flex"
+              className="hidden lg:inline-flex"
             >
               Get in Touch
+              <span aria-hidden>→</span>
             </Button>
             <button
               type="button"
@@ -142,13 +170,10 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 top-[4.5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[5.5rem]"
           >
-            <nav
-              className="container-portal flex h-full flex-col overflow-y-auto py-8"
-              aria-label="Mobile navigation"
-            >
-              {mobileLinks.map((item, idx) => (
+            <nav className="container-portal flex h-full flex-col overflow-y-auto py-8" aria-label="Mobile navigation">
+              {MOBILE_NAV_LINKS.map((item, idx) => (
                 <motion.div
-                  key={`${item.href}-${item.label}`}
+                  key={item.href}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.04 }}
@@ -162,7 +187,7 @@ export function Navbar() {
                 </motion.div>
               ))}
               <div className="mt-8">
-                <Button href="/contact" variant="gold" className="w-full uppercase tracking-wider" size="lg">
+                <Button href="/contact" variant="gold" className="w-full" size="lg">
                   Get in Touch
                 </Button>
               </div>
