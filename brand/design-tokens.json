@@ -1,0 +1,53 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "brand": "Zanzibaba Group",
+    "version": "1.0.0",
+    "updated": "2026-05-20"
+  },
+  "color": {
+    "navy": { "value": "#0A2E73", "type": "color" },
+    "navyDeep": { "value": "#07245A", "type": "color" },
+    "gold": { "value": "#C89B3C", "type": "color" },
+    "white": { "value": "#FFFFFF", "type": "color" },
+    "ink": { "value": "#0F172A", "type": "color" },
+    "muted": { "value": "#64748B", "type": "color" },
+    "surface": { "value": "#F8FAFC", "type": "color" },
+    "border": { "value": "#E2E8F0", "type": "color" }
+  },
+  "font": {
+    "serif": { "value": "\"Cormorant Garamond\", Georgia, serif", "type": "fontFamily" },
+    "sans": { "value": "\"DM Sans\", Inter, system-ui, sans-serif", "type": "fontFamily" }
+  },
+  "spacing": {
+    "1": { "value": "0.25rem", "type": "dimension" },
+    "2": { "value": "0.5rem", "type": "dimension" },
+    "3": { "value": "0.75rem", "type": "dimension" },
+    "4": { "value": "1rem", "type": "dimension" },
+    "6": { "value": "1.5rem", "type": "dimension" },
+    "8": { "value": "2rem", "type": "dimension" },
+    "12": { "value": "3rem", "type": "dimension" },
+    "16": { "value": "4rem", "type": "dimension" },
+    "24": { "value": "6rem", "type": "dimension" }
+  },
+  "shadow": {
+    "sm": { "value": "0 1px 2px rgba(7, 36, 90, 0.06)", "type": "shadow" },
+    "md": { "value": "0 4px 12px rgba(7, 36, 90, 0.08)", "type": "shadow" },
+    "lg": { "value": "0 12px 32px rgba(7, 36, 90, 0.1)", "type": "shadow" },
+    "card": {
+      "value": "0 2px 8px rgba(10, 46, 115, 0.06), 0 1px 2px rgba(10, 46, 115, 0.04)",
+      "type": "shadow"
+    }
+  },
+  "logo": {
+    "clearanceMultiplier": { "value": 1.25, "type": "number" },
+    "paths": {
+      "primaryHorizontal": "brand/logos/primary-horizontal.svg",
+      "navbarCompact": "brand/logos/navbar-compact.svg",
+      "icon": "brand/logos/icon-favicon.svg",
+      "stacked": "brand/logos/stacked-vertical.svg",
+      "monochrome": "brand/logos/monochrome-black.svg",
+      "reverse": "brand/logos/reverse-white-on-navy.svg"
+    }
+  }
+}

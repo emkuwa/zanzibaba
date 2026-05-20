@@ -1,37 +1,30 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { cormorant, dmSans } from "@/lib/fonts";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://realestate.zanzibaba.com"),
+  metadataBase: new URL("https://zanzibaba.com"),
   title: {
-    default: "Zanzibaba Real Estate | Land & Property in Zanzibar",
-    template: "%s | Zanzibaba Real Estate",
+    default: "Zanzibaba Group | Building Today, Empowering Tomorrow",
+    template: "%s | Zanzibaba Group",
   },
   description:
-    "Find land, plots, and properties in Zanzibar. Trusted real estate partner for investment in Paje, Nungwi, Kendwa, and across the island.",
+    "Zanzibaba Group — premium real estate, building materials, construction, digital, tours, security, and landscaping across Zanzibar and Tanzania.",
   keywords: [
-    "Zanzibar real estate",
-    "land for sale Zanzibar",
-    "property Zanzibar",
-    "plots Paje",
-    "investment Zanzibar",
+    "Zanzibaba",
+    "Zanzibar",
+    "real estate Zanzibar",
+    "building materials",
+    "construction Tanzania",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
+    siteName: "Zanzibaba Group",
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  icons: {
+    icon: "/brand/logos/icon-favicon.svg",
   },
 };
 
@@ -41,12 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
-      <body className="min-h-screen flex flex-col font-sans">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+      <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );
 }

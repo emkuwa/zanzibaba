@@ -1,0 +1,74 @@
+/**
+ * Zanzibaba Group — Corporate Design Tokens
+ * Import in materials, invest, admin-dashboard, and group properties.
+ */
+:root {
+  /* Brand colors */
+  --zb-navy: #0a2e73;
+  --zb-navy-deep: #07245a;
+  --zb-gold: #c89b3c;
+  --zb-white: #ffffff;
+  --zb-ink: #0f172a;
+  --zb-muted: #64748b;
+  --zb-surface: #f8fafc;
+  --zb-border: #e2e8f0;
+
+  /* Semantic */
+  --zb-primary: var(--zb-navy);
+  --zb-accent: var(--zb-gold);
+  --zb-bg-hero: var(--zb-navy-deep);
+  --zb-text-on-navy: var(--zb-white);
+
+  /* Typography */
+  --zb-font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --zb-font-sans: "DM Sans", Inter, system-ui, -apple-system, sans-serif;
+  --zb-font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --zb-text-xs: 0.75rem;
+  --zb-text-sm: 0.875rem;
+  --zb-text-base: 1rem;
+  --zb-text-lg: 1.125rem;
+  --zb-text-xl: 1.25rem;
+  --zb-text-2xl: 1.5rem;
+  --zb-text-3xl: 2rem;
+  --zb-text-4xl: 2.5rem;
+  --zb-text-hero: clamp(2.5rem, 5vw, 4rem);
+
+  --zb-leading-tight: 1.15;
+  --zb-leading-normal: 1.5;
+  --zb-tracking-wordmark: 0.14em;
+  --zb-tracking-group: 0.38em;
+  --zb-tracking-dept: 0.26em;
+
+  /* Spacing scale (4px base) */
+  --zb-space-1: 0.25rem;
+  --zb-space-2: 0.5rem;
+  --zb-space-3: 0.75rem;
+  --zb-space-4: 1rem;
+  --zb-space-5: 1.25rem;
+  --zb-space-6: 1.5rem;
+  --zb-space-8: 2rem;
+  --zb-space-10: 2.5rem;
+  --zb-space-12: 3rem;
+  --zb-space-16: 4rem;
+  --zb-space-20: 5rem;
+  --zb-space-24: 6rem;
+
+  /* Logo safe zone (× emblem height) */
+  --zb-logo-clearance: 1.25em;
+
+  /* Radius */
+  --zb-radius-sm: 4px;
+  --zb-radius-md: 8px;
+  --zb-radius-lg: 12px;
+
+  /* Shadows — restrained, investor-grade */
+  --zb-shadow-sm: 0 1px 2px rgba(7, 36, 90, 0.06);
+  --zb-shadow-md: 0 4px 12px rgba(7, 36, 90, 0.08);
+  --zb-shadow-lg: 0 12px 32px rgba(7, 36, 90, 0.1);
+  --zb-shadow-card: 0 2px 8px rgba(10, 46, 115, 0.06), 0 1px 2px rgba(10, 46, 115, 0.04);
+
+  /* Motion */
+  --zb-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --zb-duration: 220ms;
+}

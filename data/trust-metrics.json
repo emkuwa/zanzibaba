@@ -1,0 +1,30 @@
+{
+  "_chairmanNote": "Update when audited group figures are available. Indicative only — not audited financials.",
+  "disclaimer": "Indicative figures for planning; not audited financials",
+  "metrics": [
+    {
+      "id": "years",
+      "value": "10+",
+      "label": "Years of Excellence",
+      "indicative": true
+    },
+    {
+      "id": "projects",
+      "value": "500+",
+      "label": "Projects Delivered",
+      "indicative": true
+    },
+    {
+      "id": "clients",
+      "value": "1000+",
+      "label": "Clients Served",
+      "indicative": true
+    },
+    {
+      "id": "coverage",
+      "value": "Tanzania Wide",
+      "label": "National Reach",
+      "indicative": true
+    }
+  ]
+}

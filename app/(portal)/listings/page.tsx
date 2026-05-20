@@ -1,12 +1,18 @@
 import { Suspense } from "react";
-import { Hero } from "@/components/Hero";
+import type { Metadata } from "next";
 import { FilterBar } from "@/components/FilterBar";
-import { PropertyCard } from "@/components/PropertyCard";
 import { ListingsSection } from "@/components/ListingsSection";
+import { Hero } from "@/components/portal/Hero";
 import { getListingsForPublic } from "@/lib/listings-store";
 import { filterListings } from "@/lib/filter-listings";
 
-export default async function HomePage({
+export const metadata: Metadata = {
+  title: "Property Listings",
+  description:
+    "Browse land, plots, and properties in Zanzibar from Zanzibaba Real Estate.",
+};
+
+export default async function ListingsPage({
   searchParams = {},
 }: {
   searchParams?: Record<string, string | string[] | undefined>;
@@ -26,9 +32,13 @@ export default async function HomePage({
 
   return (
     <>
-      <Hero />
-      <section id="listings" className="container-tight py-12">
-        <div className="sticky top-0 z-10 -mx-3 bg-white/95 px-3 py-2 backdrop-blur-sm supports-[backdrop-filter]:bg-white/80">
+      <Hero
+        compact
+        title={<span className="text-white">Property Listings</span>}
+        subtitle="Land, plots, and investment property across Zanzibar."
+      />
+      <section id="listings" className="container-portal py-12">
+        <div className="sticky top-[4.25rem] z-10 -mx-3 bg-white/95 px-3 py-2 backdrop-blur-sm">
           <Suspense fallback={<div className="h-12" />}>
             <FilterBar />
           </Suspense>

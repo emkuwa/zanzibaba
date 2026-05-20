@@ -9,6 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        zb: {
+          navy: "#0A2E73",
+          "navy-deep": "#07245A",
+          gold: "#C89B3C",
+          ink: "#0F172A",
+          muted: "#64748B",
+          surface: "#F8FAFC",
+          border: "#E2E8F0",
+        },
         brand: {
           50: "#f0f7ff",
           100: "#e0effe",
@@ -38,6 +47,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+      },
+      boxShadow: {
+        "zb-sm": "0 1px 2px rgba(7, 36, 90, 0.06)",
+        "zb-md": "0 4px 12px rgba(7, 36, 90, 0.08)",
+        "zb-lg": "0 12px 32px rgba(7, 36, 90, 0.1)",
+        "zb-card":
+          "0 2px 8px rgba(10, 46, 115, 0.06), 0 1px 2px rgba(10, 46, 115, 0.04)",
       },
     },
   },

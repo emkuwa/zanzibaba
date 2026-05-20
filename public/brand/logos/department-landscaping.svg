@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" role="img" aria-label="Zanzibaba Group Landscaping">
+  <title>Zanzibaba Group  Landscaping</title>
+  <defs><style>.dept { font-family: "DM Sans", Inter, sans-serif; font-weight: 600; fill: #0A2E73; letter-spacing: 0.24em; }</style></defs>
+  <g transform="translate(150 108) scale(1.4)">
+    <path d="M -36 28 C -36 2, 0 -22, 36 28" fill="none" stroke="#0A2E73" stroke-width="9" stroke-linecap="round"/>
+    <g transform="translate(0 -6)"><path d="M0 -17 L4.2 -5.2 L17 0 L4.2 5.2 L0 17 L-4.2 5.2 L-17 0 L-4.2 -5.2 Z" fill="#C89B3C"/><circle r="2.8" fill="#C89B3C"/></g>
+    <path d="M -22 14 Q 0 18 22 14" fill="none" stroke="#0A2E73" stroke-width="1.4" opacity="0.55"/>
+    <path d="M -20 18 Q 0 22 20 18" fill="none" stroke="#0A2E73" stroke-width="1.2" opacity="0.38"/>
+  </g>
+  <text x="150" y="248" text-anchor="middle" class="dept" font-size="13">LANDSCAPING</text>
+</svg>

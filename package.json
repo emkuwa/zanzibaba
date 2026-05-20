@@ -1,5 +1,5 @@
 {
-  "name": "zanzibaba-realestate",
+  "name": "zanzibaba-group-portal",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cloudinary": "^2.9.0",
+    "framer-motion": "^11.18.2",
     "next": "^14.2.0",
     "outscraper": "^2.2.2",
     "react": "^18.2.0",
