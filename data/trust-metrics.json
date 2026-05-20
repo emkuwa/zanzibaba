@@ -5,7 +5,7 @@
     {
       "id": "years",
       "value": "10+",
-      "label": "Years of Experience",
+      "label": "Years of Excellence",
       "icon": "award",
       "indicative": true
     },
@@ -19,14 +19,14 @@
     {
       "id": "clients",
       "value": "1000+",
-      "label": "Happy Clients",
+      "label": "Clients Served",
       "icon": "people",
       "indicative": true
     },
     {
       "id": "coverage",
       "value": "Tanzania Wide",
-      "label": "Serving across all regions",
+      "label": "",
       "icon": "map",
       "indicative": true
     }

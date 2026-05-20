@@ -1,22 +1,20 @@
-import { GOLD, NAVY, strokeProps } from "./constants";
+import { NAVY, strokeProps } from "./constants";
 
 export function RealEstateIcon({ className = "h-14 w-14" }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 64 64"
-      fill="none"
-      aria-hidden
-    >
-      <path {...strokeProps} stroke={NAVY} d="M10 48V30l6-4 6 4v18" />
-      <path {...strokeProps} stroke={GOLD} d="M10 30l6-5 6 5" />
-      <path {...strokeProps} stroke={NAVY} d="M20 48V24l7-5 7 5v24" />
-      <path {...strokeProps} stroke={GOLD} d="M20 24l7-6 7 6" />
-      <path {...strokeProps} stroke={NAVY} d="M34 48V28l6-4 6 4v20" />
-      <path {...strokeProps} stroke={GOLD} d="M34 28l6-5 6 5" />
-      <path {...strokeProps} stroke={NAVY} d="M44 48V20l7-5 7 5v28" />
-      <path {...strokeProps} stroke={GOLD} d="M44 20l7-6 7 6" />
-      <path {...strokeProps} stroke={NAVY} d="M8 48h48" />
+    <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden>
+      {/* Building 1 — short, flat roof */}
+      <path {...strokeProps} stroke={NAVY} d="M10 50V36h10v14" />
+      {/* Building 2 — medium, peaked roof */}
+      <path {...strokeProps} stroke={NAVY} d="M22 50V38h10v12" />
+      <path {...strokeProps} stroke={NAVY} d="M21 38l6-6 6 6" />
+      {/* Building 3 — tall, peaked roof */}
+      <path {...strokeProps} stroke={NAVY} d="M34 50V32h10v18" />
+      <path {...strokeProps} stroke={NAVY} d="M33 32l6-7 6 7" />
+      {/* Building 4 — tallest, flat roof */}
+      <path {...strokeProps} stroke={NAVY} d="M46 50V24h10v26" />
+      {/* Shared base extending past edges */}
+      <path {...strokeProps} stroke={NAVY} d="M4 50h56" />
     </svg>
   );
 }

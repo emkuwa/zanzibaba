@@ -15,8 +15,8 @@ export function PortfolioSection() {
       <div className="container-portal section-py">
         <MotionReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-sans text-3xl font-bold capitalize leading-tight text-zb-navy sm:text-4xl lg:text-[2.5rem]">
-              Portfolio of distinction
+            <h2 className="font-serif text-3xl font-semibold leading-tight text-zb-navy sm:text-4xl lg:text-[2.5rem]">
+              Portfolio Of Distinction
             </h2>
             <p className="mt-5 text-base leading-relaxed text-zb-muted sm:text-lg">
               Explore our diverse range of projects across various sectors.

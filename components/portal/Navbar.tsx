@@ -29,12 +29,9 @@ function SearchIcon({ className = "" }: { className?: string }) {
 
 export function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const darkHero = isHome && !scrolled;
 
   useEffect(() => {
     setOpen(false);
@@ -58,22 +55,14 @@ export function Navbar() {
   const navLinkClass = (href: string) =>
     `relative whitespace-nowrap px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3.5 xl:text-sm ${
       pathname === href
-        ? darkHero
-          ? "text-white after:scale-x-100"
-          : "text-zb-navy after:scale-x-100"
-        : darkHero
-          ? "text-white/85 after:scale-x-0 hover:text-white hover:after:scale-x-100"
-          : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
+        ? "text-zb-navy after:scale-x-100"
+        : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        darkHero
-          ? "border-b border-white/10 bg-zb-navy-deep/95 backdrop-blur-md"
-          : scrolled
-            ? "border-b border-zb-border/80 bg-white/98 shadow-zb-sm backdrop-blur-lg"
-            : "border-b border-zb-border/60 bg-white/98 backdrop-blur-md"
+      className={`sticky top-0 z-50 border-b bg-white transition-all duration-300 ${
+        scrolled ? "border-zb-border/80 shadow-zb-sm" : "border-zb-border/60"
       }`}
     >
       <div className="container-portal">
@@ -84,11 +73,7 @@ export function Navbar() {
             aria-label={`${SITE.name} home`}
           >
             <Image
-              src={
-                darkHero
-                  ? "/brand/logos-v2/reverse-white-on-navy.png"
-                  : "/brand/logos-v2/primary-horizontal.png"
-              }
+              src="/brand/logos-v2/primary-horizontal.png"
               alt="Zanzibaba Group"
               width={320}
               height={64}
@@ -107,11 +92,7 @@ export function Navbar() {
                   <li key={item.label} className="group relative">
                     <button
                       type="button"
-                      className={`relative flex items-center gap-1 px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform group-hover:after:scale-x-100 xl:px-3.5 xl:text-sm ${
-                        darkHero
-                          ? "text-white/85 hover:text-white"
-                          : "text-zb-ink hover:text-zb-navy"
-                      }`}
+                      className="relative flex items-center gap-1 px-3 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3.5 xl:text-sm"
                       aria-expanded={solutionsOpen}
                       aria-haspopup="true"
                       onClick={() => setSolutionsOpen((v) => !v)}
@@ -165,11 +146,7 @@ export function Navbar() {
           <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5">
             <Link
               href="/solutions"
-              className={`hidden h-10 w-10 items-center justify-center rounded-sm transition-colors lg:inline-flex ${
-                darkHero
-                  ? "text-white/90 hover:bg-white/10 hover:text-white"
-                  : "text-zb-navy hover:bg-zb-surface"
-              }`}
+              className="hidden h-10 w-10 items-center justify-center rounded-sm text-zb-navy transition-colors hover:bg-zb-surface lg:inline-flex"
               aria-label="Search"
             >
               <SearchIcon className="h-5 w-5" />
@@ -178,30 +155,24 @@ export function Navbar() {
               href="/contact"
               variant="navy"
               size="md"
-              className={`hidden uppercase tracking-wider sm:inline-flex ${
-                darkHero ? "" : ""
-              }`}
+              className="hidden uppercase tracking-wider sm:inline-flex"
             >
               Get in Touch
             </Button>
             <button
               type="button"
-              className={`inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors sm:h-11 sm:w-11 lg:hidden ${
-                darkHero
-                  ? "text-white hover:bg-white/10"
-                  : "text-zb-navy hover:bg-zb-surface"
-              }`}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-zb-gold transition-colors hover:bg-zb-gold/10 sm:h-11 sm:w-11 lg:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
               {open ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>

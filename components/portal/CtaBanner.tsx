@@ -31,7 +31,7 @@ export function CtaBanner() {
             size="lg"
             className="!border-white !bg-transparent !text-white hover:!bg-white/10"
           >
-            Our Solutions
+            Our Services
           </Button>
         </div>
       </div>

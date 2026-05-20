@@ -21,7 +21,7 @@ export default function SolutionsPage() {
       <Section>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SOLUTIONS.map((s) => (
-            <SolutionCard key={s.slug} solution={s} />
+            <SolutionCard key={s.slug} solution={s} variant="full" />
           ))}
         </div>
       </Section>

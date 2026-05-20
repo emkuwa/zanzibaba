@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-  <path d="M18 48V16" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18 16h30" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M48 16v6" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18 22l30-6" stroke="#C89B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M44 22v14" stroke="#C89B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M44 36h4" stroke="#C89B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="38" y="40" width="12" height="8" rx="1" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 52h36" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 52V18" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 24l8 8M24 32l8 8M24 40l8 8M32 24l-8 8M32 32l-8 8M32 40l-8 8" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 18h30" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="14" y="14" width="8" height="8" rx="1" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 18h6" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 18 L38 8 L58 18" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 8V18" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 18v12" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 34h4" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="47" y="36" width="10" height="10" rx="1" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

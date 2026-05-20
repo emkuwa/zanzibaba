@@ -1,14 +1,21 @@
 export const HERO_IMAGES = {
-  /** Luxury modern architecture at dusk */
+  /** Stone Town coastal harbor at dusk */
   primary:
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=88&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1596402184320-417e71735880?w=2400&q=88&auto=format&fit=crop",
 } as const;
 
 export const HERO_COPY = {
   line1: "BUILDING TODAY,",
   line2: "EMPOWERING TOMORROW.",
   subheading:
-    "Seven integrated solutions across real estate, materials, construction, and digital — one group, endless possibilities for investors and institutions across Zanzibar and Tanzania.",
+    "A diversified Zanzibar group delivering real estate, materials, construction, and digital excellence across Tanzania.",
+} as const;
+
+export const SOLUTIONS_SECTION = {
+  eyebrow: "OUR SOLUTIONS",
+  title: "Seven divisions. One ecosystem.",
+  description:
+    "From land acquisition and materials supply to construction, digital marketing, tours, security, and landscaping — integrated capabilities under one accountable group.",
 } as const;
 
 export const PORTFOLIO_ITEMS = [
@@ -29,8 +36,8 @@ export const PORTFOLIO_ITEMS = [
     variant: "card" as const,
   },
   {
-    id: "commercial-building",
-    title: "Commercial Building",
+    id: "commercial-bakery",
+    title: "Commercial Bakery",
     description:
       "Mixed-use commercial programme with construction, security, and digital brand stewardship.",
     href: "/projects",
@@ -128,12 +135,14 @@ export const VISION_PILLARS = [
 ] as const;
 
 export const ABOUT_IMAGES = {
+  /** Aerial Stone Town / clock tower */
   primary:
-    "https://images.unsplash.com/photo-1511818966892-7c031c556a9e?w=1400&q=85&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=450&q=85&auto=format&fit=crop",
 } as const;
 
 export const ABOUT_COPY = {
-  heading: "Building Beyond Structures. Creating Lasting Impact.",
+  eyebrow: "ABOUT US",
+  heading: "Rooted in Zanzibar. Built for tomorrow.",
   body:
     "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja to Tanzania-wide programmes. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",
 } as const;

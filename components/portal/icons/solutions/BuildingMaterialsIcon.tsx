@@ -1,4 +1,4 @@
-import { GOLD, NAVY, strokeProps } from "./constants";
+import { NAVY, strokeProps } from "./constants";
 
 export function BuildingMaterialsIcon({
   className = "h-14 w-14",
@@ -6,33 +6,19 @@ export function BuildingMaterialsIcon({
   className?: string;
 }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 64 64"
-      fill="none"
-      aria-hidden
-    >
-      <path
-        {...strokeProps}
-        stroke={NAVY}
-        d="M12 40l9-5 9 5v10l-9 5-9-5V40z"
-      />
-      <path {...strokeProps} stroke={GOLD} d="M21 35l9-5 9 5" />
-      <path {...strokeProps} stroke={NAVY} d="M30 30v10M39 35v10" />
-      <path
-        {...strokeProps}
-        stroke={NAVY}
-        d="M26 26l9-5 9 5v10l-9 5-9-5V26z"
-      />
-      <path {...strokeProps} stroke={GOLD} d="M35 21l9-5 9 5" />
-      <path {...strokeProps} stroke={NAVY} d="M44 16v10M53 21v10" />
-      <path
-        {...strokeProps}
-        stroke={NAVY}
-        d="M8 48l9-5 9 5v10l-9 5-9-5V48z"
-      />
-      <path {...strokeProps} stroke={GOLD} d="M17 43l9-5 9 5" />
-      <path {...strokeProps} stroke={NAVY} d="M26 38v10M35 43v10" />
+    <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden>
+      {/* Bottom-left cube */}
+      <path {...strokeProps} stroke={NAVY} d="M11 38 L20 29 L29 38 L29 45 L20 49 L11 45 Z" />
+      <path {...strokeProps} stroke={NAVY} d="M11 38 V45 L20 49 V42" />
+      <path {...strokeProps} stroke={NAVY} d="M29 38 V45 L20 49" />
+      {/* Bottom-right cube */}
+      <path {...strokeProps} stroke={NAVY} d="M35 38 L44 29 L53 38 L53 45 L44 49 L35 45 Z" />
+      <path {...strokeProps} stroke={NAVY} d="M35 38 V45 L44 49 V42" />
+      <path {...strokeProps} stroke={NAVY} d="M53 38 V45 L44 49" />
+      {/* Top center cube */}
+      <path {...strokeProps} stroke={NAVY} d="M23 18 L32 9 L41 18 L41 25 L32 29 L23 25 Z" />
+      <path {...strokeProps} stroke={NAVY} d="M23 18 V25 L32 29 V22" />
+      <path {...strokeProps} stroke={NAVY} d="M41 18 V25 L32 29" />
     </svg>
   );
 }
