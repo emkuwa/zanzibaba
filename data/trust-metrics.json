@@ -26,7 +26,7 @@
     {
       "id": "coverage",
       "value": "Tanzania Wide",
-      "label": "",
+      "label": "Presence",
       "icon": "map",
       "indicative": true
     }

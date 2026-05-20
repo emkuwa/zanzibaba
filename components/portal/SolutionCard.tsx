@@ -9,7 +9,21 @@ import { Card } from "./Card";
 interface SolutionCardProps {
   solution: Solution;
   index?: number;
-  variant?: "compact" | "full";
+  variant?: "compact" | "row" | "full";
+}
+
+function ChevronRight() {
+  return (
+    <svg
+      className="h-4 w-4 shrink-0 text-zb-gold sm:h-5 sm:w-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      aria-hidden
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  );
 }
 
 export function SolutionCard({
@@ -20,6 +34,41 @@ export function SolutionCard({
   const reduce = useReducedMotion();
   const href = solution.externalUrl ?? `/solutions/${solution.slug}`;
   const external = Boolean(solution.externalUrl);
+
+  if (variant === "row") {
+    const card = (
+      <Link
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="group flex items-center gap-4 px-4 py-4 transition-colors hover:bg-zb-surface/50 sm:gap-5 sm:px-6 sm:py-5"
+      >
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-11 sm:w-11">
+          <SolutionIcon slug={solution.slug} className="h-9 w-9 sm:h-10 sm:w-10" />
+        </div>
+        <h3 className="min-w-0 flex-1 font-sans text-[0.9375rem] font-semibold leading-tight text-zb-navy sm:text-base">
+          {solution.title}
+        </h3>
+        <ChevronRight />
+      </Link>
+    );
+
+    if (reduce) return card;
+
+    return (
+      <motion.li
+        initial={{ opacity: 0, x: -8 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-20px" }}
+        transition={{
+          duration: 0.35,
+          delay: index * 0.04,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        {card}
+      </motion.li>
+    );
+  }
 
   if (variant === "compact") {
     const card = (
@@ -34,12 +83,7 @@ export function SolutionCard({
         <h3 className="min-w-0 flex-1 font-sans text-sm font-semibold leading-tight text-zb-navy sm:text-[0.9375rem]">
           {solution.title}
         </h3>
-        <span
-          className="shrink-0 text-base font-medium text-zb-gold transition-transform duration-200 group-hover:translate-x-0.5"
-          aria-hidden
-        >
-          →
-        </span>
+        <ChevronRight />
       </Link>
     );
 

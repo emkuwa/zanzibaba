@@ -30,12 +30,10 @@ function SearchIcon({ className = "" }: { className?: string }) {
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
-    setSolutionsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -53,11 +51,15 @@ export function Navbar() {
   }, []);
 
   const navLinkClass = (href: string) =>
-    `relative whitespace-nowrap px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3.5 xl:text-sm ${
+    `relative whitespace-nowrap px-2.5 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-px after:origin-left after:bg-zb-gold after:transition-transform hover:text-zb-navy xl:px-3 xl:text-sm ${
       pathname === href
         ? "text-zb-navy after:scale-x-100"
         : "text-zb-ink after:scale-x-0 hover:after:scale-x-100"
     }`;
+
+  const mobileLinks = NAV_LINKS.filter(
+    (item, idx, arr) => arr.findIndex((x) => x.href === item.href) === idx
+  );
 
   return (
     <header
@@ -66,7 +68,7 @@ export function Navbar() {
       }`}
     >
       <div className="container-portal">
-        <div className="grid h-[4.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[5.5rem] sm:gap-4 lg:h-[6rem] lg:gap-8">
+        <div className="grid h-[4.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-[5.5rem] sm:gap-4 lg:h-[6rem] lg:gap-6">
           <Link
             href="/"
             className="group shrink-0 transition-opacity hover:opacity-90"
@@ -82,68 +84,19 @@ export function Navbar() {
             />
           </Link>
 
-          <nav
-            className="hidden justify-center lg:flex"
-            aria-label="Main navigation"
-          >
-            <ul className="flex items-center gap-0.5 xl:gap-1">
-              {NAV_LINKS.map((item) =>
-                "children" in item ? (
-                  <li key={item.label} className="group relative">
-                    <button
-                      type="button"
-                      className="relative flex items-center gap-1 px-3 py-2 text-[0.8125rem] font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-3.5 xl:text-sm"
-                      aria-expanded={solutionsOpen}
-                      aria-haspopup="true"
-                      onClick={() => setSolutionsOpen((v) => !v)}
-                      onMouseEnter={() => setSolutionsOpen(true)}
-                    >
-                      {item.label}
-                      <svg
-                        className="h-3 w-3 opacity-60"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      className={`absolute left-1/2 top-full min-w-[260px] -translate-x-1/2 pt-3 ${solutionsOpen ? "block" : "hidden"} group-hover:block`}
-                      onMouseLeave={() => setSolutionsOpen(false)}
-                    >
-                      <ul className="rounded-sm border border-zb-border bg-white py-2 shadow-zb-lg">
-                        {item.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              href={child.href}
-                              className="block px-5 py-2.5 text-sm font-normal text-zb-ink transition-colors hover:bg-zb-surface hover:text-zb-navy"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </li>
-                ) : (
-                  <li key={item.href}>
-                    <Link href={item.href} className={navLinkClass(item.href)}>
-                      {item.label}
-                    </Link>
-                  </li>
-                )
-              )}
+          <nav className="hidden justify-center lg:flex" aria-label="Main navigation">
+            <ul className="flex items-center gap-0.5">
+              {NAV_LINKS.map((item) => (
+                <li key={`${item.href}-${item.label}`}>
+                  <Link href={item.href} className={navLinkClass(item.href)}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
-          <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-5">
+          <div className="flex items-center justify-end gap-3 sm:gap-4">
             <Link
               href="/solutions"
               className="hidden h-10 w-10 items-center justify-center rounded-sm text-zb-navy transition-colors hover:bg-zb-surface lg:inline-flex"
@@ -155,7 +108,7 @@ export function Navbar() {
               href="/contact"
               variant="navy"
               size="md"
-              className="hidden uppercase tracking-wider sm:inline-flex"
+              className="hidden uppercase tracking-[0.12em] lg:inline-flex"
             >
               Get in Touch
             </Button>
@@ -193,45 +146,24 @@ export function Navbar() {
               className="container-portal flex h-full flex-col overflow-y-auto py-8"
               aria-label="Mobile navigation"
             >
-              {NAV_LINKS.map((item, idx) =>
-                "children" in item ? (
-                  <div key={item.label} className="border-b border-white/10 py-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.2em] text-zb-gold">
-                      {item.label}
-                    </p>
-                    <ul className="mt-3 space-y-1">
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="block rounded-sm py-3 text-lg font-medium text-white/90 transition-colors hover:text-zb-gold"
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.04 }}
+              {mobileLinks.map((item, idx) => (
+                <motion.div
+                  key={`${item.href}-${item.label}`}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.04 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="block border-b border-white/10 py-4 text-lg font-medium text-white transition-colors hover:text-zb-gold"
                   >
-                    <Link
-                      href={item.href}
-                      className="block border-b border-white/10 py-4 text-lg font-medium text-white transition-colors hover:text-zb-gold"
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                )
-              )}
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
               <div className="mt-8">
                 <Button href="/contact" variant="gold" className="w-full uppercase tracking-wider" size="lg">
                   Get in Touch
-                  <span aria-hidden>→</span>
                 </Button>
               </div>
             </nav>

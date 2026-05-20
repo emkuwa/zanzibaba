@@ -8,11 +8,11 @@ export const HERO_COPY = {
   line1: "BUILDING TODAY,",
   line2: "EMPOWERING TOMORROW.",
   subheading:
-    "A diversified Zanzibar group delivering real estate, materials, construction, and digital excellence across Tanzania.",
+    "Zanzibaba Group delivers real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline across Tanzania.",
 } as const;
 
 export const SOLUTIONS_SECTION = {
-  eyebrow: "OUR SOLUTIONS",
+  eyebrow: "OUR DIVISIONS",
   title: "Seven divisions. One ecosystem.",
   description:
     "From land acquisition and materials supply to construction, digital marketing, tours, security, and landscaping — integrated capabilities under one accountable group.",
@@ -42,7 +42,7 @@ export const PORTFOLIO_ITEMS = [
       "Mixed-use commercial programme with construction, security, and digital brand stewardship.",
     href: "/projects",
     image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80&auto=format&fit=crop",
     variant: "photo" as const,
   },
 ] as const;
@@ -135,9 +135,9 @@ export const VISION_PILLARS = [
 ] as const;
 
 export const ABOUT_IMAGES = {
-  /** Aerial Stone Town / clock tower */
+  /** Stone archway / Zanzibar architecture */
   primary:
-    "https://images.unsplash.com/photo-1548013146-72479768bada?w=600&h=450&q=85&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1583422409515-5240fe4ddb64?w=600&h=800&q=85&auto=format&fit=crop",
 } as const;
 
 export const ABOUT_COPY = {

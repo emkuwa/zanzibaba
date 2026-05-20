@@ -9,7 +9,7 @@ export const SITE = {
   whatsapp: "255716002790",
   offices: [
     { name: "Paje Yard", location: "Paje, Zanzibar" },
-    { name: "Mlandege Town Office", location: "Stone Town, Zanzibar" },
+    { name: "Mlandege Stone Town", location: "Stone Town, Zanzibar" },
   ],
 } as const;
 
@@ -20,24 +20,13 @@ export const SUBDOMAINS = {
   admin: "https://admin.zanzibaba.com",
 } as const;
 
+/** Desktop header + mobile drawer — flat links per Chairman mockup */
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  {
-    label: "Our Solutions",
-    children: [
-      { href: "/solutions", label: "All Solutions" },
-      { href: "/solutions/real-estate", label: "Real Estate" },
-      { href: "/solutions/building-materials", label: "Building Materials" },
-      { href: "/solutions/construction", label: "Construction Services" },
-      { href: "/solutions/digital-marketing", label: "Digital & Marketing" },
-      { href: "/solutions/tours", label: "Tours & Experiences" },
-      { href: "/solutions/security", label: "Security Systems" },
-      { href: "/solutions/landscaping", label: "Landscaping" },
-    ],
-  },
+  { href: "/solutions", label: "Our Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/projects", label: "Portfolio" },
   { href: "/news", label: "News" },
-  { href: "/careers", label: "Careers" },
+  { href: "/contact", label: "Contact" },
 ] as const;

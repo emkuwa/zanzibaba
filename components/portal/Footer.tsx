@@ -32,7 +32,7 @@ export function Footer() {
   const quickLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/solutions", label: "Solutions" },
+    { href: "/solutions", label: "Our Services" },
     { href: "/projects", label: "Projects" },
     { href: "/news", label: "News" },
     { href: "/careers", label: "Careers" },
@@ -51,9 +51,9 @@ export function Footer() {
               className="h-20 w-auto sm:h-24"
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed text-white/70">
-              Building today, empowering tomorrow — a diversified Zanzibar group
-              delivering real estate, materials, construction, and digital
-              excellence across Tanzania.
+              Building today, empowering tomorrow — Zanzibaba Group delivers
+              real estate, materials, construction, and digital excellence across
+              Tanzania.
             </p>
             <div className="mt-6 flex gap-3">
               {SOCIAL.map((s) => (
@@ -87,7 +87,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">Our Solutions</h3>
+            <h3 className="text-eyebrow">Our Services</h3>
             <ul className="mt-6 space-y-3 text-sm font-light text-white/80">
               {SOLUTIONS.map((s) => (
                 <li key={s.slug}>
