@@ -36,8 +36,8 @@ export const PORTFOLIO_ITEMS = [
     variant: "card" as const,
   },
   {
-    id: "commercial-bakery",
-    title: "Commercial Bakery",
+    id: "commercial-building",
+    title: "Commercial Building",
     description:
       "Mixed-use commercial programme with construction, security, and digital brand stewardship.",
     href: "/projects",

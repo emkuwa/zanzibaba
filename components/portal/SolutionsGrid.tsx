@@ -6,6 +6,9 @@ import { SolutionCard } from "./SolutionCard";
 import { MotionReveal } from "./MotionReveal";
 
 export function SolutionsGrid() {
+  const row1 = SOLUTIONS.slice(0, 4);
+  const row2 = SOLUTIONS.slice(4, 7);
+
   return (
     <section id="solutions" className="bg-white">
       <div className="container-portal section-py-sm lg:section-py">
@@ -21,10 +24,25 @@ export function SolutionsGrid() {
           </div>
         </MotionReveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4">
+        {/* Mobile / tablet: compact 2-column grid */}
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:hidden">
           {SOLUTIONS.map((s, i) => (
             <SolutionCard key={s.slug} solution={s} index={i} variant="compact" />
           ))}
+        </div>
+
+        {/* Desktop: 4 + 3 centered rows */}
+        <div className="mt-14 hidden space-y-5 lg:block lg:mt-16">
+          <div className="grid gap-4 lg:grid-cols-4">
+            {row1.map((s, i) => (
+              <SolutionCard key={s.slug} solution={s} index={i} variant="compact" />
+            ))}
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-4 lg:grid-cols-3">
+            {row2.map((s, i) => (
+              <SolutionCard key={s.slug} solution={s} index={i + 4} variant="compact" />
+            ))}
+          </div>
         </div>
       </div>
     </section>

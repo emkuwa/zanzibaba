@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.zanzibaba.com" }],
+      "destination": "https://zanzibaba.com/:path*",
+      "permanent": true
+    }
+  ]
+}
