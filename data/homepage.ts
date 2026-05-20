@@ -1,10 +1,7 @@
 export const HERO_IMAGES = {
-  /** Aerial Zanzibar coastline — cinematic hero focal */
+  /** Stone Town / Zanzibar harbor — warm golden-hour coastal panorama */
   primary:
-    "https://images.unsplash.com/photo-1590523277543-a94d0e4ddd00?w=2400&q=88&auto=format&fit=crop",
-  /** Luxury resort architecture — layered hero accent */
-  accent:
-    "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1573844250598-d871b821bb88?w=2400&q=88&auto=format&fit=crop",
 } as const;
 
 export const HERO_COPY = {

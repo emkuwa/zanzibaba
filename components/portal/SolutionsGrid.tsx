@@ -14,13 +14,9 @@ export function SolutionsGrid() {
         <MotionReveal>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-eyebrow">Our Solutions</p>
-            <h2 className="mt-4 text-section-title text-zb-navy">
-              Seven divisions. One ecosystem.
+            <h2 className="mt-4 font-sans text-3xl font-bold leading-tight text-zb-navy sm:text-4xl lg:text-[2.5rem]">
+              Seven Solutions. One Commitment to Excellence.
             </h2>
-            <p className="mt-5 text-body-luxury">
-              Integrated capabilities across real estate, materials, construction,
-              and digital — delivered with investor-grade discipline.
-            </p>
           </div>
         </MotionReveal>
 
