@@ -26,9 +26,9 @@
     },
     {
       "id": "coverage",
-      "value": "Tanzania Wide",
-      "label": "Serving Locally, Impacting Globally",
-      "labelMobile": "Tanzania Wide",
+      "value": "Across Zanzibar",
+      "label": "Serving Zanzibar with excellence",
+      "labelMobile": "Across Zanzibar",
       "icon": "map",
       "indicative": true
     }

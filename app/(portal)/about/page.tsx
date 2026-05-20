@@ -20,7 +20,7 @@ export default function AboutPage() {
       <Hero
         compact
         title={<span className="text-white">About Zanzibaba Group</span>}
-        subtitle="A premium, diversified group headquartered in Zanzibar — serving Tanzania with discipline and long-term vision."
+        subtitle="A premium, diversified group headquartered in Zanzibar — serving the island with discipline and long-term vision."
       />
       <Section title="Our story">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -33,7 +33,7 @@ export default function AboutPage() {
             <p>
               From our Paje yard and Mlandege Town Office in Stone Town, we
               support developers, contractors, and investors with programme-scale
-              delivery across Unguja and beyond.
+              delivery throughout Unguja.
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">

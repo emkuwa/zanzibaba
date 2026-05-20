@@ -10,7 +10,7 @@ export const HERO_COPY = {
   line1: "BUILDING TODAY,",
   line2: "EMPOWERING TOMORROW.",
   subheadingMobile:
-    "A diversified Zanzibar group delivering real estate, materials, construction, and digital excellence across Tanzania.",
+    "A diversified Zanzibar group delivering real estate, materials, construction, and digital excellence throughout Zanzibar.",
   subheadingDesktop:
     "One group. Seven solutions. Endless possibilities. Delivering excellence across real estate, construction, technology, and lifestyle services.",
 } as const;
@@ -90,7 +90,7 @@ export const CORPORATE_TIMELINE = [
   { year: "2014", label: "Founded in Zanzibar", detail: "Paje Yard operations established" },
   { year: "2018", label: "Seven divisions unified", detail: "Group brand and integrated delivery model" },
   { year: "2022", label: "Stone Town presence", detail: "Mlandege office — corporate & investor relations" },
-  { year: "2026", label: "Regional expansion", detail: "Tanzania-wide programmes and digital estate" },
+  { year: "2026", label: "Island-wide growth", detail: "Zanzibar-wide programmes and digital estate" },
 ] as const;
 
 export const ABOUT_IMAGES = {
@@ -105,9 +105,9 @@ export const ABOUT_COPY = {
   headingMobile: "Rooted in Zanzibar. Built for tomorrow.",
   headingDesktop: "Building Beyond Structures. Creating Lasting Impact.",
   bodyMobile:
-    "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja to Tanzania-wide programmes. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",
+    "Zanzibaba Group unites seven divisions under one premium brand — from Paje and Stone Town across Unguja. We deliver real estate, building materials, construction, digital marketing, tours, security, and landscaping with investor-grade discipline and local expertise.",
   bodyDesktop:
-    "Zanzibaba Group is a diversified Zanzibar conglomerate delivering integrated real estate, construction, materials, digital, tours, security, and landscaping — with investor-grade discipline from Paje Yard and Stone Town across Tanzania.",
+    "Zanzibaba Group is a diversified Zanzibar conglomerate delivering integrated real estate, construction, materials, digital, tours, security, and landscaping — with investor-grade discipline from Paje Yard and Stone Town throughout Zanzibar.",
 } as const;
 
 export const STRATEGIC_SECTORS = [
@@ -186,7 +186,7 @@ export const VISION_PILLARS = [
   },
   {
     title: "Island Expertise",
-    text: "Deep Unguja knowledge: Paje operations, Stone Town presence, and Tanzania-wide reach.",
+    text: "Deep Unguja knowledge: Paje operations, Stone Town presence, and island-wide reach across Zanzibar.",
   },
   {
     title: "Investor Discipline",

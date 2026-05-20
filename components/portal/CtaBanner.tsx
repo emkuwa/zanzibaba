@@ -20,7 +20,7 @@ export function CtaBanner() {
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base lg:text-lg">
           Partner with Zanzibaba Group — seven divisions, one commitment to excellence
-          across Zanzibar and Tanzania.
+          throughout Zanzibar.
         </p>
         <div className="mt-8 flex flex-row flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
           <Button href="/contact" variant="gold" size="lg" className="shadow-zb-gold">

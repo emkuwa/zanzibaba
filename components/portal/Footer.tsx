@@ -53,8 +53,8 @@ export function Footer() {
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
               Building today, empowering tomorrow — Zanzibaba Group delivers
-              real estate, materials, construction, and digital excellence across
-              Tanzania.
+              real estate, materials, construction, and digital excellence throughout
+              Zanzibar.
             </p>
             <div className="mt-6 flex gap-3">
               {SOCIAL.map((s) => (

@@ -9,13 +9,13 @@ export const metadata: Metadata = {
     template: "%s | Zanzibaba Group",
   },
   description:
-    "Zanzibaba Group — premium real estate, building materials, construction, digital, tours, security, and landscaping across Zanzibar and Tanzania.",
+    "Zanzibaba Group — premium real estate, building materials, construction, digital, tours, security, and landscaping throughout Zanzibar.",
   keywords: [
     "Zanzibaba",
     "Zanzibar",
     "real estate Zanzibar",
     "building materials",
-    "construction Tanzania",
+    "construction Zanzibar",
   ],
   openGraph: {
     type: "website",
