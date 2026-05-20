@@ -70,8 +70,20 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-sand-900">Location</h3>
-            <p className="mt-2 text-sm text-sand-600">Zanzibar, Tanzania</p>
+            <h3 className="font-semibold text-sand-900">Offices</h3>
+            <ul className="mt-2 space-y-1 text-sm text-sand-600">
+              <li>Paje Yard — Paje, Zanzibar</li>
+              <li>Town Office — Mlandege, Stone Town, Zanzibar</li>
+            </ul>
+            <p className="mt-2 text-sm text-sand-600">
+              <a href="mailto:info@zanzibaba.com" className="hover:text-brand-600">
+                info@zanzibaba.com
+              </a>
+              {" · "}
+              <a href="tel:+255716002790" className="hover:text-brand-600">
+                +255 716 002 790
+              </a>
+            </p>
           </div>
         </div>
         <div className="mt-10 border-t border-sand-200 pt-8 text-center text-sm text-sand-500">
