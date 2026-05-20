@@ -28,5 +28,5 @@ export function SolutionIcon({
   className?: string;
 }) {
   const Icon = icons[slug];
-  return <Icon className={className} />;
+  return <Icon className={`text-zb-navy ${className}`} />;
 }

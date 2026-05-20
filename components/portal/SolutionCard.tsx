@@ -42,8 +42,8 @@ export function SolutionCard({
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="group flex items-center gap-4 px-4 py-4 transition-colors hover:bg-zb-surface/50 sm:gap-5 sm:px-6 sm:py-5"
       >
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-11 sm:w-11">
-          <SolutionIcon slug={solution.slug} className="h-9 w-9 sm:h-10 sm:w-10" />
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center text-zb-navy sm:h-14 sm:w-14">
+          <SolutionIcon slug={solution.slug} className="h-11 w-11 sm:h-12 sm:w-12" />
         </div>
         <h3 className="min-w-0 flex-1 font-sans text-[0.9375rem] font-semibold leading-tight text-zb-navy sm:text-base">
           {solution.title}
@@ -77,8 +77,8 @@ export function SolutionCard({
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="group flex items-center gap-3 rounded-md border border-zb-border/60 bg-white px-3.5 py-3 shadow-zb-sm transition-all duration-200 hover:border-zb-gold/30 hover:shadow-zb-card sm:gap-4 sm:px-4 sm:py-3.5"
       >
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12">
-          <SolutionIcon slug={solution.slug} className="h-10 w-10 sm:h-11 sm:w-11" />
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center text-zb-navy sm:h-14 sm:w-14">
+          <SolutionIcon slug={solution.slug} className="h-11 w-11 sm:h-12 sm:w-12" />
         </div>
         <h3 className="min-w-0 flex-1 font-sans text-sm font-semibold leading-tight text-zb-navy sm:text-[0.9375rem]">
           {solution.title}
@@ -115,8 +115,8 @@ export function SolutionCard({
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="flex h-full flex-col p-6 sm:p-7"
       >
-        <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-sm border border-zb-border/70 bg-white shadow-zb-sm transition-colors group-hover:border-zb-gold/30">
-          <SolutionIcon slug={solution.slug} className="h-14 w-14" />
+        <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center rounded-sm border border-zb-border/70 bg-white text-zb-navy shadow-zb-sm transition-colors group-hover:border-zb-gold/30">
+          <SolutionIcon slug={solution.slug} className="h-14 w-14 text-zb-navy" />
         </div>
         <h3 className="font-sans text-lg font-bold text-zb-navy transition-colors group-hover:text-zb-navy sm:text-xl">
           {solution.title}

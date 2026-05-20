@@ -1,21 +1,17 @@
-import { NAVY, strokeProps } from "./constants";
+import { strokeProps } from "./constants";
 
-export function ToursIcon({ className = "h-14 w-14" }: { className?: string }) {
+export function ToursIcon({ className = "h-14 w-14 text-zb-navy" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 64 64" fill="none" aria-hidden>
-      <path
-        {...strokeProps}
-        stroke={NAVY}
-        d="M18 52 C18 42 20 32 26 22 C28 18 30 14 32 10"
-      />
-      <path {...strokeProps} stroke={NAVY} d="M32 10 L26 4 L32 8" />
-      <path {...strokeProps} stroke={NAVY} d="M32 10 L20 8 L28 12" />
-      <path {...strokeProps} stroke={NAVY} d="M32 10 L32 2 L34 8" />
-      <path {...strokeProps} stroke={NAVY} d="M32 10 L44 8 L36 12" />
-      <path {...strokeProps} stroke={NAVY} d="M32 10 L40 14 L34 12" />
-      <circle {...strokeProps} stroke={NAVY} cx="48" cy="12" r="6" />
-      <path {...strokeProps} stroke={NAVY} d="M6 50 C14 46 22 52 30 48 C38 44 46 52 54 48 C58 46 60 50 58 52" />
-      <path {...strokeProps} stroke={NAVY} d="M8 54 C16 50 24 56 32 52 C40 48 48 56 56 52" />
+      <path {...strokeProps} d="M20 52C20 42 22 32 28 22C30 18 32 14 34 10" />
+      <path {...strokeProps} d="M34 10L30 4L34 8" />
+      <path {...strokeProps} d="M34 10L22 6L30 10" />
+      <path {...strokeProps} d="M34 10L34 2L36 8" />
+      <path {...strokeProps} d="M34 10L46 6L38 10" />
+      <path {...strokeProps} d="M34 10L42 14L36 12" />
+      <circle {...strokeProps} cx="50" cy="12" r="7" />
+      <path {...strokeProps} d="M6 48C14 44 22 50 30 46C38 42 46 50 54 46C58 44 60 48 58 50" />
+      <path {...strokeProps} d="M8 52C16 48 24 54 32 50C40 46 48 54 56 50" />
     </svg>
   );
 }
