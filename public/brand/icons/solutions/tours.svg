@@ -1,12 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-  <path d="M16 52 C16 44 14 36 18 28 C20 24 22 20 24 16" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 16 L20 8 L24 14" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 16 L16 12 L22 16" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 16 L24 6 L26 14" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 16 L32 10 L26 16" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 16 L30 18 L26 16" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="46" cy="14" r="7" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 50 C14 47 20 53 26 50 C32 47 38 53 44 50 C50 47 56 53 58 50" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M6 54 C12 51 18 57 24 54 C30 51 36 57 42 54 C48 51 54 57 58 54" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10 58 C16 55 22 61 28 58 C34 55 40 61 46 58 C52 55 56 61 58 58" stroke="#0A2E73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48" cy="16" r="10" stroke="#C89B3C" stroke-width="2.25"/>
+  <path d="M48 6v4M48 22v4M38 16h4M54 16h4M41 9l3 3M54 23l3 3M41 23l3-3M54 9l3-3" stroke="#C89B3C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 48c0-8 4-18 8-22s8 2 8 10" stroke="#C89B3C" stroke-width="2.25" stroke-linecap="round"/>
+  <path d="M20 48c0-6 4-14 8-18" stroke="#C89B3C" stroke-width="2.25" stroke-linecap="round"/>
+  <path d="M36 44c0-10 4-20 10-24s10 4 10 14" stroke="#C89B3C" stroke-width="2.25" stroke-linecap="round"/>
+  <path d="M36 44c0-8 4-16 10-20" stroke="#C89B3C" stroke-width="2.25" stroke-linecap="round"/>
+  <path d="M8 52h48" stroke="#C89B3C" stroke-width="2.25" stroke-linecap="round"/>
 </svg>

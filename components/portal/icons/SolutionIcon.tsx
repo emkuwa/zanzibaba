@@ -1,23 +1,14 @@
-import type { ComponentType } from "react";
+import Image from "next/image";
 import type { SolutionSlug } from "@/data/solutions";
-import {
-  BuildingMaterialsIcon,
-  ConstructionIcon,
-  DigitalMarketingIcon,
-  LandscapingIcon,
-  RealEstateIcon,
-  SecurityIcon,
-  ToursIcon,
-} from "./solutions";
 
-const icons: Record<SolutionSlug, ComponentType<{ className?: string }>> = {
-  security: SecurityIcon,
-  "real-estate": RealEstateIcon,
-  tours: ToursIcon,
-  "digital-marketing": DigitalMarketingIcon,
-  construction: ConstructionIcon,
-  "building-materials": BuildingMaterialsIcon,
-  landscaping: LandscapingIcon,
+const ICONS: Record<SolutionSlug, string> = {
+  security: "/brand/icons/solutions/security.png",
+  "real-estate": "/brand/icons/solutions/real-estate.png",
+  tours: "/brand/icons/solutions/tours.png",
+  "digital-marketing": "/brand/icons/solutions/digital-marketing.png",
+  construction: "/brand/icons/solutions/construction.png",
+  "building-materials": "/brand/icons/solutions/building-materials.png",
+  landscaping: "/brand/icons/solutions/landscaping.png",
 };
 
 export function SolutionIcon({
@@ -27,6 +18,14 @@ export function SolutionIcon({
   slug: SolutionSlug;
   className?: string;
 }) {
-  const Icon = icons[slug];
-  return <Icon className={className} />;
+  return (
+    <Image
+      src={ICONS[slug]}
+      alt=""
+      aria-hidden
+      width={64}
+      height={64}
+      className={className}
+    />
+  );
 }
