@@ -60,27 +60,29 @@ export function Navbar() {
       }`}
     >
       <div className="container-portal">
-        <div className="grid min-h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-2 py-2 sm:min-h-[6.5rem] sm:gap-3 lg:min-h-[7.5rem] lg:gap-4 xl:min-h-[8rem]">
+        <div className="grid min-h-[4.25rem] grid-cols-[auto_1fr_auto] items-center gap-2 py-2 sm:min-h-[4.75rem] sm:gap-3 lg:min-h-[5.5rem] lg:gap-4">
           <Link
             href="/"
             className="group shrink-0 transition-opacity hover:opacity-90"
             aria-label={`${SITE.name} home`}
           >
             <Image
-              src="/brand/logos-v2/primary-horizontal.png"
+              src="/brand/logos-v2/navbar-logo.png"
               alt="Zanzibaba Group"
-              width={280}
-              height={80}
-              className="h-16 w-auto sm:h-[4.5rem] lg:hidden"
+              width={590}
+              height={208}
+              unoptimized
+              className="h-11 w-auto max-w-[10.5rem] object-contain object-left sm:h-12 sm:max-w-[12rem] lg:hidden"
               priority
             />
             <Image
-              src="/brand/logos-v2/primary-horizontal.png"
+              src="/brand/logos-v2/navbar-logo.png"
               alt=""
               aria-hidden
-              width={480}
-              height={96}
-              className="hidden h-20 w-auto lg:block xl:h-24"
+              width={590}
+              height={208}
+              unoptimized
+              className="hidden h-12 w-auto max-w-[13rem] object-contain object-left lg:block xl:h-[3.25rem] xl:max-w-[14.5rem]"
               priority
             />
           </Link>
@@ -177,7 +179,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[5.5rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[6.5rem]"
+            className="fixed inset-0 top-[4.25rem] z-40 bg-zb-navy-deep lg:hidden sm:top-[4.75rem]"
           >
             <nav className="container-portal flex h-full flex-col overflow-y-auto py-8" aria-label="Mobile navigation">
               {MOBILE_NAV_LINKS.map((item, idx) => (

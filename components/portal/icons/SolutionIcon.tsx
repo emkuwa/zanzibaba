@@ -23,9 +23,10 @@ export function SolutionIcon({
       src={ICONS[slug]}
       alt=""
       aria-hidden
-      width={64}
-      height={64}
-      className={className}
+      width={192}
+      height={192}
+      unoptimized
+      className={`object-contain ${className}`}
     />
   );
 }

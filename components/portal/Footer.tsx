@@ -47,9 +47,10 @@ export function Footer() {
             <Image
               src="/brand/logos-v2/footer-logo.png"
               alt="Zanzibaba Group"
-              width={280}
-              height={140}
-              className="h-28 w-auto sm:h-32 lg:h-36"
+              width={494}
+              height={400}
+              unoptimized
+              className="h-[7.5rem] w-auto max-w-[11rem] object-contain object-left sm:h-32 sm:max-w-[12rem]"
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
               Building today, empowering tomorrow — Zanzibaba Group delivers
@@ -100,6 +101,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2 border-t border-white/10">
+                <Link href="/solutions" className="text-zb-gold/90 transition-colors hover:text-zb-gold">
+                  All group divisions →
+                </Link>
+              </li>
             </ul>
           </div>
 
