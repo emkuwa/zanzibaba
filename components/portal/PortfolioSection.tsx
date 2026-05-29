@@ -30,21 +30,21 @@ export function PortfolioSection() {
   const [featured, residential, commercial] = PORTFOLIO_ITEMS;
 
   return (
-    <section id="portfolio" className="bg-white">
+    <section id="portfolio" className="hidden bg-white lg:block">
       <div className="container-portal section-py-sm lg:section-py">
         <MotionReveal>
           <div className="max-w-2xl lg:mx-auto lg:max-w-3xl lg:text-center">
             <p className="text-eyebrow">Portfolio</p>
-            <h2 className="mt-3 text-section-title text-zb-navy sm:mt-4">
+            <h2 className="mt-2 font-serif text-[1.625rem] font-semibold leading-[1.12] text-zb-navy sm:mt-3 sm:text-section-title lg:mt-4">
               Portfolio Of Distinction
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-zb-muted sm:mt-5 sm:text-base lg:text-lg">
+            <p className="mt-3 text-sm leading-relaxed text-zb-muted sm:mt-4 sm:text-base lg:text-lg">
               Explore indicative programmes across residential, commercial, and hospitality sectors.
             </p>
           </div>
         </MotionReveal>
 
-        <div className="mt-10 flex flex-col gap-5 sm:mt-12 lg:hidden">
+        <div className="mt-10 hidden flex-col gap-5 sm:mt-12 lg:hidden">
           {PORTFOLIO_ITEMS.map((item, i) => (
             <motion.article
               key={item.id}

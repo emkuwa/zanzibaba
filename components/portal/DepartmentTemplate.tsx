@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Solution } from "@/data/solutions";
+import { getDepartmentBySolutionSlug } from "@/data/departments";
 import { Hero } from "./Hero";
 import { Section } from "./Section";
 import { Button } from "./Button";
@@ -10,8 +11,8 @@ interface DepartmentTemplateProps {
 }
 
 export function DepartmentTemplate({ solution }: DepartmentTemplateProps) {
-  const ctaHref = solution.externalUrl ?? "/contact";
-  const ctaExternal = Boolean(solution.externalUrl);
+  const department = getDepartmentBySolutionSlug(solution.slug);
+  const portalUrl = department?.portalUrl ?? solution.externalUrl;
 
   return (
     <>
@@ -40,12 +41,18 @@ export function DepartmentTemplate({ solution }: DepartmentTemplateProps) {
           </ul>
         </div>
         <div className="mt-12 flex flex-wrap gap-4">
-          <Button
-            href={ctaHref}
-            variant="primary"
-            external={ctaExternal}
-          >
-            {ctaExternal ? "Visit Portal" : "Enquire"}
+          {portalUrl && (
+            <Button href={portalUrl} variant="primary" external>
+              Visit live portal
+            </Button>
+          )}
+          {solution.slug === "real-estate" && (
+            <Button href="/listings" variant="navy">
+              Browse listings
+            </Button>
+          )}
+          <Button href="/contact" variant={portalUrl ? "ghost" : "primary"}>
+            Enquire
           </Button>
           <Button href="/solutions" variant="ghost">
             All Solutions
@@ -64,9 +71,10 @@ export function DepartmentTemplate({ solution }: DepartmentTemplateProps) {
           <Image
             src={solution.logo}
             alt=""
-            width={80}
-            height={80}
-            className="opacity-90"
+            width={512}
+            height={512}
+            unoptimized
+            className="h-20 w-20 rounded-sm object-contain"
             aria-hidden
           />
         </div>

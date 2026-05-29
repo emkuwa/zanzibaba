@@ -23,7 +23,47 @@ export function FlagshipProjects() {
       containerClassName="relative z-10"
     >
       <div className="pointer-events-none absolute inset-0 pattern-architectural opacity-60" aria-hidden />
-      <ul className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+
+      {/* Mobile: compact horizontal scroll */}
+      <div className="-mx-5 flex gap-3 overflow-x-auto px-5 pb-1 snap-x snap-mandatory lg:hidden">
+        {FLAGSHIP_PROJECTS.map((project, i) => (
+          <motion.article
+            key={project.id}
+            className="w-[72vw] max-w-[16rem] shrink-0 snap-start"
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05, duration: 0.45 }}
+          >
+            <Link
+              href={project.href}
+              className="group relative flex min-h-[9.5rem] flex-col overflow-hidden rounded-sm border border-white/10 shadow-zb-md"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="72vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zb-navy-deep/95 via-zb-navy-deep/45 to-transparent" />
+              <div className="relative mt-auto p-3.5">
+                <div className="flex flex-wrap gap-1.5 text-[0.6rem] font-medium uppercase tracking-wider text-zb-gold/90">
+                  <span>{project.sector}</span>
+                  <span className="text-white/40">·</span>
+                  <span className="text-white/70">{project.location}</span>
+                </div>
+                <h3 className="mt-1.5 line-clamp-2 font-serif text-sm font-semibold leading-snug text-white">
+                  {project.title}
+                </h3>
+              </div>
+            </Link>
+          </motion.article>
+        ))}
+      </div>
+
+      {/* Desktop: grid */}
+      <ul className="relative hidden lg:grid lg:grid-cols-4 lg:gap-8">
         {FLAGSHIP_PROJECTS.map((project, i) => (
           <motion.li
             key={project.id}
@@ -64,9 +104,10 @@ export function FlagshipProjects() {
           </motion.li>
         ))}
       </ul>
-      <MotionReveal className="mt-10 text-center">
+
+      <MotionReveal className="mt-5 text-center lg:mt-10">
         <Link
-          href="/projects"
+          href="/properties"
           className="inline-flex items-center gap-2 text-sm font-semibold text-zb-gold transition-colors hover:text-white"
         >
           View full portfolio

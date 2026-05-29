@@ -5,8 +5,8 @@ import { Button } from "@/components/portal/Button";
 import { SITE, SUBDOMAINS } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Contact Zanzibaba Group — ${SITE.email}, ${SITE.phone}. Offices in Paje and Stone Town, Zanzibar.`,
+  title: "Contact — Book Consultation",
+  description: `Contact Zanzibaba Real Estate — ${SITE.email}, ${SITE.phone}. East Coast Office, Paje and Town Office, Mlandege, Zanzibar.`,
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Hero
         compact
         title={<span className="text-white">Contact Us</span>}
-        subtitle="Reach our team by phone, email, or WhatsApp. We welcome programme enquiries across all divisions."
+        subtitle="Book a consultation for Zanzibar property — phone, email, or WhatsApp with our real estate advisory team."
       />
       <Section title="Get in touch">
         <div className="grid gap-12 lg:grid-cols-2">
@@ -76,15 +76,23 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
-      <Section eyebrow="Portals" title="Division platforms">
+      <Section eyebrow="Investors" title="Related resources">
         <ul className="flex flex-wrap gap-4">
-          {Object.entries(SUBDOMAINS).map(([key, url]) => (
-            <li key={key}>
-              <Button href={url} variant="ghost" external>
-                {key}.zanzibaba.com
-              </Button>
-            </li>
-          ))}
+          <li>
+            <Button href={SUBDOMAINS.invest} variant="ghost" external>
+              Private investor portal
+            </Button>
+          </li>
+          <li>
+            <Button href={SUBDOMAINS.investmentGateway} variant="ghost" external>
+              Investment gateway
+            </Button>
+          </li>
+          <li>
+            <Button href="/properties" variant="ghost">
+              Browse properties
+            </Button>
+          </li>
         </ul>
       </Section>
     </>

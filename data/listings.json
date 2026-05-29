@@ -16,8 +16,8 @@
       "Clear title"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+      "/images/hero-zanzibar.png",
+      "/images/hero/stone-town-harbor-wide.jpg"
     ],
     "featured": true,
     "createdAt": "2025-03-01T10:00:00Z",
@@ -40,8 +40,8 @@
       "4 bedrooms"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
+      "/images/hero/stone-town-promenade.jpg",
+      "/images/hero/stone-town-fort-rooftops.jpg"
     ],
     "featured": true,
     "createdAt": "2025-03-05T14:00:00Z",
@@ -64,7 +64,7 @@
       "Quiet area"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+      "/images/hero/secondary.jpg"
     ],
     "featured": false,
     "createdAt": "2025-03-08T09:00:00Z",
@@ -86,7 +86,7 @@
       "Traditional style"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80"
+      "/images/hero/primary.jpg"
     ],
     "featured": false,
     "createdAt": "2025-03-10T11:00:00Z",
@@ -108,7 +108,7 @@
       "Large plot"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80"
+      "/images/hero/accent.jpg"
     ],
     "featured": true,
     "createdAt": "2025-03-09T16:00:00Z",
@@ -131,7 +131,7 @@
       "Electricity"
     ],
     "images": [
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80"
+      "/images/hero/accent-villa-old.jpg"
     ],
     "featured": false,
     "createdAt": "2025-03-07T08:00:00Z",

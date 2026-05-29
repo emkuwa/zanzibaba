@@ -50,18 +50,22 @@ export function Hero({
       </motion.div>
 
       <div
+        className={`absolute inset-0 bg-zb-navy-deep/40`}
+        aria-hidden
+      />
+      <div
         className={`absolute inset-0 bg-gradient-to-t ${
           compact
-            ? "from-zb-navy-deep/90 via-zb-navy-deep/50 to-zb-navy/30"
-            : "from-zb-navy-deep/75 via-transparent to-transparent"
+            ? "from-zb-navy-deep/95 via-zb-navy-deep/65 to-zb-navy-deep/25"
+            : "from-zb-navy-deep/90 via-zb-navy-deep/45 to-zb-navy-deep/15"
         }`}
         aria-hidden
       />
       <div
         className={`absolute inset-0 bg-gradient-to-r ${
           compact
-            ? "from-zb-navy-deep/90 via-zb-navy-deep/55 to-transparent"
-            : "from-white/80 via-white/40 to-transparent sm:via-white/25 lg:via-transparent"
+            ? "from-zb-navy-deep/92 via-zb-navy-deep/60 to-transparent"
+            : "from-zb-navy-deep/88 via-zb-navy-deep/50 to-transparent"
         }`}
         aria-hidden
       />
@@ -74,10 +78,10 @@ export function Hero({
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <h1 className="text-hero-headline">
+            <h1 className="text-hero-headline [text-shadow:0_2px_28px_rgba(7,36,90,0.55)]">
               {title ?? (
                 <>
-                  <span className="block text-zb-navy">{HERO_COPY.line1}</span>
+                  <span className="block text-white">{HERO_COPY.line1}</span>
                   <span className="mt-1 block text-zb-gold sm:mt-2">
                     {HERO_COPY.line2}
                   </span>
@@ -85,18 +89,23 @@ export function Hero({
               )}
             </h1>
             {(subtitle || !compact) && (
-              <p className="mt-7 max-w-2xl text-base font-medium leading-relaxed text-zb-ink/90 sm:mt-8 sm:text-lg">
+              <p className="mt-7 max-w-2xl text-base font-normal leading-relaxed text-white/95 sm:mt-8 sm:text-lg [text-shadow:0_1px_18px_rgba(7,36,90,0.45)]">
                 {subtitle ?? HERO_COPY.subheadingDesktop}
               </p>
             )}
             {!compact && !children && (
               <div className="mt-10 flex flex-col gap-4 sm:mt-12 sm:flex-row sm:flex-wrap sm:gap-5">
-                <Button href="/solutions" variant="navy" size="lg">
-                  Explore Our Solutions
+                <Button href="/properties" variant="gold" size="lg">
+                  View Properties
                   <span aria-hidden>→</span>
                 </Button>
-                <Button href="/about" variant="outline-light" size="lg">
-                  About Zanzibaba Group
+                <Button
+                  href="/contact"
+                  variant="outline-light"
+                  size="lg"
+                  className="!border-white/80 !bg-transparent !text-white hover:!bg-white/10"
+                >
+                  Book Consultation
                   <span aria-hidden>→</span>
                 </Button>
               </div>

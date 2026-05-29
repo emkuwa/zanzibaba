@@ -41,11 +41,11 @@ export function Section({
 
   const headerAlign = align === "center" ? "mx-auto text-center" : "max-w-2xl";
   const header = (eyebrow || title || subtitle) && (
-    <div className={`mb-14 sm:mb-16 lg:mb-20 ${headerAlign}`}>
-      {eyebrow && <p className="text-eyebrow mb-4">{eyebrow}</p>}
+    <div className={`mb-8 sm:mb-12 lg:mb-20 ${headerAlign}`}>
+      {eyebrow && <p className="text-eyebrow mb-2 sm:mb-3 lg:mb-4">{eyebrow}</p>}
       {title && (
         <h2
-          className={`text-section-title ${
+          className={`font-serif text-[1.625rem] font-semibold leading-[1.12] sm:text-section-title ${
             dark ? "text-white" : "text-zb-navy"
           }`}
         >
@@ -54,15 +54,15 @@ export function Section({
       )}
       {subtitle && (
         <p
-          className={`mt-5 text-body-luxury max-w-2xl ${
+          className={`mt-3 max-w-2xl text-sm leading-relaxed sm:mt-4 sm:text-body-luxury lg:mt-5 ${
             align === "center" ? "mx-auto" : ""
-          } ${dark ? "!text-white/75" : ""}`}
+          } ${dark ? "text-white/75" : "text-zb-muted"}`}
         >
           {subtitle}
         </p>
       )}
       {showDivider && (
-        <EditorialDivider className={`mt-10 max-w-xs ${align === "center" ? "mx-auto" : ""}`} />
+        <EditorialDivider className={`mt-6 max-w-xs sm:mt-8 lg:mt-10 ${align === "center" ? "mx-auto" : ""}`} />
       )}
     </div>
   );

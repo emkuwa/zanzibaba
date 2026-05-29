@@ -1,28 +1,44 @@
 import type { Metadata } from "next";
-import { cormorant, dmSans } from "@/lib/fonts";
+import { fontVariables } from "@/lib/fonts";
+import { SITE, SEO_KEYWORDS } from "@/data/site";
+import { FUNNEL_IMAGES } from "@/data/funnel-images";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zanzibaba.com"),
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Zanzibaba Group | Building Today, Empowering Tomorrow",
-    template: "%s | Zanzibaba Group",
+    default: "Zanzibar Investment Properties | Luxury Villas & Off-Plan | Zanzibaba",
+    template: "%s | Zanzibaba Real Estate",
   },
   description:
-    "Zanzibaba Group — premium real estate, building materials, construction, digital, tours, security, and landscaping throughout Zanzibar.",
-  keywords: [
-    "Zanzibaba",
-    "Zanzibar",
-    "real estate Zanzibar",
-    "building materials",
-    "construction Zanzibar",
-  ],
+    "Zanzibar real estate for international investors — beachfront villas, off-plan developments, investment land, and luxury property for sale in Zanzibar.",
+  keywords: [...SEO_KEYWORDS],
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "Zanzibaba Group",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: "Zanzibar Investment Properties | Zanzibaba Real Estate",
+    description:
+      "High-return Zanzibar investment properties — villas, off-plan programmes, and beachfront assets for foreign buyers.",
+    images: [
+      {
+        url: FUNNEL_IMAGES.og,
+        width: 1200,
+        height: 630,
+        alt: "Zanzibar luxury property investment",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zanzibar Investment Properties | Zanzibaba",
+    description:
+      "Luxury villas and Zanzibar investment opportunities for international buyers.",
+    images: [FUNNEL_IMAGES.og],
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  alternates: { canonical: SITE.url },
   icons: {
     icon: [
       { url: "/brand/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -38,8 +54,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen flex flex-col">{children}</body>
+    <html lang="en" className={fontVariables}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preload" as="image" href={FUNNEL_IMAGES.hero} />
+      </head>
+      <body className="flex min-h-screen flex-col overflow-x-hidden">{children}</body>
     </html>
   );
 }

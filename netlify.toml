@@ -3,3 +3,49 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Short department paths (match vercel.json) for zanzibaba.com cutover
+[[redirects]]
+  from = "/real-estate"
+  to = "/solutions/real-estate"
+  status = 302
+
+[[redirects]]
+  from = "/materials"
+  to = "/solutions/building-materials"
+  status = 302
+
+[[redirects]]
+  from = "/construction"
+  to = "/solutions/construction"
+  status = 302
+
+[[redirects]]
+  from = "/digital"
+  to = "/solutions/digital-marketing"
+  status = 302
+
+[[redirects]]
+  from = "/tours"
+  to = "/solutions/tours"
+  status = 302
+
+[[redirects]]
+  from = "/security"
+  to = "/solutions/security"
+  status = 302
+
+[[redirects]]
+  from = "/landscaping"
+  to = "/solutions/landscaping"
+  status = 302
+
+[[redirects]]
+  from = "/invest"
+  to = "/investments"
+  status = 302
+
+[[redirects]]
+  from = "/zic"
+  to = "/investments"
+  status = 302

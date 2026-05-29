@@ -50,3 +50,33 @@ export async function getAllLeads(): Promise<Lead[]> {
   // Newest first
   return leads.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
+
+export type InvestorInquiry = {
+  name: string;
+  email: string;
+  phone: string;
+  source: string;
+  country?: string;
+  qualification?: Record<string, string>;
+};
+
+export async function createInvestorInquiry(input: InvestorInquiry): Promise<Lead> {
+  const leads = await readLeads();
+  const now = new Date().toISOString();
+  const lead: Lead = {
+    id: generateId(),
+    createdAt: now,
+    source: `inquiry:${input.source}`,
+    listingTitle: `Lead — ${input.name || "Unknown"} (${input.qualification?.intent ?? input.source})`,
+    listingLocation: input.email,
+    agentName: input.phone,
+    email: input.email,
+    phone: input.phone,
+    country: input.country,
+    qualification: input.qualification,
+  };
+  leads.push(lead);
+  await fs.mkdir(DATA_DIR, { recursive: true });
+  await fs.writeFile(FILE_PATH, JSON.stringify(leads, null, 2), "utf-8");
+  return lead;
+}

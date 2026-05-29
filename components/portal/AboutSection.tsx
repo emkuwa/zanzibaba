@@ -27,32 +27,26 @@ export function AboutSection() {
       <div className="absolute inset-0 pattern-architectural opacity-40" aria-hidden />
       <div className="absolute inset-0 texture-noise opacity-30 mix-blend-overlay" aria-hidden />
 
-      <div className="container-portal relative z-10 py-16 sm:py-20 lg:hidden">
+      <div className="container-portal relative z-10 py-6 sm:py-10 lg:hidden">
         <MotionReveal>
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-            <div className="relative aspect-[5/6] w-full max-w-[12rem] shrink-0 overflow-hidden rounded-sm shadow-zb-xl sm:max-w-[14rem]">
+          <div className="flex items-start gap-3">
+            <div className="min-w-0 flex-1">
+              <p className="text-[0.625rem] font-medium uppercase tracking-[0.28em] text-zb-gold sm:text-eyebrow">
+                {ABOUT_COPY.eyebrow}
+              </p>
+              <h2 className="mt-2 font-serif text-[1.375rem] font-semibold leading-[1.12] text-white sm:text-[1.5rem]">
+                {ABOUT_COPY.headingMobile}
+              </h2>
+            </div>
+            <div className="relative aspect-[4/5] w-[5.25rem] shrink-0 overflow-hidden rounded-sm shadow-zb-xl sm:w-24">
               <Image
                 src={ABOUT_IMAGES.mobile}
                 alt="Stone Town skyline, Zanzibar"
                 fill
                 className="object-cover"
-                sizes="200px"
+                sizes="140px"
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10" aria-hidden />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-eyebrow">{ABOUT_COPY.eyebrow}</p>
-              <h2 className="mt-4 font-serif text-2xl font-semibold leading-[1.12] text-white sm:text-3xl">
-                {ABOUT_COPY.headingMobile}
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-white/80 sm:text-base">
-                {ABOUT_COPY.bodyMobile}
-              </p>
-              <div className="mt-8">
-                <Button href="/about" variant="gold" size="lg" className="shadow-zb-gold">
-                  Learn More About Us
-                </Button>
-              </div>
             </div>
           </div>
         </MotionReveal>
@@ -88,7 +82,7 @@ export function AboutSection() {
                 {ABOUT_COPY.bodyDesktop}
               </p>
               <div className="mt-10">
-                <Button href="/about" variant="gold" size="lg" className="shadow-zb-gold">
+                <Button href="/about" variant="gold" size="lg">
                   Learn More About Us
                   <span aria-hidden>→</span>
                 </Button>

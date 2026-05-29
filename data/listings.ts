@@ -1,4 +1,5 @@
 import type { Listing } from "@/lib/types";
+import { FUNNEL_IMAGES } from "@/data/funnel-images";
 
 export const listings: Listing[] = [
   {
@@ -13,10 +14,7 @@ export const listings: Listing[] = [
     area: "50×100m",
     propertyType: "plot",
     features: ["Beach access", "Water", "Electricity", "Clear title"],
-    images: [
-      "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.coastalWide, FUNNEL_IMAGES.beachSunset],
     featured: true,
     createdAt: "2025-03-01T10:00:00Z",
     agentName: "Zanzibaba Real Estate",
@@ -33,10 +31,7 @@ export const listings: Listing[] = [
     location: "Nungwi",
     propertyType: "villa",
     features: ["Pool", "Sea view", "Furnished", "4 bedrooms"],
-    images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.villaLuxury, FUNNEL_IMAGES.hero],
     featured: true,
     createdAt: "2025-03-05T14:00:00Z",
     agentName: "Zanzibaba Real Estate",
@@ -54,9 +49,7 @@ export const listings: Listing[] = [
     area: "30×40m",
     propertyType: "plot",
     features: ["Water", "Electricity", "Quiet area"],
-    images: [
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.coastalWide],
     featured: false,
     createdAt: "2025-03-08T09:00:00Z",
     agentName: "Zanzibaba Real Estate",
@@ -73,9 +66,7 @@ export const listings: Listing[] = [
     location: "Stone Town",
     propertyType: "apartment",
     features: ["2 bedrooms", "Central", "Traditional style"],
-    images: [
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.stoneTownPromenade],
     featured: false,
     createdAt: "2025-03-10T11:00:00Z",
     agentName: "Zanzibaba Real Estate",
@@ -92,9 +83,7 @@ export const listings: Listing[] = [
     location: "Jambiani",
     propertyType: "land",
     features: ["Near beach", "Road access", "Large plot"],
-    images: [
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.beachSunset],
     featured: true,
     createdAt: "2025-03-09T16:00:00Z",
     agentName: "Zanzibaba Real Estate",
@@ -111,9 +100,7 @@ export const listings: Listing[] = [
     location: "Paje",
     propertyType: "house",
     features: ["3 bedrooms", "Garden", "Water", "Electricity"],
-    images: [
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
-    ],
+    images: [FUNNEL_IMAGES.development],
     featured: false,
     createdAt: "2025-03-07T08:00:00Z",
     agentName: "Zanzibaba Real Estate",

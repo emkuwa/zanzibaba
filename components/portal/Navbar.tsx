@@ -24,12 +24,10 @@ function PhoneIcon({ className = "" }: { className?: string }) {
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
-    setSolutionsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -68,7 +66,7 @@ export function Navbar() {
           >
             <Image
               src="/brand/logos-v2/navbar-logo.png"
-              alt="Zanzibaba Group"
+              alt={SITE.name}
               width={590}
               height={208}
               unoptimized
@@ -89,48 +87,13 @@ export function Navbar() {
 
           <nav className="hidden justify-center lg:flex" aria-label="Main navigation">
             <ul className="flex items-center gap-0.5">
-              {NAV_LINKS.map((item) =>
-                "children" in item ? (
-                  <li key={item.label} className="group relative">
-                    <button
-                      type="button"
-                      className="relative flex items-center gap-1 px-2 py-1.5 text-xs font-medium tracking-wide text-zb-ink transition-colors after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-zb-gold after:transition-transform hover:text-zb-navy group-hover:after:scale-x-100 xl:px-2.5 xl:text-[0.8125rem]"
-                      aria-expanded={solutionsOpen}
-                      aria-haspopup="true"
-                      onClick={() => setSolutionsOpen((v) => !v)}
-                      onMouseEnter={() => setSolutionsOpen(true)}
-                    >
-                      {item.label}
-                      <svg className="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    <div
-                      className={`absolute left-1/2 top-full min-w-[260px] -translate-x-1/2 pt-3 ${solutionsOpen ? "block" : "hidden"} group-hover:block`}
-                      onMouseLeave={() => setSolutionsOpen(false)}
-                    >
-                      <ul className="rounded-sm border border-zb-border bg-white py-2 shadow-zb-lg">
-                        {item.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              href={child.href}
-                              className="block px-5 py-2.5 text-sm font-normal text-zb-ink transition-colors hover:bg-zb-surface hover:text-zb-navy"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </li>
-                ) : (
-                  <li key={item.href}>
-                    <Link href={item.href} className={navLinkClass(item.href)}>
-                      {item.label}
-                    </Link>
-                  </li>
-                )
-              )}
+              {NAV_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className={navLinkClass(item.href)}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
@@ -148,7 +111,7 @@ export function Navbar() {
               size="md"
               className="hidden lg:inline-flex"
             >
-              Get in Touch
+              Book Consultation
               <span aria-hidden>→</span>
             </Button>
             <button
@@ -197,10 +160,18 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <div className="mt-8">
+              <div className="mt-8 space-y-4">
                 <Button href="/contact" variant="gold" className="w-full" size="lg">
-                  Get in Touch
+                  Book Consultation
                 </Button>
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  className="block text-center text-sm font-medium text-zb-gold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp an advisor
+                </a>
               </div>
             </nav>
           </motion.div>

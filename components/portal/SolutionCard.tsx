@@ -13,10 +13,10 @@ interface SolutionCardProps {
   titleOverride?: string;
 }
 
-function ChevronRight() {
+function ChevronRight({ className = "h-4 w-4 shrink-0 text-zb-gold" }: { className?: string }) {
   return (
     <svg
-      className="h-4 w-4 shrink-0 text-zb-gold"
+      className={className}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -34,25 +34,21 @@ export function SolutionCard({
   titleOverride,
 }: SolutionCardProps) {
   const reduce = useReducedMotion();
-  const href = solution.externalUrl ?? `/solutions/${solution.slug}`;
-  const external = Boolean(solution.externalUrl);
+  const href = `/solutions/${solution.slug}`;
   const title = titleOverride ?? solution.title;
 
   if (variant === "mobile-grid") {
     const card = (
       <Link
         href={href}
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="group flex h-full min-h-[6rem] flex-col justify-between rounded-sm border border-zb-border/70 bg-white p-4 shadow-zb-card transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/35 hover:shadow-zb-gold-glow sm:p-5"
+        className="group flex aspect-[3/2] min-h-0 flex-col items-center justify-center gap-1.5 overflow-hidden rounded-lg border border-zb-border/45 bg-white p-2 text-center shadow-[0_1px_6px_rgba(10,46,115,0.05)] transition-colors duration-200 hover:border-zb-gold/25 sm:gap-2 sm:p-2.5"
       >
-        <div className="flex h-10 w-10 items-center justify-center text-zb-navy">
-          <SolutionIcon slug={solution.slug} className="h-9 w-9" />
-        </div>
-        <div className="mt-3 flex items-end justify-between gap-1">
-          <h3 className="font-sans text-[0.8125rem] font-bold leading-tight text-zb-navy">
+        <SolutionIcon slug={solution.slug} className="h-12 w-12 sm:h-14 sm:w-14" />
+        <div className="flex w-full items-center justify-center gap-1 px-0.5">
+          <h3 className="font-sans text-[0.6875rem] font-bold leading-tight text-zb-navy sm:text-xs">
             {title}
           </h3>
-          <ChevronRight />
+          <ChevronRight className="h-3 w-3 shrink-0 text-zb-gold sm:h-3.5 sm:w-3.5" />
         </div>
       </Link>
     );
@@ -61,6 +57,7 @@ export function SolutionCard({
       card
     ) : (
       <motion.div
+        className="h-full"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-20px" }}
@@ -78,11 +75,10 @@ export function SolutionCard({
     >
       <Link
         href={href}
-        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className="flex h-full flex-col card-padding-lg"
       >
-        <div className="mb-5 shrink-0 text-zb-gold">
-          <SolutionIcon slug={solution.slug} className="h-12 w-12 sm:h-14 sm:w-14" />
+        <div className="mb-5 flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm sm:h-[4.25rem] sm:w-[4.25rem]">
+          <SolutionIcon slug={solution.slug} className="h-16 w-16 sm:h-[4.25rem] sm:w-[4.25rem]" />
         </div>
         <h3 className="font-sans text-lg font-bold text-zb-navy sm:text-xl">{title}</h3>
         <p className="mt-3 line-clamp-2 flex-1 text-sm font-normal leading-relaxed text-zb-muted">

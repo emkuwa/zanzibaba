@@ -5,6 +5,14 @@
       "has": [{ "type": "host", "value": "www.zanzibaba.com" }],
       "destination": "https://zanzibaba.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/realestate", "destination": "/", "permanent": true },
+    { "source": "/listings", "destination": "/properties", "permanent": true },
+    { "source": "/solutions", "destination": "/properties", "permanent": true },
+    { "source": "/solutions/:slug", "destination": "/properties", "permanent": true },
+    { "source": "/projects", "destination": "/properties", "permanent": true },
+    { "source": "/real-estate", "destination": "/properties", "permanent": true },
+    { "source": "/construction", "destination": "/properties", "permanent": true },
+    { "source": "/tours", "destination": "/why-zanzibar", "permanent": true }
   ]
 }

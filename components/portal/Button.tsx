@@ -6,17 +6,17 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent shadow-zb-sm hover:shadow-zb-md",
+    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent",
   navy:
-    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent shadow-zb-sm hover:shadow-zb-md",
+    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent",
   gold:
-    "bg-zb-gold text-zb-navy-deep hover:bg-[#d4ab55] border border-zb-gold/80 shadow-zb-gold hover:-translate-y-0.5 hover:shadow-zb-gold-glow relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/15 before:to-transparent before:opacity-0 before:transition-opacity hover:before:opacity-100",
+    "bg-zb-gold text-zb-navy-deep hover:bg-[#d4ab55] border border-zb-gold/80",
   secondary:
-    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent shadow-zb-sm hover:shadow-zb-md",
+    "bg-zb-navy text-white hover:bg-zb-navy-deep border border-transparent",
   outline:
     "bg-transparent text-zb-navy border border-zb-navy hover:bg-zb-surface",
   "outline-light":
-    "bg-white text-zb-navy border border-zb-navy hover:bg-zb-surface shadow-zb-sm",
+    "bg-transparent text-white border border-white/90 hover:bg-white/10",
   ghost:
     "bg-transparent text-zb-navy hover:text-zb-gold border border-transparent",
 };
@@ -48,7 +48,7 @@ export function Button({
   type = "button",
   onClick,
 }: ButtonProps) {
-  const base = `inline-flex items-center justify-center gap-2 font-medium transition-all duration-300 ease-luxury rounded-[4px] focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 hover:-translate-y-px ${variants[variant]} ${sizes[size]} ${className}`;
+  const base = `inline-flex items-center justify-center gap-2 font-medium transition-colors duration-200 rounded-[4px] focus:outline-none focus-visible:ring-2 focus-visible:ring-zb-gold focus-visible:ring-offset-2 ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     if (external) {

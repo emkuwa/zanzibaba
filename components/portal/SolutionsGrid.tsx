@@ -14,21 +14,24 @@ export function SolutionsGrid() {
 
   return (
     <section id="solutions" className="bg-white">
-      <div className="container-portal section-py-sm lg:section-py">
+      <div className="container-portal py-6 sm:py-8 lg:section-py">
         <MotionReveal>
           <div className="max-w-2xl lg:mx-auto lg:max-w-3xl lg:text-center">
-            <p className="text-eyebrow">{SOLUTIONS_SECTION.eyebrow}</p>
-            <h2 className="mt-3 text-section-title text-zb-navy sm:mt-4">
+            <p className="text-[0.625rem] font-medium uppercase tracking-[0.28em] text-zb-gold sm:text-eyebrow">
+              {SOLUTIONS_SECTION.eyebrow}
+            </p>
+            <h2 className="mt-2 font-serif text-[1.375rem] font-semibold leading-[1.15] text-zb-navy sm:mt-2.5 sm:text-[1.625rem] lg:mt-4 lg:text-section-title">
               <span className="lg:hidden">{SOLUTIONS_SECTION.titleMobile}</span>
               <span className="hidden lg:inline">{SOLUTIONS_SECTION.titleDesktop}</span>
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-zb-muted sm:mt-5 sm:text-base lg:hidden">
-              {SOLUTIONS_SECTION.description}
+            <p className="mt-2 line-clamp-2 text-xs leading-snug text-zb-muted sm:mt-3 sm:text-sm sm:leading-relaxed lg:mx-auto lg:mt-5 lg:line-clamp-none lg:max-w-2xl lg:text-base">
+              <span className="lg:hidden">{SOLUTIONS_SECTION.descriptionMobile}</span>
+              <span className="hidden lg:inline">{SOLUTIONS_SECTION.description}</span>
             </p>
           </div>
         </MotionReveal>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:hidden">
+        <div className="mt-4 grid grid-cols-2 gap-1.5 sm:mt-5 sm:gap-2 lg:hidden">
           {SOLUTIONS.map((s, i) => (
             <SolutionCard key={s.slug} solution={s} index={i} variant="mobile-grid" />
           ))}

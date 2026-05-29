@@ -7,7 +7,7 @@ export function SectionAccent({ variant = "light" }: { variant?: "light" | "dark
         : "via-zb-navy/15";
 
   return (
-    <div className="container-portal py-6 sm:py-8" aria-hidden>
+    <div className="container-portal py-2 sm:py-4 lg:py-8" aria-hidden>
       <div className="flex items-center gap-6">
         <span className={`h-px flex-1 bg-gradient-to-r from-transparent ${line} to-transparent`} />
         <svg

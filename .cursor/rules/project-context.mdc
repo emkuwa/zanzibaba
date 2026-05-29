@@ -1,0 +1,95 @@
+---
+description: Project context for Cursor AI — brand, stack, and conventions
+globs:
+alwaysApply: true
+---
+
+# Zanzibaba Real Estate — Project Context
+
+## Brand identity
+
+| Item | Value |
+|------|-------|
+| **Company** | Zanzibaba Real Estate (Zanzibaba Group — Real Estate division) |
+| **Domain** | `realestate.zanzibaba.com` |
+| **Tagline** | Trusted real estate partner for land & property in Zanzibar |
+| **Primary colors** | Navy `#0A2E73`, Gold `#C89B3C`, Deep Navy `#07245A` |
+| **UI colors** | Tailwind `brand` blue scale + `sand` neutrals (see `tailwind.config.ts`) |
+| **Typography** | Plus Jakarta Sans (`--font-sans`) for UI; group serif for investor-facing headlines |
+| **Logos** | `assets/logos/` · Group masters: `../../shared-assets/logos/` |
+
+Use approved group PNG lockups in header/footer. Department mark: `department-real-estate` per brand guidelines.
+
+## Project purpose
+
+Production portal for land, plots, and property listings across Zanzibar — the main Real Estate division web product.
+
+- **Target audience:** Investors, diaspora buyers, developers, local purchasers
+- **Key locations:** Paje, Nungwi, Kendwa, Stone Town, and island-wide
+- **Geography:** Zanzibar-first; Tanzania mainland where relevant
+- **Integrations:** Cloudinary (media), Outscraper (data enrichment)
+- **Status:** Production — `npm run build` verified (May 2026)
+
+## Design style
+
+Investor-grade luxury corporate real estate (EMAAR/DAMAC reference per group guidelines):
+
+- Clean listing cards with trust signals (verified listings, contact CTAs)
+- Restrained palette — no neon, loud gradients, or off-brand accents
+- Coastal and architectural photography; avoid generic stock
+- Reference layouts: `assets/mockups/` when present
+
+## Coding standards
+
+| Layer | Choice |
+|-------|--------|
+| Framework | Next.js 14 App Router |
+| UI | React 18, TypeScript |
+| Styling | Tailwind CSS 3.4, PostCSS |
+| Images | Cloudinary + Next.js `<Image>` |
+| Alias | `@/` → project root |
+
+**Structure:** `app/` (routes + layouts) · `components/` (Header, Footer, listing UI) · `public/` (static)
+
+**Commands:** `npm run dev` · `npm run build` · `npm run lint`
+
+Prefer functional components, typed props, and colocated page metadata exports.
+
+## Preferred UI direction
+
+- **Mobile-first** — sticky Header/Footer shell in `app/layout.tsx`
+- Extend existing Tailwind tokens (`brand`, `sand`) — do not invent parallel color systems
+- SEO: metadata in root layout + per-page `generateMetadata` where needed
+- Listing pages: fast LCP — optimize hero and card images
+- Contact flows: WhatsApp/phone patterns consistent with group sites
+
+## Common tasks
+
+- New listing page → `app/` route + reusable card component
+- Brand update → sync from `shared-assets/` or corporate-hq `brand/logos-v2/`
+- Image upload → Cloudinary config in existing integration
+
+## Folder rules
+
+- **Scope rule:** Only modify files inside `/Users/apple/Zanzibaba-Projects/active-projects/zanzibaba-real-estate/` unless the user explicitly asks otherwise.
+- **Code roots:** `app/`, `components/`, `public/`
+- **Assets:** `assets/logos/`, `assets/mockups/`, `assets/images/`, `assets/icons/` — project-specific only.
+- **Docs & prompts:** `docs/` for project notes; `prompts/` for AI prompts scoped to this product.
+- **Backups/archive:** Use `backups/` and `archive/` for deprecated material — do not delete without user confirmation.
+
+- **Canonical path:** `/Users/apple/Zanzibaba-Projects/active-projects/zanzibaba-real-estate/` (symlinks may exist at legacy Desktop/cursor paths).
+
+## Asset usage rules
+
+- **Project-first:** Use `assets/logos/`, `assets/images/`, `assets/mockups/` before pulling from elsewhere.
+- **Group logos:** Reference `../../shared-assets/logos/` for Zanzibaba Group PNG masters — copy to `public/` only when deploy requires a local path.
+- **Brand guidelines:** Read `../../shared-assets/brand-guidelines/BRAND_GUIDELINES.md` before changing colors, fonts, or logo placement.
+- **Do not** duplicate canonical logo PNGs across repos — symlink or import at build time when possible.
+- **Do not** redraw, recolor, or add effects to approved logos (no drop shadows, gradients on emblem).
+- **Partner/trust logos:** Keep 48px+ gap from group emblem when shown in the same row (procurement pattern).
+## References
+
+- **Master index:** `/Users/apple/Zanzibaba-Projects/PROJECT_INDEX.md`
+- **Group brand:** `/Users/apple/Zanzibaba-Projects/shared-assets/brand-guidelines/BRAND_GUIDELINES.md`
+- **Shared logos:** `/Users/apple/Zanzibaba-Projects/shared-assets/logos/`
+- **Cursor workspace:** `/Users/apple/Zanzibaba-Projects/.cursor/rules/workspace-scope.mdc`

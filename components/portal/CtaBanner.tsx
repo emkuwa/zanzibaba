@@ -14,25 +14,25 @@ export function CtaBanner() {
         aria-hidden
       />
       <div className="relative text-center">
-        <h2 className="mx-auto max-w-3xl font-serif text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-[2.5rem]">
-          Building Beyond Structures.
-          <span className="mt-2 block text-zb-gold">Creating Lasting Impact.</span>
+        <h2 className="mx-auto max-w-3xl font-serif text-xl font-semibold leading-tight text-white sm:text-2xl lg:text-[2.5rem]">
+          Ready to invest in
+          <span className="mt-1 block text-zb-gold sm:mt-2">Zanzibar real estate?</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/75 sm:mt-6 sm:text-base lg:text-lg">
-          Partner with Zanzibaba Group — seven divisions, one commitment to excellence
-          throughout Zanzibar.
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/75 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg">
+          Speak with our advisory team about beachfront villas, investment land, and
+          luxury property for sale in Zanzibar.
         </p>
-        <div className="mt-8 flex flex-row flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
-          <Button href="/contact" variant="gold" size="lg" className="shadow-zb-gold">
-            Get in Touch with Us
+        <div className="mt-5 flex flex-row flex-wrap justify-center gap-2.5 sm:mt-7 sm:gap-3 lg:mt-10 lg:gap-4">
+          <Button href="/contact" variant="gold" size="md" className="sm:px-8 sm:py-3.5 sm:text-base">
+            Book Consultation
           </Button>
           <Button
-            href="/projects"
+            href="/properties"
             variant="outline-light"
-            size="lg"
-            className="!border-white !bg-transparent !text-white hover:!bg-white/10"
+            size="md"
+            className="!border-white !bg-transparent !text-white hover:!bg-white/10 sm:px-8 sm:py-3.5 sm:text-base"
           >
-            Our Projects
+            Browse Properties
           </Button>
         </div>
       </div>

@@ -1,15 +1,2 @@
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
-
-export const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-export const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
-  display: "swap",
-});
+/** CSS class hooks — fonts loaded via <link> in root layout (no build-time Google fetch). */
+export const fontVariables = "font-variables";

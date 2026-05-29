@@ -13,7 +13,7 @@ const ICONS: Record<SolutionSlug, string> = {
 
 export function SolutionIcon({
   slug,
-  className = "h-14 w-14",
+  className = "h-16 w-16",
 }: {
   slug: SolutionSlug;
   className?: string;
@@ -23,8 +23,8 @@ export function SolutionIcon({
       src={ICONS[slug]}
       alt=""
       aria-hidden
-      width={192}
-      height={192}
+      width={512}
+      height={512}
       unoptimized
       className={`object-contain ${className}`}
     />

@@ -7,7 +7,7 @@ import { SUBDOMAINS } from "@/data/site";
 export const metadata: Metadata = {
   title: "Investments",
   description:
-    "Zanzibaba investment opportunities — private investor portal for curated deals in Zanzibar.",
+    "Zanzibar investment property programmes — business setup gateway and private investor portal for qualified buyers.",
 };
 
 export default function InvestmentsPage() {
@@ -16,18 +16,49 @@ export default function InvestmentsPage() {
       <Hero
         compact
         title={<span className="text-white">Investments</span>}
-        subtitle="Curated opportunities for qualified investors — access our private investment portal."
+        subtitle="Structured pathways for Zanzibar investment property — from consultation to qualified investor documentation."
       />
-      <Section title="Investor portal">
-        <p className="max-w-2xl text-lg text-zb-muted leading-relaxed">
-          Deal details, indicative returns, and programme documentation are
-          available on our secure investment subdomain. Indicative figures are
-          not audited financials — legal review applies to all ROI language.
-        </p>
-        <div className="mt-10">
-          <Button href={SUBDOMAINS.invest} variant="primary" size="lg" external>
-            Open invest.zanzibaba.com
-          </Button>
+      <Section title="Choose your path">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <article className="rounded-sm border border-zb-border bg-white p-8 shadow-zb-card">
+            <p className="text-eyebrow">Business setup</p>
+            <h2 className="mt-2 font-serif text-2xl font-semibold text-zb-navy">
+              Zanzibar Investment Gateway
+            </h2>
+            <p className="mt-4 text-zb-muted leading-relaxed">
+              Licensing facilitation, company registration, and investor support for buyers
+              establishing a presence in Zanzibar before or alongside property acquisition.
+            </p>
+            <div className="mt-6">
+              <Button
+                href={SUBDOMAINS.investmentGateway}
+                variant="navy"
+                size="lg"
+                external
+              >
+                Open investment.zanzibaba.com
+              </Button>
+            </div>
+          </article>
+
+          <article className="rounded-sm border border-zb-border bg-white p-8 shadow-zb-card">
+            <p className="text-eyebrow">Private investors</p>
+            <h2 className="mt-2 font-serif text-2xl font-semibold text-zb-navy">
+              Private Investor Portal
+            </h2>
+            <p className="mt-4 text-zb-muted leading-relaxed">
+              Deal documentation, indicative programme metrics, and secure access for
+              qualified investors evaluating Zanzibar real estate programmes.
+            </p>
+            <p className="mt-3 text-sm text-zb-muted/80">
+              Indicative figures are not audited financials — legal review applies.
+            </p>
+            <div className="mt-6">
+              <Button href={SUBDOMAINS.invest} variant="gold" size="lg" external>
+                Open invest.zanzibaba.com
+              </Button>
+            </div>
+          </article>
         </div>
       </Section>
     </>

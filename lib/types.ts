@@ -46,13 +46,19 @@ export interface Listing {
 export interface Lead {
   id: string;
   createdAt: string;
-  source: "public_whatsapp";
-  listingId: string;
+  source: string;
+  listingId?: string;
   /** Human-readable property reference (e.g. ZRE-000042) */
   listingRefCode?: string;
-  listingTitle: string;
-  listingLocation: string;
+  listingTitle?: string;
+  listingLocation?: string;
   agentName?: string;
   agentCode?: string;
   agentWhatsApp?: string;
+  /** Email from funnel forms */
+  email?: string;
+  phone?: string;
+  country?: string;
+  /** Full qualification payload for CRM-ready leads */
+  qualification?: Record<string, string>;
 }

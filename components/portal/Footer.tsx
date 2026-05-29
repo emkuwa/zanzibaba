@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE } from "@/data/site";
-import { SOLUTIONS } from "@/data/solutions";
+import { SITE, NAV_LINKS } from "@/data/site";
 
-/** Proposed handles — verify before Meta apply (SOCIAL_REBRAND_REAL_ESTATE_2026.md) */
 const SOCIAL = [
   {
     label: "Facebook",
@@ -28,16 +26,15 @@ const SOCIAL = [
   },
 ] as const;
 
+const INVESTOR_LINKS = [
+  { href: "/properties", label: "Browse properties" },
+  { href: "/investments", label: "Investment programmes" },
+  { href: "/areas", label: "Coastal areas guide" },
+  { href: "/why-zanzibar", label: "Why invest in Zanzibar" },
+] as const;
+
 export function Footer() {
   const year = new Date().getFullYear();
-  const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/solutions", label: "Our Services" },
-    { href: "/projects", label: "Projects" },
-    { href: "/news", label: "News" },
-    { href: "/careers", label: "Careers" },
-  ];
 
   return (
     <footer className="relative border-t border-white/10 bg-zb-navy-deep text-white">
@@ -47,17 +44,25 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Image
               src="/brand/logos-v2/footer-logo.png"
-              alt="Zanzibaba Group"
+              alt={SITE.name}
               width={494}
               height={400}
               unoptimized
               className="h-[7.5rem] w-auto max-w-[11rem] object-contain object-left sm:h-32 sm:max-w-[12rem]"
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
-              Building today, empowering tomorrow — Zanzibaba Group delivers
-              real estate, materials, construction, and digital excellence throughout
-              Zanzibar.
+              International investment advisory for Zanzibar — beachfront villas, off-plan
+              developments, and curated property opportunities for foreign and diaspora
+              investors.
             </p>
+            <a
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-zb-gold px-6 py-3 text-sm font-medium text-zb-navy-deep transition-colors hover:bg-zb-gold/90"
+            >
+              WhatsApp an advisor
+            </a>
             <div className="mt-6 flex gap-3">
               {SOCIAL.map((s) => (
                 <a
@@ -65,7 +70,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold hover:shadow-zb-gold"
+                  className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold"
                   aria-label={s.label}
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -77,9 +82,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">Quick Links</h3>
+            <h3 className="text-eyebrow">Explore</h3>
             <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
-              {quickLinks.map((l) => (
+              {NAV_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="transition-colors duration-300 hover:text-zb-gold">
                     {l.label}
@@ -90,23 +95,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">Our Services</h3>
+            <h3 className="text-eyebrow">For investors</h3>
             <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
-              {SOLUTIONS.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/solutions/${s.slug}`}
-                    className="transition-colors duration-300 hover:text-zb-gold"
-                  >
-                    {s.title}
+              {INVESTOR_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="transition-colors duration-300 hover:text-zb-gold">
+                    {l.label}
                   </Link>
                 </li>
               ))}
-              <li className="pt-2 border-t border-white/10">
-                <Link href="/solutions" className="text-zb-gold/90 transition-colors hover:text-zb-gold">
-                  All group divisions →
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -149,14 +146,14 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-10 text-xs font-light text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {SITE.legalName}. All rights reserved.
+            © {year} {SITE.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <Link href="/about" className="transition-colors hover:text-zb-gold">
-              Privacy Policy
-            </Link>
             <Link href="/contact" className="transition-colors hover:text-zb-gold">
-              Terms of Service
+              Book consultation
+            </Link>
+            <Link href="/about" className="transition-colors hover:text-zb-gold">
+              About us
             </Link>
           </div>
         </div>

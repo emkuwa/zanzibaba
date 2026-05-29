@@ -25,3 +25,4 @@ tsconfig.tsbuildinfo
 
 # Uploaded images (optional: remove to commit uploads)
 public/uploads/
+.vercel

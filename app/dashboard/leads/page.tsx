@@ -48,7 +48,7 @@ export default async function LeadsPage() {
                   <td className="px-4 py-2 text-sand-900">
                     {lead.listingTitle}
                     <div className="text-xs text-sand-500">
-                      Ref: {lead.listingRefCode ?? lead.listingId.slice(-6).toUpperCase()}
+                      Ref: {lead.listingRefCode ?? lead.listingId?.slice(-6).toUpperCase() ?? "—"}
                     </div>
                   </td>
                   <td className="px-4 py-2 text-sand-700">{lead.listingLocation}</td>
