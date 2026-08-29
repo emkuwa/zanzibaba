@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fontVariables } from "@/lib/fonts";
 import { SITE, SEO_KEYWORDS } from "@/data/site";
 import { FUNNEL_IMAGES } from "@/data/funnel-images";
+import { GlobalRealEstateSchema } from "@/components/seo/RealEstateJsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="preload" as="image" href={FUNNEL_IMAGES.hero} />
+        <GlobalRealEstateSchema />
       </head>
       <body className="flex min-h-screen flex-col overflow-x-hidden">{children}</body>
     </html>
