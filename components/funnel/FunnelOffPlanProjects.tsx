@@ -19,7 +19,7 @@ export function FunnelOffPlanProjects() {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={`${project.name} off-plan investment — ${project.location}, Zanzibar`}
+                  alt={`${project.name} off-plan property — ${project.location}, Zanzibar`}
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -55,7 +55,7 @@ export function FunnelOffPlanProjects() {
                   href={project.href}
                   className="mt-6 inline-flex text-sm font-bold uppercase tracking-wider text-zb-navy transition hover:text-zb-gold"
                 >
-                  Request programme details →
+                  Enquire about this project →
                 </Link>
               </div>
             </article>

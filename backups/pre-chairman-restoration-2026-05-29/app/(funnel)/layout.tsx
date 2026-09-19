@@ -2,17 +2,15 @@ import { Footer } from "@/components/portal/Footer";
 import { FunnelNavbar } from "@/components/funnel/FunnelNavbar";
 import { StickyWhatsApp } from "@/components/funnel/StickyWhatsApp";
 import { InvestmentConcierge } from "@/components/funnel/InvestmentConcierge";
-import { MobileContactBar } from "@/components/layout/MobileContactBar";
 
 export default function FunnelLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <FunnelNavbar />
-      <main className="flex-1 pb-14 sm:pb-0">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
       <StickyWhatsApp />
       <InvestmentConcierge />
-      <MobileContactBar />
     </>
   );
 }

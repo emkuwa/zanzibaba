@@ -28,9 +28,9 @@ const SOCIAL = [
 
 const INVESTOR_LINKS = [
   { href: "/properties", label: "Browse properties" },
-  { href: "/investments", label: "Investment programmes" },
-  { href: "/areas", label: "Coastal areas guide" },
-  { href: "/why-zanzibar", label: "Why invest in Zanzibar" },
+  { href: "/locations", label: "Location guides" },
+  { href: "/buying-guide", label: "Buying guide" },
+  { href: "/tell-us", label: "Tell us what you need" },
 ] as const;
 
 export function Footer() {
@@ -51,9 +51,9 @@ export function Footer() {
               className="h-[7.5rem] w-auto max-w-[11rem] object-contain object-left sm:h-32 sm:max-w-[12rem]"
             />
             <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
-              International investment advisory for Zanzibar — beachfront villas, off-plan
-              developments, and curated property opportunities for foreign and diaspora
-              investors.
+              Local property sourcing and buyer support in Zanzibar — beachfront
+              villas, development land, and off-plan homes for international and
+              diaspora buyers.
             </p>
             <a
               href={`https://wa.me/${SITE.whatsapp}`}

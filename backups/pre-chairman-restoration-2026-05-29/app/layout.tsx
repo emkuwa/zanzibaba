@@ -2,40 +2,39 @@ import type { Metadata } from "next";
 import { fontVariables } from "@/lib/fonts";
 import { SITE, SEO_KEYWORDS } from "@/data/site";
 import { FUNNEL_IMAGES } from "@/data/funnel-images";
-import { GlobalRealEstateSchema } from "@/components/seo/RealEstateJsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Zanzibar Property — Buy, Sell, Invest | Zanzibaba Real Estate",
+    default: "Zanzibar Investment Properties | Luxury Villas & Off-Plan | Zanzibaba",
     template: "%s | Zanzibaba Real Estate",
   },
   description:
-    "Local property advisory for Zanzibar — helping buyers find, evaluate, and purchase property with local knowledge and professional support.",
+    "Zanzibar real estate for international investors — beachfront villas, off-plan developments, investment land, and luxury property for sale in Zanzibar.",
   keywords: [...SEO_KEYWORDS],
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Zanzibar Property — Buy, Sell, Invest | Zanzibaba Real Estate",
+    title: "Zanzibar Investment Properties | Zanzibaba Real Estate",
     description:
-      "Local property advisory for Zanzibar — helping buyers find, evaluate, and purchase property with local knowledge.",
+      "High-return Zanzibar investment properties — villas, off-plan programmes, and beachfront assets for foreign buyers.",
     images: [
       {
         url: FUNNEL_IMAGES.og,
         width: 1200,
         height: 630,
-        alt: "Zanzibar property — Zanzibaba Real Estate",
+        alt: "Zanzibar luxury property investment",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zanzibar Property | Zanzibaba Real Estate",
+    title: "Zanzibar Investment Properties | Zanzibaba",
     description:
-      "Local property advisory for Zanzibar — property discovery, local access, professional support.",
+      "Luxury villas and Zanzibar investment opportunities for international buyers.",
     images: [FUNNEL_IMAGES.og],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
@@ -64,7 +63,6 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="preload" as="image" href={FUNNEL_IMAGES.hero} />
-        <GlobalRealEstateSchema />
       </head>
       <body className="flex min-h-screen flex-col overflow-x-hidden">{children}</body>
     </html>

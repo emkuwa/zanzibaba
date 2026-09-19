@@ -22,7 +22,7 @@ export function FunnelInvestmentAreas() {
             >
               <Image
                 src={area.image}
-                alt={`${area.name} — Zanzibar investment area for luxury property`}
+                alt={`${area.name} — property and real estate in ${area.name}, Zanzibar`}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -35,7 +35,7 @@ export function FunnelInvestmentAreas() {
                 <h3 className="mt-2 font-serif text-2xl font-semibold text-white">{area.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/75">{area.description}</p>
                 <span className="mt-4 text-xs font-bold uppercase tracking-wider text-zb-gold">
-                  Explore {area.name} →
+                  View {area.name} guide →
                 </span>
               </div>
             </Link>

@@ -9,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/dashboard/", "/login"],
       },
-      // Explicitly allow AI crawlers for AEO (Answer Engine Optimization)
       {
         userAgent: ["GPTBot", "ChatGPT-User", "OAI-SearchBot"],
         allow: "/",
@@ -36,6 +35,14 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: ["Applebot", "Applebot-Extended"],
+        allow: "/",
+      },
+      {
+        userAgent: ["CohereBot"],
+        allow: "/",
+      },
+      {
+        userAgent: ["Bytespider"],
         allow: "/",
       },
     ],

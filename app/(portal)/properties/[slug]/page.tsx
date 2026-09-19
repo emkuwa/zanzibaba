@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { SITE } from "@/data/site";
 import { getListingBySlug } from "@/lib/listings-store";
 import { sanitizeWhatsAppText } from "@/lib/sanitize-whatsapp-text";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { ListingFeatureChips } from "@/components/ListingFeatureChips";
 import { listingHasFeatureChips } from "@/lib/listing-feature-labels";
 import { ShareButton } from "@/components/ShareButton";
+import { PropertyJsonLd, BreadcrumbJsonLd } from "@/components/seo/RealEstateJsonLd";
 
 function formatPrice(price: number, currency: string) {
   if (!price || price <= 0) return "Price on request";
@@ -33,8 +35,9 @@ export async function generateMetadata({
     listing.description;
   const shortDesc = desc.slice(0, 155) + (desc.length > 155 ? "…" : "");
   return {
-    title,
+    title: `${title} | Zanzibaba Real Estate`,
     description: shortDesc,
+    alternates: { canonical: `${SITE.url}/properties/${slug}` },
     openGraph: {
       title,
       description: shortDesc,
@@ -62,113 +65,166 @@ export default async function PropertyPage({
     sanitizeWhatsAppText(listing.description, { keepNewlines: true }) ||
     listing.description;
 
-  return (
-    <article className="container-tight py-8">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <Link
-          href="/#listings"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700"
-        >
-          <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to catalog
-        </Link>
-        <nav className="text-sm text-sand-600" aria-label="Breadcrumb">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-brand-600">Home</Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href="/#listings" className="hover:text-brand-600">Properties</Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-sand-900" aria-current="page">{displayTitle}</li>
-          </ol>
-        </nav>
-      </div>
+  const whatsappMessage = encodeURIComponent(
+    `Hello Zanzibaba — I'm interested in "${displayTitle}" (${refCode}) in ${listing.location}. I'd like to discuss this property.`
+  );
 
-      <div className="grid gap-8 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <PropertyGallery listing={listing} openFirstImage={openFirstImage} />
-        </div>
-        <div>
-          <p className="text-sm font-medium text-brand-600">{listing.location}</p>
-          <h1 className="mt-1 break-words text-2xl font-bold text-sand-900 sm:text-3xl">
+  return (
+    <article className="bg-white">
+      <PropertyJsonLd
+        listing={{
+          title: displayTitle,
+          description: displayDescription,
+          price: listing.price,
+          currency: listing.currency,
+          location: listing.location,
+          propertyType: listing.propertyType,
+          bedrooms: listing.bedrooms,
+          bathrooms: listing.bathrooms,
+          area: listing.area,
+          images: listing.images,
+          refCode,
+          id: listing.id,
+        }}
+        url={`${SITE.url}/properties/${slug}`}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: SITE.url },
+          { name: "Properties", url: `${SITE.url}/properties` },
+          { name: displayTitle, url: `${SITE.url}/properties/${slug}` },
+        ]}
+      />
+      <section className="bg-zb-navy-deep pt-28 pb-8 sm:pt-32">
+        <div className="container-portal">
+          <nav className="mb-4 text-xs text-white/50" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2">
+              <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li aria-hidden>/</li>
+              <li><Link href="/properties" className="hover:text-white">Properties</Link></li>
+              <li aria-hidden>/</li>
+              <li className="text-white/80" aria-current="page">{displayTitle}</li>
+            </ol>
+          </nav>
+          <p className="text-sm font-medium text-zb-gold">{listing.location}</p>
+          <h1 className="mt-1 font-serif text-3xl font-semibold text-white sm:text-4xl">
             {displayTitle}
           </h1>
-          <p className="mt-3 text-2xl font-semibold text-sand-900">
+          <p className="mt-3 font-serif text-2xl text-zb-gold">
             {formatPrice(listing.price, listing.currency)}
           </p>
-          {listing.area && (
-            <p className="mt-1 text-sand-600">Plot/land: {listing.area}</p>
-          )}
-          <p className="mt-2 inline-block rounded-lg bg-sand-200 px-2.5 py-1 text-sm font-medium text-sand-700 capitalize">
-            {listing.propertyType}
-          </p>
-          <p className="mt-2 text-xs text-sand-500">Ref: {refCode}</p>
+        </div>
+      </section>
 
-          <div className="mt-4">
-            <p className="text-xs font-medium text-sand-500">Share this property</p>
-            <div className="mt-1.5">
-              <ShareButton
-                title={displayTitle}
-                sharePath={`/properties/${slug}?open=1`}
-              />
+      <div className="container-portal py-8 sm:py-12">
+        <div className="grid gap-8 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <PropertyGallery listing={listing} openFirstImage={openFirstImage} />
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-[5rem] space-y-6">
+              <div className="rounded-sm border border-zb-border p-6">
+                <h2 className="font-serif text-lg font-semibold text-zb-navy">Property Details</h2>
+                <dl className="mt-4 space-y-3 text-sm">
+                  <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                    <dt className="text-zb-muted">Type</dt>
+                    <dd className="font-medium text-zb-navy capitalize">{listing.propertyType}</dd>
+                  </div>
+                  {listing.bedrooms && (
+                    <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                      <dt className="text-zb-muted">Bedrooms</dt>
+                      <dd className="font-medium text-zb-navy">{listing.bedrooms}</dd>
+                    </div>
+                  )}
+                  {listing.bathrooms && (
+                    <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                      <dt className="text-zb-muted">Bathrooms</dt>
+                      <dd className="font-medium text-zb-navy">{listing.bathrooms}</dd>
+                    </div>
+                  )}
+                  {listing.area && (
+                    <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                      <dt className="text-zb-muted">Size</dt>
+                      <dd className="font-medium text-zb-navy">{listing.area}</dd>
+                    </div>
+                  )}
+                  <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                    <dt className="text-zb-muted">Location</dt>
+                    <dd className="font-medium text-zb-navy">{listing.location}</dd>
+                  </div>
+                  {listing.furnished && (
+                    <div className="flex justify-between border-b border-zb-border/50 pb-3">
+                      <dt className="text-zb-muted">Furnished</dt>
+                      <dd className="font-medium text-zb-navy capitalize">{listing.furnished}</dd>
+                    </div>
+                  )}
+                  <div className="flex justify-between pb-1">
+                    <dt className="text-zb-muted">Reference</dt>
+                    <dd className="font-medium text-zb-navy">{refCode}</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div className="rounded-sm border border-zb-border bg-zb-surface-warm p-6">
+                <h2 className="font-serif text-lg font-semibold text-zb-navy">Enquire About This Property</h2>
+                {listing.agentName && (
+                  <p className="mt-2 text-sm text-zb-muted">
+                    Agent: {listing.agentName}
+                    {listing.agentCode ? ` (${listing.agentCode})` : null}
+                  </p>
+                )}
+                <div className="mt-4 space-y-3">
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}?text=${whatsappMessage}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center gap-2 rounded-sm bg-[#25D366] py-3.5 text-sm font-semibold text-white transition hover:bg-[#20b858]"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    WhatsApp About This Property
+                  </a>
+                  <Link
+                    href="/tell-us"
+                    className="flex w-full items-center justify-center rounded-sm border border-zb-navy py-3.5 text-sm font-semibold text-zb-navy transition hover:bg-zb-navy hover:text-white"
+                  >
+                    Tell Us What You're Looking For
+                  </Link>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-xs text-zb-muted">Share this property</p>
+                <div className="mt-2">
+                  <ShareButton title={displayTitle} sharePath={`/properties/${slug}?open=1`} />
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="mt-6 rounded-xl border border-sand-200 bg-sand-50/50 p-4">
-            <h2 className="font-semibold text-sand-900">Contact Zanzibaba</h2>
-            {listing.agentName && (
-              <p className="mt-1 text-sm text-sand-600">
-                Agent: {listing.agentName}
-                {listing.agentCode ? ` (${listing.agentCode})` : null}
-              </p>
-            )}
-            <a
-              href={`/api/leads/whatsapp?listingId=${encodeURIComponent(listing.id)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 py-3 font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-            >
-              Chat on WhatsApp
-            </a>
-          </div>
         </div>
-      </div>
 
-      <div className="mt-10">
-        <h2 className="text-lg font-semibold text-sand-900">Description</h2>
-        <p className="mt-2 whitespace-pre-line text-sand-700 leading-relaxed">
-          {displayDescription}
-        </p>
-      </div>
-
-      {listingHasFeatureChips(listing) && (
-        <div className="mt-8">
-          <h2 className="text-lg font-semibold text-sand-900">Features</h2>
-          <div className="mt-2">
-            <ListingFeatureChips listing={listing} />
-          </div>
+        <div className="mt-10 border-t border-zb-border pt-8 sm:mt-14">
+          <h2 className="font-serif text-xl font-semibold text-zb-navy">Description</h2>
+          <p className="mt-4 whitespace-pre-line text-sm leading-relaxed text-zb-muted">
+            {displayDescription}
+          </p>
         </div>
-      )}
 
-      <div className="mt-10 border-t border-sand-200 pt-8 flex flex-wrap items-center justify-between gap-4">
-        <Link
-          href="/#listings"
-          className="inline-flex items-center gap-2 text-brand-600 hover:text-brand-700 font-medium"
-        >
-          <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to catalog
-        </Link>
-        <ShareButton
-          title={displayTitle}
-          sharePath={`/properties/${slug}?open=1`}
-        />
+        {listingHasFeatureChips(listing) && (
+          <div className="mt-8">
+            <h2 className="font-serif text-xl font-semibold text-zb-navy">Features</h2>
+            <div className="mt-3">
+              <ListingFeatureChips listing={listing} />
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10 rounded-sm border border-zb-border/50 bg-zb-surface-warm p-6 text-center text-xs text-zb-muted sm:mt-14">
+          Property information should be independently verified during due diligence.
+          We recommend obtaining independent legal, tax, and financial advice before making property purchases.
+        </div>
       </div>
     </article>
   );

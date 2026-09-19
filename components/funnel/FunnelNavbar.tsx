@@ -57,11 +57,11 @@ export function FunnelNavbar() {
             Zanzibaba
           </span>
           <span className="block text-[0.6rem] font-medium uppercase tracking-[0.32em] text-zb-gold">
-            Investment Properties
+            Real Estate
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Investor navigation">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           {FUNNEL_NAV_LINKS.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass(item.href)}>
               {item.label}

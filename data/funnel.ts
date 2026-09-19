@@ -1,31 +1,31 @@
 import { FUNNEL_GALLERY_IMAGES, FUNNEL_IMAGES } from "@/data/funnel-images";
 
 export const FUNNEL_HERO = {
-  eyebrow: "International investors · Zanzibar",
-  title: "Discover High-Return Investment Properties in Zanzibar",
+  eyebrow: "Zanzibar Property Advisory",
+  title: "Find Exceptional Property in Zanzibar",
   subtitle:
-    "Beachfront villas, off-plan developments, investment land and luxury residences curated for international investors.",
-  primaryCta: "View Investment Opportunities",
+    "Beachfront villas, development land, off-plan homes and selected investment opportunities — sourced with local knowledge.",
+  primaryCta: "Explore Properties",
   primaryHref: "/properties",
-  secondaryCta: "Book Consultation",
-  secondaryHref: "/contact",
+  secondaryCta: "Tell Us What You're Looking For",
+  secondaryHref: "/tell-us",
   image: FUNNEL_IMAGES.hero,
-  trustLine: "Curated opportunities · Investor advisory · Island-wide access",
+  trustLine: "Local property sourcing and buyer support across Zanzibar",
 } as const;
 
 export const FUNNEL_HERO_TRUST = [
-  "International client advisory",
+  "Based in Paje and Stone Town",
   "Off-plan & beachfront access",
-  "Due diligence coordination",
+  "Buyer support from search to handover",
 ] as const;
 
 export const FUNNEL_LEAD = {
   id: "invest",
-  eyebrow: "Private investor access",
-  title: "Request your investment consultation",
+  eyebrow: "Tell us what you're looking for",
+  title: "Find properties that match your requirements",
   subtitle:
-    "Share your goals and our advisory team will match you with villas, off-plan programmes and land opportunities across Zanzibar.",
-  submit: "Book Investment Consultation",
+    "Share your goals and our local team will suggest matching opportunities across Zanzibar.",
+  submit: "Find Properties for Me",
   privacy: "Confidential enquiry · No obligation · Response within 24 hours",
 } as const;
 
@@ -56,86 +56,86 @@ export const LEAD_TIMELINE_OPTIONS = [
 ] as const;
 
 export const FUNNEL_TRUST = {
-  eyebrow: "Why investors choose us",
-  title: "Institutional discipline. Island expertise.",
+  eyebrow: "Why buyers choose us",
+  title: "Local knowledge. Direct access.",
   subtitle:
-    "A dedicated real estate advisory platform for international capital entering Zanzibar — not a generic listings portal.",
+    "A Zanzibar-based property advisory with local market knowledge, not a generic listings portal.",
   pillars: [
     {
-      value: "10+",
-      label: "Years island presence",
-      body: "Local relationships, title coordination, and developer introductions across Unguja.",
+      value: "Local",
+      label: "Island presence",
+      body: "Offices in Paje and Stone Town with local market knowledge and property access.",
     },
     {
-      value: "Global",
-      label: "Investor support",
-      body: "Remote viewings, WhatsApp advisory, and structured acquisition for diaspora and HNW buyers.",
+      value: "Direct",
+      label: "Buyer support",
+      body: "Remote viewings, WhatsApp advisory, and hands-on support for international and diaspora buyers.",
     },
     {
       value: "Curated",
-      label: "Opportunity access",
-      body: "Beachfront villas, off-plan programmes, and investment land vetted for international buyers.",
+      label: "Property access",
+      body: "Beachfront villas, off-plan programmes, and land opportunities vetted for serious buyers.",
     },
     {
-      value: "End-to-end",
-      label: "Acquisition guidance",
-      body: "From first consultation through legal review, payment milestones, and handover.",
+      value: "Guided",
+      label: "Purchase support",
+      body: "From first enquiry through legal review, due diligence, and handover coordination.",
     },
   ],
 } as const;
 
 export const FUNNEL_STATS = [
-  { value: "15%", label: "Target annual ROI", sub: "Indicative — not audited" },
-  { value: "20+", label: "Luxury programmes", sub: "Coast & Stone Town" },
-  { value: "100%", label: "Structured ownership", sub: "Leasehold pathways" },
-  { value: "6", label: "Prime coast zones", sub: "Paje to Stone Town" },
+  { value: "Paje", label: "East coast office", sub: "Open Mon–Sat" },
+  { value: "Stone", label: "Town head office", sub: "Mlandege, Zanzibar" },
+  { value: "Local", label: "Market knowledge", sub: "Island-wide access" },
+  { value: "Direct", label: "Client support", sub: "WhatsApp-first service" },
 ] as const;
 
 export const FUNNEL_WHY = {
-  eyebrow: "Market fundamentals",
-  title: "Why invest in Zanzibar",
+  eyebrow: "Property market",
+  title: "Why Zanzibar property",
   subtitle:
-    "Indian Ocean scarcity, luxury tourism expansion, and rising international demand for beachfront assets.",
+    "A growing tourism destination with limited beachfront land and increasing international buyer interest.",
   items: [
     {
       title: "Tourism growth",
-      body: "Visitor demand supports hospitality, villas, and short-stay investment along Unguja's coast.",
+      body: "Zanzibar welcomes increasing visitor numbers each year, supporting demand for holiday rentals and hospitality properties.",
     },
     {
-      title: "Airbnb & yield",
-      body: "Premium short-stay markets in Paje, north coast, and Stone Town corridors for managed rentals.",
+      title: "Short-stay potential",
+      body: "Well-located properties in popular areas can generate rental income through short-term holiday platforms when professionally managed.",
     },
     {
       title: "Beachfront scarcity",
-      body: "Limited freehold-style frontage drives long-term value for villas and boutique developments.",
+      body: "Limited coastal land with beach access drives long-term value for villa and boutique development opportunities.",
     },
     {
-      title: "Luxury tourism expansion",
-      body: "Five-star resorts and branded residences elevate the island's international positioning.",
+      title: "Luxury development",
+      body: "New resorts and branded residences are expanding the island's international tourism positioning.",
     },
     {
-      title: "Investment ROI",
-      body: "Early off-plan entry and land banking strategies for qualified investors — subject to due diligence.",
+      title: "Off-plan opportunities",
+      body: "Early entry into development projects with staged payment plans — subject to developer due diligence.",
     },
     {
-      title: "Infrastructure growth",
-      body: "Improved connectivity and resort investment strengthen east and north coast appeal.",
+      title: "Infrastructure improvement",
+      body: "Ongoing connectivity and resort investment strengthen east and north coast appeal for property buyers.",
     },
   ],
 } as const;
 
 export const FUNNEL_FEATURED = {
-  eyebrow: "Curated inventory",
-  title: "Featured investment opportunities",
+  eyebrow: "Current listings",
+  title: "Featured properties",
   subtitle:
-    "Luxury villas, beachfront plots, and island assets with advisory support for international buyers.",
+    "Beachfront villas, plots, and island properties with local advisory support for buyers.",
 } as const;
 
 export const FUNNEL_OFF_PLAN_SECTION = {
   eyebrow: "Off-plan",
-  title: "Luxury off-plan developments",
+  title: "Off-plan developments",
   subtitle:
-    "Early investor pricing, staged payment plans, and appreciation potential before handover — subject to developer track record.",
+    "Early entry pricing and staged payment plans on selected development projects — due diligence support included.",
 } as const;
 
 export const OFF_PLAN_PROJECTS = [
@@ -146,7 +146,7 @@ export const OFF_PLAN_PROJECTS = [
     completion: "2026–2027",
     highlight: "Boutique coastal residences",
     paymentPlan: "Staged milestones · reservation deposit",
-    roiLabel: "Early investor pricing",
+    roiLabel: "Early entry pricing",
     image: FUNNEL_IMAGES.development,
     href: "/contact?interest=off-plan-anga",
   },
@@ -157,7 +157,7 @@ export const OFF_PLAN_PROJECTS = [
     completion: "2027",
     highlight: "Luxury villa collection",
     paymentPlan: "Flexible instalments during construction",
-    roiLabel: "Premium finish spec",
+    roiLabel: "Premium finish specification",
     image: FUNNEL_IMAGES.villaLuxury,
     href: "/contact?interest=off-plan-shivo",
   },
@@ -168,7 +168,7 @@ export const OFF_PLAN_PROJECTS = [
     completion: "2026",
     highlight: "Panoramic ocean-view homes",
     paymentPlan: "Phased payments to completion",
-    roiLabel: "View premium positioning",
+    roiLabel: "Elevated positioning",
     image: FUNNEL_IMAGES.coastalWide,
     href: "/contact?interest=off-plan-the-hill",
   },
@@ -177,9 +177,9 @@ export const OFF_PLAN_PROJECTS = [
     name: "Anantara",
     location: "Resort corridor",
     completion: "2027–2028",
-    highlight: "Branded hospitality investment",
+    highlight: "Branded hospitality residences",
     paymentPlan: "Developer-led schedule",
-    roiLabel: "Hospitality-linked asset",
+    roiLabel: "Resort-adjacent location",
     image: FUNNEL_IMAGES.stoneTownGolden,
     href: "/contact?interest=off-plan-anantara",
   },
@@ -187,8 +187,8 @@ export const OFF_PLAN_PROJECTS = [
 
 export const FUNNEL_AREAS_SECTION = {
   eyebrow: "Locations",
-  title: "Investment areas across Zanzibar",
-  subtitle: "Match your strategy to the coast — yield, lifestyle, or heritage capital preservation.",
+  title: "Explore Zanzibar's coastal areas",
+  subtitle: "Each area offers a different character — from lively east coast to quiet north-east and heritage Stone Town.",
 } as const;
 
 /** @deprecated Use INVESTMENT_AREAS */
@@ -263,13 +263,13 @@ export const INVESTMENT_AREAS = [
 ] as const;
 
 export const FUNNEL_TESTIMONIALS = {
-  eyebrow: "Investor confidence",
-  title: "Trusted by international buyers",
+  eyebrow: "Buyer feedback",
+  title: "What buyers say about working with us",
   items: [
     {
       quote:
-        "Clear communication, verified opportunities, and local support through closing — exactly what we needed for our first Zanzibar acquisition.",
-      name: "Private investor",
+        "Clear communication, local knowledge, and support through the buying process — exactly what we needed for our Zanzibar property purchase.",
+      name: "Private buyer",
       location: "United Kingdom",
     },
     {
@@ -280,8 +280,8 @@ export const FUNNEL_TESTIMONIALS = {
     },
     {
       quote:
-        "Professional advisory on areas, budgets, and rental potential — not a pushy sales experience.",
-      name: "Investment group",
+        "Professional guidance on areas, budgets, and rental potential — not a pushy sales experience.",
+      name: "Property buyer",
       location: "UAE",
     },
   ],
@@ -289,70 +289,70 @@ export const FUNNEL_TESTIMONIALS = {
 
 export const FUNNEL_PROCESS = {
   eyebrow: "How it works",
-  title: "Your investment pathway",
+  title: "Your property search pathway",
   steps: [
     {
       step: "01",
-      title: "Consult",
-      body: "Book a consultation to align budget, timeline, and investment strategy.",
+      title: "Enquire",
+      body: "Tell us what you're looking for — budget, location, property type, and timeline.",
     },
     {
       step: "02",
-      title: "Select",
-      body: "Shortlist villas, off-plan programmes, or land with curated introductions.",
+      body: "We shortlist matching properties and arrange viewings — in person or virtually.",
+      title: "Discover",
     },
     {
       step: "03",
       title: "Verify",
-      body: "Title review, structure selection, and compliant acquisition with counsel.",
+      body: "Title review, legal guidance, and due diligence support with local professionals.",
     },
     {
       step: "04",
       title: "Acquire",
-      body: "Completion coordination, handover, and ongoing investor support.",
+      body: "Completion coordination, handover, and ongoing support where needed.",
     },
   ],
 } as const;
 
 export const FUNNEL_FAQ = [
   {
-    q: "Can foreigners invest in property in Zanzibar?",
-    a: "International buyers typically acquire through approved leasehold and investment structures. We coordinate legal review and compliant pathways.",
+    q: "Can foreigners buy property in Zanzibar?",
+    a: "International buyers typically acquire through approved leasehold and investment structures. We coordinate legal review and guide you through compliant pathways.",
   },
   {
-    q: "What are the best places to invest in Zanzibar?",
-    a: "Paje, Nungwi, Jambiani, Kiwengwa, Matemwe, and Stone Town each offer distinct yield and lifestyle profiles — we advise based on your goals.",
+    q: "What are the best areas to buy in Zanzibar?",
+    a: "Paje, Nungwi, Jambiani, Kiwengwa, Matemwe, and Stone Town each offer different characteristics — we help you find the right match based on your goals and budget.",
   },
   {
-    q: "Is Zanzibar good for Airbnb investment?",
-    a: "Tourism demand supports short-stay programmes when properties are well located and professionally managed. Yields are indicative, not guaranteed.",
+    q: "Is Zanzibar good for holiday rental income?",
+    a: "Well-located properties in popular areas can generate rental income through short-term platforms when professionally managed. Returns vary by location, property type, and market conditions.",
   },
   {
-    q: "How do off-plan investments work?",
-    a: "Early pricing, staged payments, and handover timelines vary by developer. We introduce qualified buyers to vetted programmes with due diligence support.",
+    q: "How do off-plan purchases work?",
+    a: "Early entry pricing, staged payments, and handover timelines vary by developer. We introduce buyers to vetted programmes and support due diligence throughout.",
   },
   {
-    q: "Can I buy a luxury villa in Zanzibar remotely?",
-    a: "Yes — virtual tours, media packs, and WhatsApp advisory are standard before on-island viewings.",
+    q: "Can I buy a villa in Zanzibar remotely?",
+    a: "Yes — virtual tours, media packs, and WhatsApp advisory are available before on-island viewings. Many buyers complete the process remotely with legal representation.",
   },
   {
-    q: "What budget do I need to start?",
-    a: "Entry points vary from investment land to luxury villas and off-plan residences. Share your range in the consultation form for matched opportunities.",
+    q: "What budget do I need?",
+    a: "Entry points range from investment land to luxury villas and off-plan residences. Share your range in the enquiry form and we will suggest matching options.",
   },
   {
-    q: "Do you support diaspora and group investors?",
-    a: "We work with individual buyers, families, and investment groups seeking beachfront, off-plan, and yield-focused assets.",
+    q: "Do you work with diaspora buyers?",
+    a: "We work with individual buyers, families, and groups seeking beachfront, off-plan, and lifestyle properties across Zanzibar.",
   },
 ] as const;
 
 export const FUNNEL_FINAL_CTA = {
-  eyebrow: "Begin your acquisition",
-  title: "Secure your place in Zanzibar's next chapter",
+  eyebrow: "Start your property search",
+  title: "Find your place in Zanzibar",
   subtitle:
-    "Book a private consultation with our investment advisory team — beachfront villas, off-plan programmes, and curated land opportunities.",
-  primaryCta: "Book Investment Consultation",
-  primaryHref: "/contact",
-  secondaryCta: "View Investment Opportunities",
+    "Tell us what you're looking for and our local team will help you discover the right opportunity.",
+  primaryCta: "Tell Us What You're Looking For",
+  primaryHref: "/tell-us",
+  secondaryCta: "Browse Properties",
   secondaryHref: "/properties",
 } as const;
 
@@ -370,26 +370,26 @@ export const FUNNEL_OFF_PLAN = {
 } as const;
 
 export const FUNNEL_MID_CTA = {
-  title: "Join the investor list",
-  body: "Receive curated Zanzibar investment opportunities and off-plan programme updates.",
-  button: "Join now",
+  title: "Not finding what you're looking for?",
+  body: "Not every property opportunity is publicly advertised. Tell us what you're looking for and our local team can help source suitable options across Zanzibar.",
+  button: "Submit Your Requirements",
 } as const;
 
 export const FUNNEL_PROPERTY_TYPES = {
   title: "Property types",
   items: [
-    { title: "Luxury villas", body: "Beachfront villas for lifestyle and yield.", href: "/properties" },
-    { title: "Investment land", body: "Plots for development.", href: "/properties?type=land" },
-    { title: "Off-plan", body: "Early entry programmes.", href: "#off-plan" },
+    { title: "Beachfront villas", body: "Villas with ocean views and beach access.", href: "/properties" },
+    { title: "Land & plots", body: "Development land and building plots.", href: "/properties?type=land" },
+    { title: "Off-plan", body: "New-build properties with payment plans.", href: "#off-plan" },
   ],
 } as const;
 
 export const FUNNEL_RENTALS = {
-  title: FUNNEL_WHY.items[1]?.title ?? "Airbnb & yield",
-  subtitle: "Premium short-stay and long-term advisory.",
+  title: "Holiday rental areas",
+  subtitle: "Popular locations for short-term stays and holiday lets.",
   items: [
-    { title: "Luxury vacation villas", body: "Curated rentals.", image: FUNNEL_IMAGES.villaLuxury },
-    { title: "Long-term living", body: "Expat housing.", image: FUNNEL_IMAGES.stoneTownPromenade },
-    { title: "Digital nomad", body: "Coastal lifestyle.", image: FUNNEL_IMAGES.stoneTownHarbor },
+    { title: "Luxury vacation villas", body: "Private holiday rentals.", image: FUNNEL_IMAGES.villaLuxury },
+    { title: "Long-term living", body: "Residential options.", image: FUNNEL_IMAGES.stoneTownPromenade },
+    { title: "Coastal lifestyle", body: "Beach proximity.", image: FUNNEL_IMAGES.stoneTownHarbor },
   ],
 } as const;

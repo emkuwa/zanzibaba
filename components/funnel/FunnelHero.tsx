@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FUNNEL_HERO, FUNNEL_HERO_TRUST } from "@/data/funnel";
-import { PRIMARY_CTA, SECONDARY_CTA } from "@/data/site";
+import { SITE } from "@/data/site";
 
 export function FunnelHero() {
   return (
@@ -9,7 +9,7 @@ export function FunnelHero() {
       <div className="absolute inset-0" aria-hidden>
         <Image
           src={FUNNEL_HERO.image}
-          alt="Luxury beachfront and Stone Town property investment in Zanzibar"
+          alt="Zanzibar beachfront property — coastal villas and ocean views"
           fill
           priority
           className="object-cover object-center"
@@ -42,15 +42,20 @@ export function FunnelHero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href={SECONDARY_CTA.href} className="btn-luxury-primary">
-              {SECONDARY_CTA.label}
+            <Link href={FUNNEL_HERO.primaryHref} className="btn-luxury-primary">
+              {FUNNEL_HERO.primaryCta}
             </Link>
-            <Link href={PRIMARY_CTA.href} className="btn-luxury-outline">
-              {PRIMARY_CTA.label}
+            <Link href={FUNNEL_HERO.secondaryHref} className="btn-luxury-outline">
+              {FUNNEL_HERO.secondaryCta}
             </Link>
-            <Link href="#invest" className="btn-luxury-ghost">
-              Request consultation
-            </Link>
+            <a
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-luxury-ghost"
+            >
+              WhatsApp us
+            </a>
           </div>
 
           <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-8">

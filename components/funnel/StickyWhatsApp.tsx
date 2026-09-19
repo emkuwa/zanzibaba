@@ -4,7 +4,7 @@ import { SITE } from "@/data/site";
 
 export function StickyWhatsApp() {
   const message = encodeURIComponent(
-    "Hello Zanzibaba — I'm interested in Zanzibar investment properties (villa / off-plan / land). I'd like to book a consultation."
+    "Hello Zanzibaba — I'm interested in property in Zanzibar (villa / land / off-plan). I'd like to discuss my requirements."
   );
 
   return (

@@ -10,9 +10,9 @@ export function FunnelFaq() {
   return (
     <FunnelSection
       id="faq"
-      eyebrow="Investor FAQ"
+      eyebrow="Questions"
       title="Frequently asked questions"
-      subtitle="Answers for international buyers exploring Zanzibar real estate and off-plan investment."
+      subtitle="Common questions from buyers exploring property in Zanzibar."
       className="bg-white"
     >
       <ul className="mx-auto max-w-3xl divide-y divide-zb-border rounded-sm border border-zb-border bg-white shadow-zb-card">

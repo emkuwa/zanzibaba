@@ -18,9 +18,9 @@ import { FunnelFaq } from "@/components/funnel/FunnelFaq";
 import { FunnelFinalCta } from "@/components/funnel/FunnelFinalCta";
 
 export const metadata: Metadata = {
-  title: "Zanzibar Property for Sale — Villas, Land & Off-Plan | Zanzibaba Real Estate",
+  title: "Zanzibar Investment Properties | Luxury Villas & Off-Plan",
   description:
-    "Find property in Zanzibar — beachfront villas, development land, off-plan homes and selected investment opportunities. Local property advisory based in Paje and Stone Town.",
+    "Discover high-return Zanzibar investment properties — beachfront villas, off-plan developments, and luxury residences for international investors. Book your investment consultation.",
   keywords: [...SEO_KEYWORDS],
   alternates: { canonical: SITE.url },
   openGraph: {
@@ -28,23 +28,23 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Zanzibar Property for Sale | Zanzibaba Real Estate",
+    title: "Zanzibar Investment Properties | Zanzibaba Real Estate",
     description:
-      "Beachfront villas, development land, and off-plan properties in Zanzibar — local property sourcing and buyer support.",
+      "Beachfront villas, off-plan projects, and Zanzibar investment opportunities curated for foreign investors and diaspora capital.",
     images: [
       {
         url: FUNNEL_IMAGES.og,
         width: 1200,
         height: 630,
-        alt: "Zanzibar property — beachfront villas and coastal land",
+        alt: "Luxury Zanzibar property investment — beachfront and Stone Town",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zanzibar Property for Sale | Zanzibaba Real Estate",
+    title: "Zanzibar Investment Properties | Zanzibaba",
     description:
-      "Beachfront villas, land, and off-plan property in Zanzibar — local advisory based in Paje and Stone Town.",
+      "Luxury villas, off-plan developments, and beachfront property for sale in Zanzibar — international investor advisory.",
     images: [FUNNEL_IMAGES.og],
   },
 };

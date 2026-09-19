@@ -8,16 +8,16 @@ type Msg = { role: "bot" | "user"; text: string };
 
 const WELCOME: Msg = {
   role: "bot",
-  text: "Welcome — I'm your Zanzibar investment concierge. Are you looking to invest, buy, or rent luxury property?",
+  text: "Welcome — I can help you find property in Zanzibar. Are you looking to buy, rent, or explore the market?",
 };
 
 const REPLIES: Record<string, string> = {
   invest:
-    "We advise international investors on villas, land, and hospitality assets. Use our qualification form or WhatsApp for a private consultation.",
-  buy: "Browse verified listings or tell us your budget and preferred area — Paje, Nungwi, Stone Town, and more.",
-  rent: "We match luxury vacation and long-term rentals for expats, nomads, and premium travellers.",
+    "We help buyers find villas, land, and properties across Zanzibar. Use the enquiry form or WhatsApp for a direct conversation.",
+  buy: "Browse our property listings or tell us your budget and preferred area — Paje, Nungwi, Stone Town, and more.",
+  rent: "We can help with holiday rentals and long-term stays across Zanzibar.",
   default:
-    "I can guide you on real estate, rentals, and areas across Zanzibar. Tap below to speak with our team on WhatsApp.",
+    "I can help you find property in Zanzibar. Tap below to speak with our team on WhatsApp.",
 };
 
 export function InvestmentConcierge() {
@@ -73,8 +73,8 @@ export function InvestmentConcierge() {
             className="fixed bottom-40 right-4 z-50 flex h-[min(32rem,70vh)] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-sm border border-zb-border bg-white shadow-zb-xl sm:bottom-24 sm:right-24"
           >
             <header className="border-b border-zb-border bg-zb-navy-deep px-4 py-3 text-white">
-              <p className="text-xs font-medium uppercase tracking-widest text-zb-gold">AI Concierge</p>
-              <p className="font-serif text-lg">Zanzibar Investment Guide</p>
+              <p className="text-xs font-medium uppercase tracking-widest text-zb-gold">Property Guide</p>
+              <p className="font-serif text-lg">Zanzibaba Real Estate</p>
             </header>
             <div className="flex-1 space-y-3 overflow-y-auto p-4">
               {messages.map((m, i) => (
@@ -96,7 +96,7 @@ export function InvestmentConcierge() {
             </div>
             <div className="border-t border-zb-border p-3 space-y-2">
               <div className="flex flex-wrap gap-1.5">
-                {["Invest", "Buy a villa", "Luxury rental"].map((q) => (
+                {["Buy property", "Find a villa", "Holiday rental"].map((q) => (
                   <button
                     key={q}
                     type="button"
@@ -113,7 +113,7 @@ export function InvestmentConcierge() {
                 rel="noopener noreferrer"
                 className="block w-full rounded-sm bg-zb-gold py-2.5 text-center text-xs font-bold uppercase text-zb-navy-deep"
               >
-                WhatsApp advisor
+                WhatsApp us
               </a>
             </div>
           </motion.div>

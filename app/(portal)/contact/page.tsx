@@ -3,15 +3,29 @@ import { Hero } from "@/components/portal/Hero";
 import { Section } from "@/components/portal/Section";
 import { Button } from "@/components/portal/Button";
 import { SITE, SUBDOMAINS } from "@/data/site";
+import { BreadcrumbJsonLd } from "@/components/seo/RealEstateJsonLd";
 
 export const metadata: Metadata = {
-  title: "Contact — Book Consultation",
-  description: `Contact Zanzibaba Real Estate — ${SITE.email}, ${SITE.phone}. East Coast Office, Paje and Town Office, Mlandege, Zanzibar.`,
+  title: "Contact Zanzibaba Real Estate — Zanzibar Property Advisory",
+  description: `Contact Zanzibaba Real Estate in Zanzibar — ${SITE.email}, ${SITE.phone}. Offices in Paje (East Coast) and Mlandege (Stone Town). WhatsApp, email, or phone.`,
+  alternates: { canonical: `${SITE.url}/contact` },
+  openGraph: {
+    title: "Contact Zanzibaba Real Estate",
+    description: "Get in touch with our Zanzibar property advisory team.",
+    url: `${SITE.url}/contact`,
+    siteName: SITE.name,
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: SITE.url },
+          { name: "Contact", url: `${SITE.url}/contact` },
+        ]}
+      />
       <Hero
         compact
         title={<span className="text-white">Contact Us</span>}

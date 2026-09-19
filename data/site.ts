@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Zanzibaba Real Estate",
-  brandLine: "Zanzibar Investment Properties",
+  brandLine: "Local Property Advisory — Zanzibar",
   legalName: "Zanzibaba Company Limited",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
@@ -24,31 +24,29 @@ export const SUBDOMAINS = {
 } as const;
 
 export const SEO_KEYWORDS = [
-  "Zanzibar real estate",
-  "Zanzibar investment properties",
-  "property for sale in Zanzibar",
-  "luxury villas Zanzibar",
+  "Zanzibar property for sale",
+  "Zanzibar villas for sale",
   "beachfront property Zanzibar",
-  "offplan projects Zanzibar",
-  "Zanzibar investment opportunities",
-  "best places to invest in Zanzibar",
-  "Zanzibar Airbnb investment",
-  "buy villa in Zanzibar",
-  "Zanzibar offplan investment",
-  "luxury property investment Zanzibar",
+  "property for sale Paje Zanzibar",
+  "land for sale Zanzibar",
+  "buy property in Zanzibar",
+  "Zanzibar real estate",
+  "Jambiani property for sale",
+  "Nungwi property for sale",
+  "Zanzibar off-plan property",
+  "Zanzibar investment property",
   "Zanzibar beachfront villa",
-  "foreign property investment Zanzibar",
 ] as const;
 
-/** Investor funnel navigation — no corporate divisions */
+/** Property navigation */
 export const FUNNEL_NAV_LINKS = [
-  { href: "/properties", label: "Opportunities" },
-  { href: "/investments", label: "Investments" },
-  { href: "/areas", label: "Areas" },
-  { href: "/why-zanzibar", label: "Why Zanzibar" },
+  { href: "/properties", label: "Properties" },
+  { href: "/locations", label: "Locations" },
+  { href: "/buying-guide", label: "Buying Guide" },
+  { href: "/about", label: "About" },
 ] as const;
 
-/** Desktop header navigation (portal + legacy) */
+/** Desktop header navigation */
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   ...FUNNEL_NAV_LINKS,
@@ -58,11 +56,11 @@ export const NAV_LINKS = [
 export const MOBILE_NAV_LINKS = NAV_LINKS;
 
 export const PRIMARY_CTA = {
-  label: "Book Investment Consultation",
-  href: "/contact",
+  label: "Tell Us What You're Looking For",
+  href: "/tell-us",
 } as const;
 
 export const SECONDARY_CTA = {
-  label: "View Investment Opportunities",
+  label: "Explore Properties",
   href: "/properties",
 } as const;

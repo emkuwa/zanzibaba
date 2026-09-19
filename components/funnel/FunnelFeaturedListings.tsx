@@ -24,11 +24,11 @@ export function FunnelFeaturedListings({ listings }: { listings: Listing[] }) {
     >
       {items.length === 0 ? (
         <div className="rounded-sm border border-zb-border bg-white p-12 text-center text-zb-muted">
-          New opportunities arriving soon.{" "}
-          <Link href="/contact" className="font-semibold text-zb-gold hover:underline">
-            Book a consultation
+          New properties arriving soon.{" "}
+          <Link href="/tell-us" className="font-semibold text-zb-gold hover:underline">
+            Tell us what you're looking for
           </Link>{" "}
-          for off-market introductions.
+          and we'll notify you when matching properties become available.
         </div>
       ) : (
         <ul className="grid gap-6 sm:grid-cols-2">
@@ -67,7 +67,7 @@ export function FunnelFeaturedListings({ listings }: { listings: Listing[] }) {
                       href={`/properties/${listing.slug}`}
                       className="btn-luxury-outline mt-6 w-full justify-center text-center"
                     >
-                      View opportunity
+                      View property
                     </Link>
                   </div>
                 </article>
@@ -80,7 +80,7 @@ export function FunnelFeaturedListings({ listings }: { listings: Listing[] }) {
       {items.length > 0 && (
         <div className="mt-10 text-center">
           <Link href="/properties" className="btn-luxury-primary">
-            View all investment opportunities
+            View all properties
           </Link>
         </div>
       )}
