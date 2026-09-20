@@ -42,7 +42,10 @@ export const SEO_KEYWORDS = [
 export const FUNNEL_NAV_LINKS = [
   { href: "/properties", label: "Properties" },
   { href: "/locations", label: "Locations" },
+  { href: "/property-type", label: "Property Types" },
+  { href: "/for", label: "For Buyers" },
   { href: "/buying-guide", label: "Buying Guide" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ] as const;
 
