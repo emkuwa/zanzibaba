@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FUNNEL_NAV_LINKS, PRIMARY_CTA, SITE } from "@/data/site";
+import { NAV_LINKS, PRIMARY_CTA, SITE } from "@/data/site";
 
 export function FunnelNavbar() {
   const pathname = usePathname();
@@ -62,7 +62,7 @@ export function FunnelNavbar() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-          {FUNNEL_NAV_LINKS.map((item) => (
+          {NAV_LINKS.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass(item.href)}>
               {item.label}
             </Link>
@@ -109,7 +109,7 @@ export function FunnelNavbar() {
             className="overflow-hidden border-t border-white/10 bg-zb-navy-deep lg:hidden"
           >
             <nav className="container-portal flex flex-col py-4" aria-label="Mobile navigation">
-              {FUNNEL_NAV_LINKS.map((item) => (
+              {NAV_LINKS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

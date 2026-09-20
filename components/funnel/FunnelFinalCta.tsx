@@ -3,30 +3,30 @@ import { FUNNEL_FINAL_CTA } from "@/data/funnel";
 
 export function FunnelFinalCta() {
   return (
-    <section className="relative overflow-hidden bg-zb-navy-deep py-16 sm:py-20 lg:py-28">
-      <div className="absolute inset-0 pattern-architectural opacity-40" aria-hidden />
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-zb-gold/10 via-transparent to-zb-navy-deep"
-        aria-hidden
-      />
-      <div className="container-portal relative z-10 text-center">
-        <p className="text-eyebrow text-zb-gold">{FUNNEL_FINAL_CTA.eyebrow}</p>
-        <h2 className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+    <section className="section-py-sm lg:section-py bg-zb-surface-warm">
+      <div className="container-portal text-center">
+        <p className="text-eyebrow">{FUNNEL_FINAL_CTA.eyebrow}</p>
+        <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-zb-navy sm:text-4xl">
           {FUNNEL_FINAL_CTA.title}
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-sm text-white/75 sm:text-base">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-zb-muted sm:text-base">
           {FUNNEL_FINAL_CTA.subtitle}
         </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link href={FUNNEL_FINAL_CTA.primaryHref} className="btn-luxury-primary">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            href={FUNNEL_FINAL_CTA.primaryHref}
+            className="inline-flex items-center justify-center rounded-sm bg-zb-gold px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-zb-navy-deep transition hover:bg-[#d4ab55]"
+          >
             {FUNNEL_FINAL_CTA.primaryCta}
           </Link>
-          <Link
+          <a
             href={FUNNEL_FINAL_CTA.secondaryHref}
-            className="inline-flex items-center justify-center rounded-sm border border-white/70 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-sm border border-zb-navy px-8 py-3.5 text-sm font-semibold text-zb-navy transition hover:bg-zb-navy hover:text-white"
           >
             {FUNNEL_FINAL_CTA.secondaryCta}
-          </Link>
+          </a>
         </div>
       </div>
     </section>

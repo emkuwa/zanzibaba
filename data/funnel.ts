@@ -2,20 +2,20 @@ import { FUNNEL_GALLERY_IMAGES, FUNNEL_IMAGES } from "@/data/funnel-images";
 
 export const FUNNEL_HERO = {
   eyebrow: "Zanzibar Property Advisory",
-  title: "Find Exceptional Property in Zanzibar",
+  title: "Exceptional Property.\nExtraordinary Zanzibar.",
   subtitle:
-    "Beachfront villas, development land, off-plan homes and selected investment opportunities — sourced with local knowledge.",
+    "Curated villas, beachfront land, hospitality assets and off-plan opportunities for international buyers.",
   primaryCta: "Explore Properties",
   primaryHref: "/properties",
-  secondaryCta: "Tell Us What You're Looking For",
-  secondaryHref: "/tell-us",
+  secondaryCta: "WhatsApp an Advisor",
+  secondaryHref: `https://wa.me/255716002790`,
   image: FUNNEL_IMAGES.hero,
-  trustLine: "Local property sourcing and buyer support across Zanzibar",
+  trustLine: "Local team in Zanzibar · Due diligence support · International buyer advisory",
 } as const;
 
 export const FUNNEL_HERO_TRUST = [
   "Based in Paje and Stone Town",
-  "Off-plan & beachfront access",
+  "Founder-led advisory",
   "Buyer support from search to handover",
 ] as const;
 
@@ -56,40 +56,85 @@ export const LEAD_TIMELINE_OPTIONS = [
 ] as const;
 
 export const FUNNEL_TRUST = {
-  eyebrow: "Why buyers choose us",
-  title: "Local knowledge. Direct access.",
+  eyebrow: "Your property partner",
+  title: "Your Property Partner on the Ground in Zanzibar",
   subtitle:
-    "A Zanzibar-based property advisory with local market knowledge, not a generic listings portal.",
+    "Direct, local advisory for international buyers — from property sourcing and site visits to due diligence coordination and acquisition support.",
   pillars: [
     {
-      value: "Local",
-      label: "Island presence",
-      body: "Offices in Paje and Stone Town with local market knowledge and property access.",
+      value: "01",
+      label: "Property Sourcing",
+      body: "We search our network of agents, developers, and off-market opportunities to find properties matching your requirements.",
     },
     {
-      value: "Direct",
-      label: "Buyer support",
-      body: "Remote viewings, WhatsApp advisory, and hands-on support for international and diaspora buyers.",
+      value: "02",
+      label: "Due Diligence",
+      body: "Title review, legal guidance, and verification support with established local professionals.",
     },
     {
-      value: "Curated",
-      label: "Property access",
-      body: "Beachfront villas, off-plan programmes, and land opportunities vetted for serious buyers.",
+      value: "03",
+      label: "Site Visits",
+      body: "In-person and virtual viewings with local observation and honest area assessments.",
     },
     {
-      value: "Guided",
-      label: "Purchase support",
-      body: "From first enquiry through legal review, due diligence, and handover coordination.",
+      value: "04",
+      label: "Acquisition Support",
+      body: "From negotiation guidance through completion coordination and handover — we remain involved throughout.",
     },
   ],
 } as const;
 
-export const FUNNEL_STATS = [
-  { value: "Paje", label: "East coast office", sub: "Open Mon–Sat" },
-  { value: "Stone", label: "Town head office", sub: "Mlandege, Zanzibar" },
-  { value: "Local", label: "Market knowledge", sub: "Island-wide access" },
-  { value: "Direct", label: "Client support", sub: "WhatsApp-first service" },
-] as const;
+export const FUNNEL_FOUNDER = {
+  eyebrow: "Meet your advisor",
+  name: "Emmanuel Mkuwa",
+  title: "Founder & Managing Director",
+  description:
+    "Direct, local advisory for international buyers — from property sourcing and site visits to due diligence coordination and acquisition support.",
+  whatsappCta: "WhatsApp Emmanuel",
+  consultationCta: "Book a Private Consultation",
+  image: FUNNEL_IMAGES.stoneTownGolden,
+} as const;
+
+export const FUNNEL_SMART_MATCH = {
+  eyebrow: "Smart property matching",
+  title: "Find Your Zanzibar Property",
+  subtitle:
+    "Tell us what you're looking for and we'll match you with suitable opportunities.",
+  steps: [
+    {
+      id: "type",
+      label: "What are you looking for?",
+      options: ["Villa", "Land", "Hotel / Resort", "Apartment", "Commercial", "Not Sure"],
+    },
+    {
+      id: "budget",
+      label: "Investment Budget",
+      options: ["Under $150K", "$150K–$300K", "$300K–$500K", "$500K–$1M", "$1M+"],
+    },
+    {
+      id: "area",
+      label: "Preferred Area",
+      options: ["Paje", "Jambiani", "Nungwi", "Matemwe", "Fumba", "Other / Not Sure"],
+    },
+    {
+      id: "objective",
+      label: "Primary Objective",
+      options: [
+        "Lifestyle / Holiday Home",
+        "Airbnb / Rental",
+        "Development",
+        "Hospitality Business",
+        "Long-Term Investment",
+      ],
+    },
+  ],
+  matchText: "We can match you with opportunities based on your requirements.",
+  namePlaceholder: "Your name",
+  whatsappPlaceholder: "WhatsApp number",
+  emailPlaceholder: "Email (optional)",
+  submitCta: "Send My Matches on WhatsApp",
+  privacy: "Confidential enquiry · No obligation · Response within 24 hours",
+} as const;
 
 export const FUNNEL_WHY = {
   eyebrow: "Property market",
@@ -126,9 +171,9 @@ export const FUNNEL_WHY = {
 
 export const FUNNEL_FEATURED = {
   eyebrow: "Current listings",
-  title: "Featured properties",
+  title: "Featured Opportunities in Zanzibar",
   subtitle:
-    "Beachfront villas, plots, and island properties with local advisory support for buyers.",
+    "Curated properties with local advisory support — beachfront villas, development land, and investment opportunities.",
 } as const;
 
 export const FUNNEL_OFF_PLAN_SECTION = {
@@ -187,7 +232,7 @@ export const OFF_PLAN_PROJECTS = [
 
 export const FUNNEL_AREAS_SECTION = {
   eyebrow: "Locations",
-  title: "Explore Zanzibar's coastal areas",
+  title: "Explore Zanzibar",
   subtitle: "Each area offers a different character — from lively east coast to quiet north-east and heritage Stone Town.",
 } as const;
 
@@ -347,13 +392,13 @@ export const FUNNEL_FAQ = [
 
 export const FUNNEL_FINAL_CTA = {
   eyebrow: "Start your property search",
-  title: "Find your place in Zanzibar",
+  title: "Your Zanzibar property search starts here.",
   subtitle:
-    "Tell us what you're looking for and our local team will help you discover the right opportunity.",
-  primaryCta: "Tell Us What You're Looking For",
-  primaryHref: "/tell-us",
-  secondaryCta: "Browse Properties",
-  secondaryHref: "/properties",
+    "Whether you're looking for a beachfront villa, investment land, or an off-plan opportunity — our local team is ready to help.",
+  primaryCta: "View Properties",
+  primaryHref: "/properties",
+  secondaryCta: "WhatsApp an Advisor",
+  secondaryHref: `https://wa.me/255716002790`,
 } as const;
 
 /** @deprecated Use FUNNEL_GALLERY in new layouts */

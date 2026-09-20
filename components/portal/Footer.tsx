@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE, NAV_LINKS } from "@/data/site";
+import { SITE, NAV_LINKS, SECONDARY_NAV_LINKS } from "@/data/site";
 
 const SOCIAL = [
   {
@@ -26,21 +26,14 @@ const SOCIAL = [
   },
 ] as const;
 
-const INVESTOR_LINKS = [
-  { href: "/properties", label: "Browse properties" },
-  { href: "/locations", label: "Location guides" },
-  { href: "/buying-guide", label: "Buying guide" },
-  { href: "/tell-us", label: "Tell us what you need" },
-] as const;
-
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-white/10 bg-zb-navy-deep text-white">
       <div className="absolute inset-0 pattern-architectural opacity-30" aria-hidden />
-      <div className="container-portal relative z-10 py-20 sm:py-24 lg:py-28">
-        <div className="grid gap-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-14">
+      <div className="container-portal relative z-10 py-16 sm:py-20 lg:py-24">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <Image
               src="/brand/logos-v2/footer-logo.png"
@@ -48,29 +41,28 @@ export function Footer() {
               width={494}
               height={400}
               unoptimized
-              className="h-[7.5rem] w-auto max-w-[11rem] object-contain object-left sm:h-32 sm:max-w-[12rem]"
+              className="h-28 w-auto max-w-[10rem] object-contain object-left sm:h-32 sm:max-w-[11rem]"
             />
-            <p className="mt-6 max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/75">
-              Local property sourcing and buyer support in Zanzibar — beachfront
-              villas, development land, and off-plan homes for international and
-              diaspora buyers.
+            <p className="mt-5 max-w-xs text-sm font-light leading-relaxed text-white/65">
+              Local property advisory in Zanzibar — beachfront villas, development
+              land, and off-plan opportunities for international buyers.
             </p>
             <a
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-zb-gold px-6 py-3 text-sm font-medium text-zb-navy-deep transition-colors hover:bg-zb-gold/90"
+              className="mt-5 inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#20b858]"
             >
               WhatsApp an advisor
             </a>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-5 flex gap-3">
               {SOCIAL.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-sm border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold"
+                  className="flex h-10 w-10 items-center justify-center rounded-sm border border-white/15 text-white/60 transition-all duration-300 hover:-translate-y-0.5 hover:border-zb-gold/50 hover:bg-zb-gold/10 hover:text-zb-gold"
                   aria-label={s.label}
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -82,8 +74,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">Explore</h3>
-            <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
+            <h3 className="text-eyebrow text-[0.65rem]">Properties</h3>
+            <ul className="mt-5 space-y-3 text-sm font-light text-white/70">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="transition-colors duration-300 hover:text-zb-gold">
@@ -95,9 +87,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">For investors</h3>
-            <ul className="mt-7 space-y-3.5 text-sm font-light text-white/80">
-              {INVESTOR_LINKS.map((l) => (
+            <h3 className="text-eyebrow text-[0.65rem]">Resources</h3>
+            <ul className="mt-5 space-y-3 text-sm font-light text-white/70">
+              {SECONDARY_NAV_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="transition-colors duration-300 hover:text-zb-gold">
                     {l.label}
@@ -108,12 +100,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-eyebrow">Contact</h3>
-            <ul className="mt-7 space-y-5 text-sm font-light text-white/80">
+            <h3 className="text-eyebrow text-[0.65rem]">Contact</h3>
+            <ul className="mt-5 space-y-4 text-sm font-light text-white/70">
               <li>
-                <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
-                  Phone
-                </span>
+                <span className="text-[0.6rem] font-medium uppercase tracking-[0.2em] text-zb-gold/70">Phone</span>
                 <a
                   href={`tel:${SITE.phoneTel}`}
                   className="mt-1 block text-base font-medium text-white transition-colors duration-300 hover:text-zb-gold"
@@ -122,9 +112,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
-                  Email
-                </span>
+                <span className="text-[0.6rem] font-medium uppercase tracking-[0.2em] text-zb-gold/70">Email</span>
                 <a
                   href={`mailto:${SITE.email}`}
                   className="mt-1 block text-base font-medium text-white transition-colors duration-300 hover:text-zb-gold"
@@ -134,27 +122,20 @@ export function Footer() {
               </li>
               {SITE.offices.map((o) => (
                 <li key={o.name}>
-                  <span className="text-[0.65rem] font-medium uppercase tracking-editorial text-zb-gold/80">
-                    {o.name}
-                  </span>
-                  <span className="mt-1 block text-white/75">{o.location}</span>
+                  <span className="text-[0.6rem] font-medium uppercase tracking-[0.2em] text-zb-gold/70">{o.name}</span>
+                  <span className="mt-1 block text-white/65">{o.location}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-10 text-xs font-light text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {SITE.name}. All rights reserved.
-          </p>
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs font-light text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {year} {SITE.name}. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <Link href="/contact" className="transition-colors hover:text-zb-gold">
-              Book consultation
-            </Link>
-            <Link href="/about" className="transition-colors hover:text-zb-gold">
-              About us
-            </Link>
+            <Link href="/contact" className="transition-colors hover:text-zb-gold">Contact</Link>
+            <Link href="/about" className="transition-colors hover:text-zb-gold">About</Link>
+            <Link href="/buying-guide" className="transition-colors hover:text-zb-gold">Buying Guide</Link>
           </div>
         </div>
       </div>

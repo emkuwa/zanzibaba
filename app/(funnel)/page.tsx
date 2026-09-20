@@ -3,18 +3,12 @@ import { getListingsForPublic } from "@/lib/listings-store";
 import { SITE, SEO_KEYWORDS } from "@/data/site";
 import { FUNNEL_IMAGES } from "@/data/funnel-images";
 import { RealEstateJsonLd } from "@/components/seo/RealEstateJsonLd";
-import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { FunnelHero } from "@/components/funnel/FunnelHero";
-import { FunnelLeadCapture } from "@/components/funnel/FunnelLeadCapture";
-import { FunnelTrust } from "@/components/funnel/FunnelTrust";
-import { FunnelWhyInvest } from "@/components/funnel/FunnelWhyInvest";
 import { FunnelFeaturedListings } from "@/components/funnel/FunnelFeaturedListings";
-import { FunnelOffPlanProjects } from "@/components/funnel/FunnelOffPlanProjects";
+import { FunnelTrust } from "@/components/funnel/FunnelTrust";
+import { SmartMatch } from "@/components/funnel/SmartMatch";
 import { FunnelInvestmentAreas } from "@/components/funnel/FunnelInvestmentAreas";
-import { FunnelProcess } from "@/components/funnel/FunnelProcess";
-import { FunnelTestimonials } from "@/components/funnel/FunnelTestimonials";
-import { FunnelFaq } from "@/components/funnel/FunnelFaq";
 import { FunnelFinalCta } from "@/components/funnel/FunnelFinalCta";
 
 export const metadata: Metadata = {
@@ -52,23 +46,17 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const listings = await getListingsForPublic();
   const featured = listings.filter((l) => l.featured);
-  const showcase = featured.length > 0 ? featured : listings.slice(0, 4);
+  const showcase = featured.length > 0 ? featured : listings.slice(0, 3);
 
   return (
     <>
       <RealEstateJsonLd />
-      <FaqJsonLd />
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }]} />
       <FunnelHero />
-      <FunnelLeadCapture />
-      <FunnelTrust />
-      <FunnelWhyInvest />
       <FunnelFeaturedListings listings={showcase} />
-      <FunnelOffPlanProjects />
+      <FunnelTrust />
+      <SmartMatch />
       <FunnelInvestmentAreas />
-      <FunnelProcess />
-      <FunnelTestimonials />
-      <FunnelFaq />
       <FunnelFinalCta />
     </>
   );

@@ -153,4 +153,8 @@
   .btn-luxury-ghost {
     @apply inline-flex items-center justify-center rounded-sm border border-white/50 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 focus-ring;
   }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#20b858] focus-ring;
+  }
 }

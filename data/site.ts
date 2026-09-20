@@ -38,32 +38,41 @@ export const SEO_KEYWORDS = [
   "Zanzibar beachfront villa",
 ] as const;
 
-/** Property navigation */
-export const FUNNEL_NAV_LINKS = [
+/** Simplified buyer-facing desktop navigation */
+export const NAV_LINKS = [
   { href: "/properties", label: "Properties" },
-  { href: "/locations", label: "Locations" },
-  { href: "/property-type", label: "Property Types" },
-  { href: "/for", label: "For Buyers" },
-  { href: "/buying-guide", label: "Buying Guide" },
-  { href: "/blog", label: "Blog" },
+  { href: "/areas", label: "Areas" },
+  { href: "/buying-guide", label: "Buy in Zanzibar" },
+  { href: "/blog", label: "Insights" },
   { href: "/about", label: "About" },
 ] as const;
 
-/** Desktop header navigation */
-export const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  ...FUNNEL_NAV_LINKS,
+/** Mobile navigation — primary links only */
+export const MOBILE_NAV_LINKS = [
+  { href: "/properties", label: "Properties" },
+  { href: "/areas", label: "Areas" },
+  { href: "/buying-guide", label: "Buy in Zanzibar" },
+  { href: "/blog", label: "Insights" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const MOBILE_NAV_LINKS = NAV_LINKS;
+/** Secondary links for footer / deeper navigation */
+export const SECONDARY_NAV_LINKS = [
+  { href: "/locations", label: "Location Guides" },
+  { href: "/property-type", label: "Property Types" },
+  { href: "/for", label: "For Buyers" },
+  { href: "/tell-us", label: "Smart Match" },
+  { href: "/contact", label: "Contact" },
+  { href: "/careers", label: "Careers" },
+] as const;
 
 export const PRIMARY_CTA = {
-  label: "Tell Us What You're Looking For",
-  href: "/tell-us",
+  label: "Explore Properties",
+  href: "/properties",
 } as const;
 
 export const SECONDARY_CTA = {
-  label: "Explore Properties",
-  href: "/properties",
+  label: "WhatsApp an Advisor",
+  href: "whatsapp",
 } as const;
